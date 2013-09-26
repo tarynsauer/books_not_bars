@@ -5,3 +5,13 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+File.open('db/source1.csv').each do |row|
+  Data_unit.create(
+    state: row[0],
+    category: row[1],
+    data_num: row[2],
+    age: row[3],
+    race: row[4],
+    scope: row[5] )
+end

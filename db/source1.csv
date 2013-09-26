@@ -1,0 +1,92 @@
+state,category,data_num,age,race,scope
+Alabama,education,8813,,,per_capita
+Alaska,education,16674,,,per_capita
+Arizona,education,7666,,,per_capita
+Arkansas,education,9353,,,per_capita
+California,education,9139,,,per_capita
+Colorado,education,8724,,,per_capita
+Connecticut,education,15600,,,per_capita
+Delaware,education,12685,,,per_capita
+District of Columbia,education,18475,,,per_capita
+Florida,education,8887,,,per_capita
+Georgia,education,9253,,,per_capita
+Hawaii,education,12004,,,per_capita
+Idaho,education,6824,,,per_capita
+Illinois,education,10774,,,per_capita
+Indiana,education,9370,,,per_capita
+Iowa,education,9807,,,per_capita
+Kansas,education,9498,,,per_capita
+Kentucky,education,9309,,,per_capita
+Louisiana,education,10723,,,per_capita
+Maine,education,11438,,,per_capita
+Maryland,education,13871,,,per_capita
+Massachusetts,education,13941,,,per_capita
+Michigan,education,10823,,,per_capita
+Minnesota,education,10712,,,per_capita
+Mississippi,education,7928,,,per_capita
+Missouri,education,9410,,,per_capita
+Montana,education,10639,,,per_capita
+Nebraska,education,10825,,,per_capita
+Nevada,education,8527,,,per_capita
+New Hampshire,education,13224,,,per_capita
+New Jersey,education,15968,,,per_capita
+New Mexico,education,9070,,,per_capita
+New York,education,19076,,,per_capita
+North Carolina,education,8312,,,per_capita
+North Dakota,education,11420,,,per_capita
+Ohio,education,11223,,,per_capita
+Oklahoma,education,7587,,,per_capita
+Oregon,education,9682,,,per_capita
+Pennsylvania,education,13467,,,per_capita
+Rhode Island,education,13815,,,per_capita
+South Carolina,education,8986,,,per_capita
+South Dakota,education,8805,,,per_capita
+Tennessee,education,8242,,,per_capita
+Texas,education,8671,,,per_capita
+Utah,education,6212,,,per_capita
+Vermont,education,15925,,,per_capita
+Virginia,education,10364,,,per_capita
+Washington,education,9483,,,per_capita
+West Virginia,education,11846,,,per_capita
+Wisconsin,education,11774,,,per_capita
+Wyoming,education,15849,,,per_capita
+Alabama,prison,17285,,,per_capita
+Arizona,prison,24805,,,per_capita
+Arkansas,prison,24391,,,per_capita
+California,prison,47421,,,per_capita
+Colorado,prison,30374,,,per_capita
+Connecticut,prison,50262,,,per_capita
+Delaware,prison,32967,,,per_capita
+Florida,prison,20553,,,per_capita
+Georgia,prison,21039,,,per_capita
+Idaho,prison,19545,,,per_capita
+Illinois,prison,38268,,,per_capita
+Indiana,prison,14823,,,per_capita
+Iowa,prison,32925,,,per_capita
+Kansas,prison,18207,,,per_capita
+Kentucky,prison,14603,,,per_capita
+Louisiana,prison,17486,,,per_capita
+Maine,prison,46404,,,per_capita
+Maryland,prison,38383,,,per_capita
+Michigan,prison,28117,,,per_capita
+Minnesota,prison,41364,,,per_capita
+Missouri,prison,22350,,,per_capita
+Montana,prison,30227,,,per_capita
+Nebraska,prison,35950,,,per_capita
+Nevada,prison,20656,,,per_capita
+New Hampshire,prison,34080,,,per_capita
+New Jersey,prison,54865,,,per_capita
+New York,prison,60076,,,per_capita
+North Carolina,prison,29965,,,per_capita
+North Dakota,prison,39271,,,per_capita
+Ohio,prison,25814,,,per_capita
+Oklahoma,prison,18467,,,per_capita
+Pennsylvania,prison,42339,,,per_capita
+Rhode Island,prison,49133,,,per_capita
+Texas,prison,21390,,,per_capita
+Utah,prison,29349,,,per_capita
+Vermont,prison,49502,,,per_capita
+Virginia,prison,25129,,,per_capita
+Washington,prison,46897,,,per_capita
+West Virginia,prison,26498,,,per_capita
+Wisconsin,prison,37994,,,per_capita
