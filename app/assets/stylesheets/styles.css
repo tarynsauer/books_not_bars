@@ -1,0 +1,143 @@
+@font-face{
+font-family: Born;
+src: url('Born.otf');
+}
+@font-face{
+font-family: Dense;
+src: url('Dense-Regular.otf');
+}
+ 
+@font-face {font-family: 'IdealistSans';src: url('webfonts/28772F_0_0.eot');src: url('webfonts/28772F_0_0.eot?#iefix') format('embedded-opentype'),url('webfonts/28772F_0_0.woff') format('woff'),url('webfonts/28772F_0_0.ttf') format('truetype');}
+ 
+  
+@font-face {font-family: 'IdealistSans-Light';src: url('webfonts/28772F_1_0.eot');src: url('webfonts/28772F_1_0.eot?#iefix') format('embedded-opentype'),url('webfonts/28772F_1_0.woff') format('woff'),url('webfonts/28772F_1_0.ttf') format('truetype');}
+ 
+  
+@font-face {font-family: 'Myra4FCaps';src: url('webfonts/28772F_2_0.eot');src: url('webfonts/28772F_2_0.eot?#iefix') format('embedded-opentype'),url('webfonts/28772F_2_0.woff') format('woff'),url('webfonts/28772F_2_0.ttf') format('truetype');}
+ 
+  
+@font-face {font-family: 'Myra4FCaps-Bold';src: url('webfonts/28772F_3_0.eot');src: url('webfonts/28772F_3_0.eot?#iefix') format('embedded-opentype'),url('webfonts/28772F_3_0.woff') format('woff'),url('webfonts/28772F_3_0.ttf') format('truetype');}
+ 
+  
+@font-face {font-family: 'Myra4FCaps-Light';src: url('webfonts/28772F_4_0.eot');src: url('webfonts/28772F_4_0.eot?#iefix') format('embedded-opentype'),url('webfonts/28772F_4_0.woff') format('woff'),url('webfonts/28772F_4_0.ttf') format('truetype');}
+ 
+
+html,
+body{
+  position: fixed;
+  height: 100%; width: 100%;
+  overflow: hidden;
+  margin: 0; padding: 0;
+  background: url('blackorchid.png') repeat;
+  /*-webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;*/
+}
+.cover{
+  background: url('blackorchid.png') repeat;
+  position: fixed;
+  height: 100%; width: 100%;
+  opacity: 0.7;
+}
+.center{
+  display: table;
+  margin: 0 auto;
+  text-align: center;
+}
+
+nav{
+position: absolute;
+ width: 100%;
+ height: 60px;
+ top:0; left:0; 
+ z-index:2;
+ padding:0px 40px;
+ background:rgba(240,242,241,0.95);
+}
+footer{
+position: absolute;
+ width: 100%;
+ height: 60px;
+ bottom:0; left:0; 
+ z-index:2;
+ padding:0px 40px;
+ background:rgba(240,242,241,0.95);
+}
+nav > h1{
+  color: rgba(21,21,21,1);
+  font-size: 50px;
+  margin: 2px 0 0 0;
+}
+
+div.container,
+section.home{
+  height: 100%; width: 100%;
+  margin: 0; padding: 40px;
+}
+
+section.home{
+  position: absolute;
+  top: 0; left:0;
+  -webkit-perspective: 2500; perspective: 2500;
+}
+
+section.home h2{
+  font-family: 'Dense', sans-serif;
+}
+section.home > div#vmap{
+  -webkit-transform-origin: bottom center;
+  -webkit-transform-style: preserve-3d;
+  -webkit-transition: -webkit-transform 1.2s ease-out;
+  transition: transform 1s ease-in-out;
+  transform: rotate3d(0, 1, 1, 30deg);
+  margin: 12% auto;
+  height: 60%; width: 60%;
+  opacity: 0.9;
+}
+
+section.home > div#vmap > svg > g > path{
+  -webkit-filter: drop-shadow(0px 10px 0px rgba(255,255,255,1),
+             0px 14px 10px rgba(255,255,255,1),
+             0px 24px 2px rgba(255,255,255,1),
+             0px 34px 30px rgba(255,255,255,1));
+}
+
+section.home > div#vmap.display{
+  -webkit-transform: translateY(80px) translateZ(200px) rotateX(65deg);
+    display: table;
+    margin: 12% auto;
+    height: 60%; width: 60%;
+    text-align: center;
+}
+
+
+section.home > div.stats{
+  background: rgba(21,21,21,1);
+  color: rgba(240,242,241,0.8);
+  position: absolute;
+  width: 600px;
+  height: auto;
+  top: 60px; left:25%;
+  padding:0; margin: 0 auto;
+}
+section.home > div.stats > ul {
+  text-align: center;
+   padding:0; margin: 0;
+}
+section.home > div.stats ul > li{
+  list-style: none;
+  
+  width: 100%;
+}
+button#close{
+  border: none;
+  border-radius: none;
+  width: 200px;
+  height: 50px;
+  background: rgba(21,21,21,1);
+  position: absolute;
+  bottom:5%; right:5%;
+  z-index:999;
+  color:rgba(240,242,241,0.95);
+}

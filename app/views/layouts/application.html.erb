@@ -7,10 +7,17 @@
   <%= csrf_meta_tags %>
 
 </head>
-<body>
-<h1>This is the home page</h1>
+  <body>
+    <nav>
+      <h1>Books not Bars</h1>
+      <button id="close" value="close">close</button>
+    </nav>
+    
+    <div class="container">
+      <%= yield %>
+    </div>
+    <footer>
 
-<%= yield %>
-
-</body>
+    </footer>
+  </body>
 </html>
