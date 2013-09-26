@@ -5,12 +5,15 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+source1array = []
 
 File.open('db/source1.csv').each do |row|
-  arr = row.split(",")
-  DataUnit.create(
-    state: arr[0],
-    category: arr[1],
-    data_num: arr[2],
-    scope: arr[5] )
+  source1array << row.chomp.split(",")
+end
+
+source1array[1..-1].each do |state|
+  State.create(
+    name: state[0],
+    education_per_capita: state[1].to_i,
+    incarceration_per_capita: state[2].to_i )
 end
