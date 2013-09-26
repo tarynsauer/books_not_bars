@@ -67,8 +67,8 @@ section.home > div#vmap{
   -webkit-transform-style: preserve-3d;
   -webkit-transition: -webkit-transform 1.2s ease-out;
   transition: transform 1s ease-in-out;
-  transform: rotate3d(0, 1, 1, 30deg);
-  margin: 12% auto;
+  transform: rotate3d(0, 1, 1, 0);
+  margin: 10% auto;
   height: 60%; width: 60%;
   opacity: 0.9;
 }
@@ -83,7 +83,7 @@ section.home > div#vmap > svg > g > path{
 section.home > div#vmap.display{
   -webkit-transform: translateY(80px) translateZ(200px) rotateX(65deg);
     display: table;
-    margin: 12% auto;
+    margin: 10% auto;
     height: 60%; width: 60%;
     text-align: center;
 }
