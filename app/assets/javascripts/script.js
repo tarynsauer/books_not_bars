@@ -17,7 +17,12 @@ Map.prototype.statChange = function(){
 }
 
 Map.prototype.assignStats = function(state){
-  $()
+  var recidivism = '80%'
+  var inmate_cost = '35,000'
+  var pupil_cost = '8,000'
+  $('#recidivism').text(recidivism)
+  $('#inmate_cost').text(inmate_cost)
+  $('#pupil_cost').text(pupil_cost)
 }
 
 
