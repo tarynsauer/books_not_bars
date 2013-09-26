@@ -15,8 +15,8 @@ ActiveRecord::Schema.define(version: 20130925234149) do
 
   create_table "states", force: true do |t|
     t.string   "name"
-    t.integer  "education_per_capita"
-    t.integer  "incarceration_per_capita"
+    t.integer  "edu_per_capita"
+    t.integer  "inc_per_capita"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

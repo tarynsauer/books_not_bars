@@ -5,15 +5,13 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-source1array = []
+# source1array = []
+require 'csv'  
 
-File.open('db/source1.csv').each do |row|
-  source1array << row.chomp.split(",")
-end
+csv_text = File.read('db/source1.csv')
+csv = CSV.parse(csv_text, :headers => true)
 
-source1array[1..-1].each do |state|
-  State.create(
-    name: state[0],
-    education_per_capita: state[1].to_i,
-    incarceration_per_capita: state[2].to_i )
+csv.each do |row|
+  p row.to_hash
+  State.create!(row.to_hash)
 end
