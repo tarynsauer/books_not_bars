@@ -13,8 +13,12 @@ class WelcomeController < ApplicationController
     p "X"*100
     state_obj = State.where(name: params[:state])
     p state_obj
-    pupil_cost = state_obj.edu_per_capita
-    inmate_cost = state_obj.inc_per_capita
+    if state_obj.first.edu_per_capita
+      pupil_cost = state_obj.first.edu_per_capita
+    end
+    if state_obj.first.inc_per_capita
+      inmate_cost = state_obj.first.inc_per_capita
+    end
     p "X"*100
     if request.xhr?
      render json: { pupil_cost: pupil_cost, inmate_cost: inmate_cost }
