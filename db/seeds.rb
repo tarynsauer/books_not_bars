@@ -7,9 +7,10 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 File.open('db/source1.csv').each do |row|
-  Data_unit.create(
-    state: row[0],
-    category: row[1],
-    data_num: row[2],
-    scope: row[5] )
+  arr = row.split(",")
+  DataUnit.create(
+    state: arr[0],
+    category: arr[1],
+    data_num: arr[2],
+    scope: arr[5] )
 end
