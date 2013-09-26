@@ -13,13 +13,10 @@
 
 ActiveRecord::Schema.define(version: 20130925234149) do
 
-  create_table "data_units", force: true do |t|
-    t.string   "state"
-    t.string   "category"
-    t.integer  "data_num"
-    t.integer  "age"
-    t.string   "race"
-    t.string   "scope"
+  create_table "states", force: true do |t|
+    t.string   "name"
+    t.integer  "education_per_capita"
+    t.integer  "incarceration_per_capita"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
