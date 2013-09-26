@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class DataUnitTest < ActiveSupport::TestCase
+class StateTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

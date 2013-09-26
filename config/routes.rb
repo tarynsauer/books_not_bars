@@ -8,7 +8,7 @@ CurrentBooksBar::Application.routes.draw do
   # Example of regular route:
 
   # get 'products/:id' => 'catalog#view'
-
+  get '/animation' => 'animation'
 
   post '/update' => 'welcome#update'
 
