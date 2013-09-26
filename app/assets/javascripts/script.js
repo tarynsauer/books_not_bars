@@ -10,17 +10,19 @@ var Map = function(selector){
 
 Map.prototype.statChange = function(){
   var self = this;
-  $('#vmap').on('regionClick.jqvmap',
-    function(event, code, region){
-      self.assignStats(code);
+  $(this.elem).on('regionClick.jqvmap', function(event, code, region){
+      console.log(region)
+      console.log(code)
+      $.post('/update',{ state: region }, function(response){
+        console.log(response)
+        self.assignStats(region, response.pupil_cost, response.inmate_cost)
+      })
   });
 }
 
-Map.prototype.assignStats = function(state){
-  var recidivism = '80%'
-  var inmate_cost = '35,000'
-  var pupil_cost = '8,000'
-  $('#recidivism').text(recidivism)
+Map.prototype.assignStats = function(state, pupil_cost, inmate_cost){
+  $('#state').text(state)
+  // $('#recidivism').text(recidivism)
   $('#inmate_cost').text(inmate_cost)
   $('#pupil_cost').text(pupil_cost)
 }
