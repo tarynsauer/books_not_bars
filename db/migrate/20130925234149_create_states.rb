@@ -8,7 +8,4 @@ class CreateStates < ActiveRecord::Migration
       t.timestamps
     end
   end
-  # add_index :states, :name
-  # add_index :states, :edu_per_capita
-  # add_index :states, :inc_per_capita
 end
