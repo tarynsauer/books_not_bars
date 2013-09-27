@@ -47,10 +47,10 @@
       normalizeFunction: 'linear',
       enableZoom: true,
       showTooltip: true,
-      borderColor: '#818181',
-      borderWidth: 1,
-      borderOpacity: 0.25,
-      selectedRegions: null,
+      borderColor: 'rgba(21,21,21,1)',
+      borderWidth: 0,
+      borderOpacity: 1,
+      selectedRegions: true,
       multiSelectRegion: false
     }, map = this.data('mapObject');
 
