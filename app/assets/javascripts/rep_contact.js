@@ -1,24 +1,28 @@
 $(function () {
 
-var options = {
-  enableHighAccuracy: true,
-  timeout: 5000,
-  maximumAge: 0
-};
+  $( "#contactReps" ).click(function(event) {
+    event.preventDefault();
+    var options = {
+      enableHighAccuracy: true,
+      timeout: 5000,
+      maximumAge: 0
+    };
 
-function success(pos) {
-  var crd = pos.coords;
-  var data = { latitude: crd.latitude, longitude: crd.longitude }
+    function success(pos) {
+      var crd = pos.coords;
+      var data = { latitude: crd.latitude, longitude: crd.longitude }
 
-  $.get('/legislators', data, function(response){
-    console.log(response);
+      $.get('/legislators', data, function(response){
+        console.log(response);
+        $('#contactInfo').html(response);
+      });
+    };
+
+    function error(err) {
+      console.warn('ERROR(' + err.code + '): ' + err.message);
+    };
+
+    navigator.geolocation.getCurrentPosition(success, error, options);
   });
-};
-
-function error(err) {
-  console.warn('ERROR(' + err.code + '): ' + err.message);
-};
-
-navigator.geolocation.getCurrentPosition(success, error, options);
 
 });
