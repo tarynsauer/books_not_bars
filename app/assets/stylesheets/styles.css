@@ -1,22 +1,23 @@
 
 html,
 body{
-  position: fixed;
   height: 100%; width: 100%;
-  overflow: hidden;
   margin: 0; padding: 0;
-  background: url('blackorchid.png') repeat;
-  /*-webkit-background-size: cover;
+  background: rgba(218,33,50,1);
+  /*no-repeat center fixed;
+  -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;*/
 }
+
 .cover{
   background: url('blackorchid.png') repeat;
   position: fixed;
   height: 100%; width: 100%;
   opacity: 0.7;
 }
+
 .center{
   display: table;
   margin: 0 auto;
@@ -24,13 +25,13 @@ body{
 }
 
 nav{
-position: absolute;
+position: fixed;
  width: 100%;
  height: 60px;
  top:0; left:0; 
  z-index:2;
  padding:0px 40px;
- background:rgba(240,242,241,0.95);
+ background:rgba(240,242,241,0);
 }
 footer{
 position: absolute;
@@ -38,15 +39,35 @@ position: absolute;
  height: 60px;
  bottom:0; left:0; 
  z-index:2;
- padding:0px 40px;
- background:rgba(240,242,241,0.95);
+ /*padding:0px 40px;*/
+ background:rgba(240,242,241,0);
 }
 nav > h1{
-  color: rgba(21,21,21,1);
+  font-family: 'Born', sans-serif;
+  font-weight: 100;
+  color: rgba(255,255,255,1); 
+  font-size: 50px;
+  letter-spacing: -1px;
+  margin: 3px 0 0 10px;
+}
+nav > h1 span.thick{
+  font-family: 'Myra4FCaps-Bold', sans-serif;
+  letter-spacing: 1px;
   font-size: 50px;
   margin: 2px 0 0 0;
+  font-weight: 600;
+}
+nav > h1 > span.black{
+  color:rgba(21,21,21,1);
+  margin: 0 2px;
+  text-decoration: underline;
 }
 
+nav > ul > li{
+  font-family: 'GeneralFoundicons';
+  color: rgba(255,255,255,1);
+  list-style: none;
+}
 div.container,
 section.home{
   height: 100%; width: 100%;
@@ -56,7 +77,7 @@ section.home{
 section.home{
   position: absolute;
   top: 0; left:0;
-  -webkit-perspective: 2500; perspective: 2500;
+  -webkit-perspective: 15000; perspective: 15000;
 }
 
 section.home h2{
@@ -65,11 +86,9 @@ section.home h2{
 section.home > div#vmap{
   -webkit-transform-origin: bottom center;
   -webkit-transform-style: preserve-3d;
-  -webkit-transition: -webkit-transform 1.2s ease-out;
-  transition: transform 1s ease-in-out;
-  transform: rotate3d(0, 1, 1, 0);
-  margin: 10% auto;
-  height: 60%; width: 60%;
+  -webkit-transition: all 1.2s linear;
+  margin: 1% auto;
+  height: 880px; width: 880px;
   opacity: 0.9;
 }
 
@@ -83,29 +102,43 @@ section.home > div#vmap > svg > g > path{
 section.home > div#vmap.display{
   -webkit-transform: translateY(80px) translateZ(200px) rotateX(65deg);
     display: table;
-    margin: 10% auto;
-    height: 60%; width: 60%;
+    margin: -1000px auto 0;
+    height: 2080px; width: 2080px;
     text-align: center;
 }
 
 
 section.home > div.stats{
+  text-align: right;
   background: rgba(21,21,21,1);
   color: rgba(240,242,241,0.8);
-  position: absolute;
-  width: 600px;
-  height: auto;
-  top: 60px; left:25%;
-  padding:0; margin: 0 auto;
+  position: fixed;
+  width: 200px;
+  height: 100%;
+  top: 0; 
+  left:0;
+  padding:0; margin: 0;
 }
 section.home > div.stats > ul {
-  text-align: center;
-   padding:0; margin: 0;
+  padding:200px 8px; margin: 0;
+  text-align: right;
+  font-size: 14px;
 }
 section.home > div.stats ul > li{
   list-style: none;
-  
+  padding:5px 0;
+  border-bottom: #ccc inset 1px;
+  border-top: #ccc inset 1px;
+  text-align: right;
   width: 100%;
+}
+section.home > div.stats ul > li:last-child{
+  border: none;
+}
+section.home > div.stats ul > li > h3,
+section.home > div.stats ul > li > p{
+  display: inline;
+  margin: 4px;
 }
 button#close{
   border: none;
