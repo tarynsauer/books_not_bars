@@ -88,13 +88,33 @@ Map.prototype.assignStats = function(state, pupil_cost, inmate_cost){
   $('#pupil_cost').text(pupil_cost)
 }
 
-$(document).ready(function() {
-    $('#close').hide();
-    var map = new Map('#vmap');
-    map.statChange();
-    $("#close").on('click', function(event){
-      $("#vmap").attr('class', 'center');
-      $('#close').hide();
-    })
+var linkTransition = function() {
+  console.log('linkTransition was called');
 
+  $('a[href^="#"]').on('click',function (e) {
+      e.preventDefault();
+
+      var target = this.hash,
+      $target = $(target);
+
+      $('html, body').stop().animate({
+          'scrollTop': $target.offset().top
+      }, 900, 'swing', function () {
+          window.location.hash = target;
+      });
   });
+}
+
+// ========================ON DOCUMENT LOAD======================
+
+$(document).ready(function() {
+  $('#close').hide();
+  var map = new Map('#vmap');
+  map.statChange();
+  $("#close").on('click', function(event){
+    $("#vmap").attr('class', 'center');
+    $('#close').hide();
+  })
+
+  linkTransition();
+});
