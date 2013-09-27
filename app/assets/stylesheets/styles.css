@@ -25,14 +25,23 @@ body{
 }
 
 nav{
-position: fixed;
- width: 100%;
- height: 60px;
- top:0; left:0;
- z-index:2;
- padding:0px 40px;
- background:rgba(240,242,241,0);
+  position: fixed;
+  width: 10%;
+  height: 60px;
+  top:0; left:0;
+  z-index:2;
+  padding:0px 40px;
+
+
 }
+
+nav ul li{
+  list-style: none;
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
+  color: white;
+  font-family: 'Lato', sans-serif;
+}
+
 footer{
 position: absolute;
  width: 100%;
@@ -41,33 +50,9 @@ position: absolute;
  z-index:2;
  /*padding:0px 40px;*/
  background:rgba(240,242,241,0);
-}
-nav > h1{
-  font-family: 'Born', sans-serif;
-  font-weight: 100;
-  color: rgba(255,255,255,1);
-  font-size: 50px;
-  letter-spacing: -1px;
-  margin: 3px 0 0 10px;
-}
-nav > h1 span.thick{
-  font-family: 'Myra4FCaps-Bold', sans-serif;
-  letter-spacing: 1px;
-  font-size: 50px;
-  margin: 2px 0 0 0;
-  font-weight: 600;
-}
-nav > h1 > span.black{
-  color:rgba(21,21,21,1);
-  margin: 0 2px;
-  text-decoration: underline;
+ font-family: "Trebuchet MS", Helvetica, sans-serif;
 }
 
-nav > ul > li{
-  font-family: 'GeneralFoundicons';
-  color: rgba(255,255,255,1);
-  list-style: none;
-}
 div.container,
 section.home{
   height: 100%; width: 100%;
@@ -81,7 +66,7 @@ section.home{
 }
 
 section.home h2{
-  font-family: 'Dense', sans-serif;
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
 }
 section.home > div#vmap{
   -webkit-transform-origin: bottom center;
@@ -110,7 +95,7 @@ section.home > div#vmap.display{
 
 section.home > div.stats{
   text-align: right;
-  background: rgba(21,21,21,1);
+/*  background: rgba(21,21,21,1);*/
   color: rgba(240,242,241,0.8);
   position: fixed;
   width: 200px;
