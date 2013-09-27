@@ -1,0 +1,12 @@
+<table>
+  <th>WA Legislator</th>
+  <th>Twitter Username</th>
+  <%= debug @response %>
+  <% @response["results"].each do |rep| %>
+    <tr>
+      <td><%= rep["first_name"] + " " + rep["last_name"]%></td>
+      <td><%= rep["twitter_id"] %></td>
+    </tr>
+  <% end %>
+
+</table>

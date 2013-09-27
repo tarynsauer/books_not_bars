@@ -17,3 +17,6 @@
 
 # Ignore all environment variable files.
 /config/sunlight_labs.yml
+
+# Ignore application configuration
+/config/application.yml
