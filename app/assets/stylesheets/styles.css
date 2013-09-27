@@ -3,7 +3,7 @@ html,
 body{
   height: 100%; width: 100%;
   margin: 0; padding: 0;
-  background: rgba(218,33,50,1);
+  /*background: rgba(218,33,50,1);*/
   /*no-repeat center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -25,14 +25,27 @@ body{
 }
 
 nav{
-position: fixed;
- width: 100%;
- height: 60px;
- top:0; left:0;
- z-index:2;
- padding:0px 40px;
- background:rgba(240,242,241,0);
+  position: fixed;
+  width: 10%;
+  height: 60px;
+  top:0; left:0;
+  z-index:2;
+  padding:0px 40px;
+
+
 }
+
+nav ul{
+  padding-top: 40px
+}
+
+nav ul li{
+  list-style: none;
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
+  color: white;
+  font-family: 'Lato', sans-serif;
+}
+
 footer{
 position: absolute;
  width: 100%;
@@ -41,65 +54,68 @@ position: absolute;
  z-index:2;
  /*padding:0px 40px;*/
  background:rgba(240,242,241,0);
-}
-nav > h1{
-  font-family: 'Born', sans-serif;
-  font-weight: 100;
-  color: rgba(255,255,255,1);
-  font-size: 50px;
-  letter-spacing: -1px;
-  margin: 3px 0 0 10px;
-}
-nav > h1 span.thick{
-  font-family: 'Myra4FCaps-Bold', sans-serif;
-  letter-spacing: 1px;
-  font-size: 50px;
-  margin: 2px 0 0 0;
-  font-weight: 600;
-}
-nav > h1 > span.black{
-  color:rgba(21,21,21,1);
-  margin: 0 2px;
-  text-decoration: underline;
+ font-family: "Trebuchet MS", Helvetica, sans-serif;
 }
 
-nav > ul > li{
-  font-family: 'GeneralFoundicons';
-  color: rgba(255,255,255,1);
-  list-style: none;
-}
 div.container,
-section.home{
+section.explore{
   height: 100%; width: 100%;
   margin: 0; padding: 40px;
 }
 
-section.home{
-  position: absolute;
+
+section{
+  height:100%;
+  width: 100%;
+  margin-left: -40px
+
+}
+
+section{
+  /*position: absolute;*/
   top: 0; left:0;
   -webkit-perspective: 15000; perspective: 15000;
 }
 
-section.home h2{
-  font-family: 'Dense', sans-serif;
+section#situation{
+background-color: white;
+
+
+
 }
-section.home > div#vmap{
+
+section#facts{
+background-color: black;
+color: white;
+height: 950px;
+margin-bottom: -16px;
+
+}
+section#explore{
+  background-color: rgba(218,33,50,1);
+  height: 950px;
+
+
+
+}
+section#explore > div#vmap{
   -webkit-transform-origin: bottom center;
   -webkit-transform-style: preserve-3d;
   -webkit-transition: all 1.2s linear;
   margin: 1% auto;
   height: 880px; width: 880px;
   opacity: 0.9;
+
 }
 
-section.home > div#vmap > svg > g > path{
+section#explore > div#vmap > svg > g > path{
   -webkit-filter: drop-shadow(0px 10px 0px rgba(255,255,255,1),
              0px 14px 10px rgba(255,255,255,1),
              0px 24px 2px rgba(255,255,255,1),
              0px 34px 30px rgba(255,255,255,1));
 }
 
-section.home > div#vmap.display{
+section#explore > div#vmap.display{
   -webkit-transform: translateY(80px) translateZ(200px) rotateX(65deg);
     display: table;
     margin: 1% auto;
@@ -108,9 +124,9 @@ section.home > div#vmap.display{
 }
 
 
-section.home > div.stats{
+section#explore > div.stats{
   text-align: right;
-  background: rgba(21,21,21,1);
+/*  background: rgba(21,21,21,1);*/
   color: rgba(240,242,241,0.8);
   position: fixed;
   width: 200px;
@@ -119,12 +135,12 @@ section.home > div.stats{
   left:0;
   padding:0; margin: 0;
 }
-section.home > div.stats > ul {
+section#explore > div.stats > ul {
   padding:200px 8px; margin: 0;
   text-align: right;
   font-size: 14px;
 }
-section.home > div.stats ul > li{
+section#explore > div.stats ul > li{
   list-style: none;
   padding:5px 0;
   border-bottom: #ccc inset 1px;
@@ -132,14 +148,21 @@ section.home > div.stats ul > li{
   text-align: right;
   width: 100%;
 }
-section.home > div.stats ul > li:last-child{
+section#explore > div.stats ul > li:last-child{
   border: none;
 }
-section.home > div.stats ul > li > h3,
-section.home > div.stats ul > li > p{
+section#explore > div.stats ul > li > h3,
+section#explore > div.stats ul > li > p{
   display: inline;
   margin: 4px;
 }
+
+section#toolkit{
+  height:950px;
+  background-color: white
+  color: black;
+}
+
 button#close{
   border: none;
   border-radius: none;
