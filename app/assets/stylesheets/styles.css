@@ -102,8 +102,8 @@ section.home > div#vmap > svg > g > path{
 section.home > div#vmap.display{
   -webkit-transform: translateY(80px) translateZ(200px) rotateX(65deg);
     display: table;
-    margin: -1000px auto 0;
-    height: 2080px; width: 2080px;
+    margin: 1% auto;
+    height: 880px; width: 880px;
     text-align: center;
 }
 
