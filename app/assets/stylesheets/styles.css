@@ -28,7 +28,7 @@ nav{
 position: fixed;
  width: 100%;
  height: 60px;
- top:0; left:0; 
+ top:0; left:0;
  z-index:2;
  padding:0px 40px;
  background:rgba(240,242,241,0);
@@ -37,7 +37,7 @@ footer{
 position: absolute;
  width: 100%;
  height: 60px;
- bottom:0; left:0; 
+ bottom:0; left:0;
  z-index:2;
  /*padding:0px 40px;*/
  background:rgba(240,242,241,0);
@@ -45,7 +45,7 @@ position: absolute;
 nav > h1{
   font-family: 'Born', sans-serif;
   font-weight: 100;
-  color: rgba(255,255,255,1); 
+  color: rgba(255,255,255,1);
   font-size: 50px;
   letter-spacing: -1px;
   margin: 3px 0 0 10px;
@@ -115,7 +115,7 @@ section.home > div.stats{
   position: fixed;
   width: 200px;
   height: 100%;
-  top: 0; 
+  top: 0;
   left:0;
   padding:0; margin: 0;
 }
@@ -151,3 +151,39 @@ button#close{
   z-index:999;
   color:rgba(240,242,241,0.95);
 }
+
+/* ----------------------OVERLAY----------------------*/
+
+div#overlay {
+  display: none;
+  z-index: 2;
+  background: #000;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  text-align: center;
+}
+div#specialBox{
+  display: none;
+  position: fixed;
+  z-index: 3;
+  margin: 150px 30% 0px 30%;
+  width: 500px;
+  height: 300px;
+  background: rgba(255,255,255,0.5);
+  color: #000;
+}
+button#agree{
+  border: none;
+  border-radius: none;
+  width: 200px;
+  height: 50px;
+  background: rgba(21,21,21,1);
+  position: absolute;
+  bottom:5%; right:5%;
+  z-index:999;
+  color:rgba(240,242,241,0.95);
+}
+
