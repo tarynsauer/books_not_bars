@@ -1,3 +1,12 @@
+@font-face{
+font-family: FuturaNDBook;
+src: url('23F08f_0_0_reg.woff') format('woff');
+}
+
+@font-face{
+font-family: FuturaNDBook-Bold;
+src: url('23F08f_2_0_bold.woff') format('woff');
+}
 
 @font-face{
 font-family: Born;
@@ -7,21 +16,21 @@ src: url('Born.otf');
 font-family: Dense;
 src: url('Dense-Regular.otf');
 }
- 
+
 @font-face {font-family: 'IdealistSans';src: url('webfonts/28772F_0_0.eot');src: url('webfonts/28772F_0_0.eot?#iefix') format('embedded-opentype'),url('webfonts/28772F_0_0.woff') format('woff'),url('webfonts/28772F_0_0.ttf') format('truetype');}
- 
-  
+
+
 @font-face {font-family: 'IdealistSans-Light';src: url('webfonts/28772F_1_0.eot');src: url('webfonts/28772F_1_0.eot?#iefix') format('embedded-opentype'),url('webfonts/28772F_1_0.woff') format('woff'),url('webfonts/28772F_1_0.ttf') format('truetype');}
- 
-  
+
+
 @font-face {font-family: 'Myra4FCaps';src: url('webfonts/28772F_2_0.eot');src: url('webfonts/28772F_2_0.eot?#iefix') format('embedded-opentype'),url('webfonts/28772F_2_0.woff') format('woff'),url('webfonts/28772F_2_0.ttf') format('truetype');}
- 
-  
+
+
 @font-face {font-family: 'Myra4FCaps-Bold';src: url('webfonts/28772F_3_0.eot');src: url('webfonts/28772F_3_0.eot?#iefix') format('embedded-opentype'),url('webfonts/28772F_3_0.woff') format('woff'),url('webfonts/28772F_3_0.ttf') format('truetype');}
- 
-  
+
+
 @font-face {font-family: 'Myra4FCaps-Light';src: url('webfonts/28772F_4_0.eot');src: url('webfonts/28772F_4_0.eot?#iefix') format('embedded-opentype'),url('webfonts/28772F_4_0.woff') format('woff'),url('webfonts/28772F_4_0.ttf') format('truetype');}
- 
+
 
 /* font-face */
 @font-face {
