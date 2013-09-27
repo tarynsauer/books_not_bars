@@ -12,7 +12,7 @@ CurrentBooksBar::Application.routes.draw do
 
   post '/update' => 'welcome#update'
 
-  get '/data' => "representatives#index"
+  get '/legislators' => "representatives#index"
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
