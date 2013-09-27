@@ -14,3 +14,9 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
+
+# Ignore all environment variable files.
+/config/sunlight_labs.yml
+
+# Ignore application configuration
+/config/application.yml

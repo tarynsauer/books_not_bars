@@ -1,6 +1,6 @@
 
 var Map = function(selector){
-  this.elem = $(selector); 
+  this.elem = $(selector);
   this.elem.vectorMap({
     map: 'usa_en',
     backgroundColor: 'none',
@@ -17,7 +17,7 @@ var Map = function(selector){
 };
 
 // =================================================================
- 
+
   var ChartTable = function(w, h, data_array){
     this.w = w;
     this.h = h;
@@ -58,27 +58,27 @@ var Map = function(selector){
       this.x_coord = event.pageX;
       this.y_coord = event.pageY;
     })
-  } 
+  }
 
 Map.prototype.statChange = function(){
-  
+
   var self = this;
 
   $(this.elem).on('regionClick.jqvmap', function(event, code, region){
      $('#chart_holder').children().remove();
       self.elem.attr('class', 'display');
       $('#close').show();
-      $('.stats').show(); 
+      $('.stats').show();
 
-      $.post('/update',{ state: region }, function(response){
-        var data_array = [response.pupil_cost/900, response.inmate_cost/900]        
+      $.post('/update', { state: region }, function(response){
+        var data_array = [response.pupil_cost/900, response.inmate_cost/900]
         var chart = new ChartTable(20, 80, data_array);
 
         chart.render();
         chart.animateBars();
         self.assignStats(region, '$'+ response.pupil_cost, '$'+ response.inmate_cost)
       })
-  }); 
+  });
 }
 
 Map.prototype.assignStats = function(state, pupil_cost, inmate_cost){
