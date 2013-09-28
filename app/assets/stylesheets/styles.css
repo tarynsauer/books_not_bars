@@ -3,8 +3,6 @@ html,
 body{
   height: 100%; width: 100%;
   margin: 0; padding: 0;
-  background: rgba(218,33,50,1);
-  overflow: hidden;
 }
 
 .cover{
@@ -135,7 +133,7 @@ section#explore > div#vmap > svg > g > path{
 section#explore > div#vmap.display{
   -webkit-transform: translateY(80px) translateZ(200px) rotateX(65deg);
     display: table;
-    margin: 1% auto;
+    margin: 1% auto;      console.log(board.count);      console.log(board.count);      console.log(board.count);      console.log(board.count);      console.log(board.count);
     height: 880px; width: 880px;
     text-align: center;
 }
@@ -166,7 +164,7 @@ section#explore > div.stats ul > li{
 }
 section#explore > div.stats ul > li:last-child{
   border: none;
-  padding-top: 80px; 
+  padding-top: 80px;
 }
 
 
@@ -188,7 +186,7 @@ section.home > div.stats > div#donut_holder{
 }
 section.home > div.stats > div#donut_holder .arc,
 section.home > div.stats > div#donut_holder g{
-  -webkit-transition: all 1s ease-in-out; 
+  -webkit-transition: all 1s ease-in-out;
 }
 section.home > div#vmap > .arc_show{
   opacity: 0.6;
