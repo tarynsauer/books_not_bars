@@ -22,3 +22,6 @@ class WelcomeController < ApplicationController
     end
   end
 end
+
+
+data = 
