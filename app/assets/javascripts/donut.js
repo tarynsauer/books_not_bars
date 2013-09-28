@@ -28,11 +28,11 @@ DonutChart.prototype.getCSV = function() {
     .enter().append("g")
       .attr("class", "arc");
 
-    g.append("path")
+  this.g.append("path")
       .attr("d", self.arc)
       .style("fill", function(d) { return self.color(d.data.age); });
 
-    g.append("text")
+  this.g.append("text")
       .attr("transform", function(d) { return "translate(" + self.arc.centroid(d) + ")"; })
       .attr("dy", ".25em")
       .style("text-anchor", "middle")
@@ -46,7 +46,7 @@ DonutChart.prototype.buildArc = function(){
 
   this.arc = d3.svg.arc()
     .outerRadius(self.radius - 10)
-    .innerRadius(self.radius - 70);
+    .innerRadius(self.radius - 40);
  
 }
 

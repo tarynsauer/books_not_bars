@@ -148,7 +148,7 @@ svg {
 }
 
 .arc path {
-  stroke: #fff;
+  /*stroke: #fff;*/
   shape-rendering: auto;
 }
 
