@@ -1,5 +1,5 @@
 var getGeoCoordinates = function() {
-  $( "#contactReps" ).click(function(event) {
+  $("#contactReps").click(function(event) {
     event.preventDefault();
     var options = {
       enableHighAccuracy: true,
@@ -13,6 +13,7 @@ var getGeoCoordinates = function() {
 
       $.get('/legislators', data, function(response){
         $('#contactInfo').html(response);
+        $("#contactReps").hide();
       });
     };
 
@@ -32,6 +33,7 @@ var getZipcode = function() {
 
     $.get('/zipcode', data, function(response){
       $('#contactInfo').html(response);
+      $("#contactReps").hide();
     });
   });
 };
