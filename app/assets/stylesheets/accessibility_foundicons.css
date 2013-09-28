@@ -1,4 +1,9 @@
 @font-face{
+  font-family: AmericanTypewriter;
+  src: url('typewriter.ttf') format('ttf');
+}
+
+@font-face{
 font-family: FuturaNDBook;
 src: url('23F08f_0_0_reg.woff') format('woff');
 }

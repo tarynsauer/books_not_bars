@@ -22,19 +22,17 @@ body{
 
 nav{
   position: fixed;
-  width: 10%;
-  height: 60px;
+  top: 40px;
+  height: 80px;
   top:0; left:0;
   z-index:2;
-  padding:0px 40px;
+  padding:0px 10px;
+  border: 1px dashed red;
 }
 
-nav ul{
-  position: fixed;
-  top: 40px;
-  width: 100px;
+nav ul {
+  padding: 0;
 }
-
 nav ul li{
   list-style: none;
 }
@@ -66,6 +64,13 @@ nav > ul > li > a {
   /*nav ul a li.white:hover {color:'white';font-weight: 700;}  /* mouse over link */*/
   /*nav ul a li.white:active {color:'white'; font-weight: 700;}  /* selected link */*/*/
 */
+
+#4to1 {
+  position: fixed;
+  float:right;
+  top: 100px;
+  left: 30%;
+}
 
 footer{
 position: absolute;
