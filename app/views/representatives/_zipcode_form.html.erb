@@ -1,0 +1,5 @@
+<%= form_tag("/zipcode", method: "get", id: "zipForm" ) do %>
+  <%= label_tag(:zipcode, "Enter your zipcode:") %>
+  <%= text_field_tag(:zipcode) %>
+  <%= submit_tag "Find" %>
+<% end %>
