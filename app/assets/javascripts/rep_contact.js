@@ -1,5 +1,4 @@
-$(function () {
-
+var getGeoCoordinates = function() {
   $( "#contactReps" ).click(function(event) {
     event.preventDefault();
     var options = {
@@ -13,7 +12,6 @@ $(function () {
       var data = { latitude: crd.latitude, longitude: crd.longitude }
 
       $.get('/legislators', data, function(response){
-        console.log(response);
         $('#contactInfo').html(response);
       });
     };
@@ -24,5 +22,22 @@ $(function () {
 
     navigator.geolocation.getCurrentPosition(success, error, options);
   });
+};
 
-});
+var getZipcode = function() {
+    $("#zipForm").submit(function( event ) {
+     alert('test!!!!!');
+
+    event.preventDefault();
+
+    $.get('/zipcode', data, function(response){
+      $('#contactInfo').html(response);
+    });
+  });
+};
+
+$(document).ready(getGeoCoordinates);
+$(document).ready(getZipcode);
+
+$(document).on('page:load', getGeoCoordinates);
+$(document).on('page:load', getZipcode);
