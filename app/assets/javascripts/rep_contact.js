@@ -44,16 +44,15 @@ var getZipcode = function() {
 var findByZipcode = function() {
     $("#findByZipcode").click(function( event ) {
     event.preventDefault();
-    $.get('/show', data, function(response){
-        $('#contactInfo').html(response);
+    $('.legislators-contact-info').hide();
+    $('.zipcode-form').show();
 
-        $(document).ready(getZipcode);
-        $(document).ready(findByZipcode);
-        $(document).ready(copyToClipboard);
-        $(document).on('page:load', getZipcode);
-        $(document).on('page:load', findByZipcode);
-        $(document).on('page:load', copyToClipboard);
-      });
+      $(document).ready(getZipcode);
+      $(document).ready(findByZipcode);
+      $(document).ready(copyToClipboard);
+      $(document).on('page:load', getZipcode);
+      $(document).on('page:load', findByZipcode);
+      $(document).on('page:load', copyToClipboard);
   });
 };
 
