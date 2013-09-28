@@ -23,7 +23,7 @@ var Map = function(selector){
     this.h = h;
     this.data_array = data_array;
     this.chart_width = (w + 50 ) * data_array.length;
-    
+
     var data_max = d3.max(data_array)
     this.chart_height = data_max
 
@@ -54,7 +54,7 @@ var Map = function(selector){
       .scale(self.y)
       .tickSize(self.chart_height)
       .orient("right");
-    
+
     var gy = self.chart.append("g")
       .attr("class", "y axis")
       .call(yAxis)
@@ -89,76 +89,158 @@ Map.prototype.statChange = function(){
   var self = this;
 
   $(this.elem).on('regionClick.jqvmap', function(event, code, region){
-     $('#chart_holder').children().remove();
-     $('#donut_holder').children().remove();
-      self.elem.attr('class', 'display');
+    $('#chart_holder').children().remove();
+    $('#donut_holder').children().remove();
+    self.elem.attr('class', 'display');
 
-      $('#close').show(); 
-    
-
-      $.post('/update',{ state: region }, function(response){
-        var data_array = [response.pupil_cost, response.inmate_cost]        
-        var chart = new ChartTable(40, 400, data_array);
-        
+    $('#close').show();
 
 
-// =================================================================
-        var my_donut = new DonutChart(560, 300, "test_data.csv");
-        my_donut.renderDonut();
-        my_donut.buildArc();
-        my_donut.buildCircle();
-        my_donut.getCSV();
-// =================================================================
+    $.post('/update',{ state: region }, function(response){
+      var data_array = [response.pupil_cost, response.inmate_cost]
+      var chart = new ChartTable(40, 400, data_array);
+
+      // ========================================================
+      var my_donut = new DonutChart(560, 300, "test_data.csv");
+      my_donut.renderDonut();
+      my_donut.buildArc();
+      my_donut.buildCircle();
+      my_donut.getCSV();
+      // ========================================================
 
       $('#close').show();
       $('.stats').show();
 
-      $.post('/update', { state: region }, function(response){
-        var data_array = [response.pupil_cost/900, response.inmate_cost/900]
-        var chart = new ChartTable(20, 80, data_array);
-
-
-        chart.render();
-        chart.animateBars(2000);
-        self.assignStats(region, '$'+ response.pupil_cost, '$'+ response.inmate_cost)
-      })
+      chart.render();
+      chart.animateBars(2000);
+      self.assignStats(region, '$'+ response.pupil_cost, '$'+ response.inmate_cost);
+    });
   });
 }
 
-Map.prototype.assignStats = function(state, pupil_cost, inmate_cost){
-  $('#state').text(state)
-  $('#inmate_cost').text(inmate_cost)
-  $('#pupil_cost').text(pupil_cost)
+Map.prototype.assignStats = function(state, pupil_cost, inmate_cost) {
+  $('#state').text(state);
+  $('#pupil_cost').text(pupil_cost);
+  $('#inmate_cost').text(inmate_cost);
 }
 
+// ========================Navigation Scripts====================
+var linkTransition = function() {
+  $('a[href^="#"]').on('click',function (e) {
+      e.preventDefault();
+
+      var target = this.hash,
+      $target = $(target);
+
+      $('html, body').stop().animate({
+          'scrollTop': $target.offset().top
+      }, 900, 'swing', function () {
+          window.location.hash = target;
+      });
+  });
+}
+var linkStyler = function() {
+  $(window).scroll( function () {
+
+    var situationTop = 0;
+    var factsTop = $('#facts').offset().top - situationTop;
+    var exploreTop = $('#explore').offset().top - situationTop;
+    var toolkitTop = $('#toolkit').offset().top - situationTop;
+
+    var screenTop = this.scrollY - situationTop;
+
+    var a1 = $('a#1');
+    var a2 = $('a#2');
+    var a3 = $('a#3');
+    var a4 = $('a#4');
+
+    var a1top = $('a#1').offset().top + $('#situation').offset().top;
+    var a2top = $('a#2').offset().top + $('#situation').offset().top;
+    var a3top = $('a#3').offset().top + $('#situation').offset().top;
+    var a4top = $('a#4').offset().top + $('#situation').offset().top;
+
+    // a1
+    if ( a1top>factsTop && a1top<toolkitTop ) {
+      console.log('changed a1 class to black');
+      $('#1').removeClass();
+      $('#1').addClass("white");
+    }
+    if ( a1top<factsTop ) {
+      console.log('changed a1 class to black');
+      $('#1').removeClass();
+      $('#1').addClass("black");
+    }
+    if ( a1top>toolkitTop ) {
+      console.log('changed a1 class to black');
+      $('#1').removeClass();
+      $('#1').addClass("black");
+    }
+    // a2
+    if ( a2top>factsTop && a2top<toolkitTop ) {
+      console.log('changed a2 class to black');
+      $('#2').removeClass();
+      $('#2').addClass("white");
+    }
+    if ( a2top<factsTop ) {
+      console.log('changed a2 class to black');
+      $('#2').removeClass();
+      $('#2').addClass("black");
+    }
+    if ( a2top>toolkitTop ) {
+      console.log('changed a2 class to black');
+      $('#2').removeClass();
+      $('#2').addClass("black");
+    }
+    //a3
+    if ( a3top>factsTop && a3top<toolkitTop ) {
+      console.log('changed a3 class to black');
+      $('#3').removeClass();
+      $('#3').addClass("white");
+    }
+    if ( a3top<factsTop ) {
+      console.log('changed a3 class to black');
+      $('#3').removeClass();
+      $('#3').addClass("black");
+    }
+    if ( a3top>toolkitTop ) {
+      console.log('changed a3 class to black');
+      $('#3').removeClass();
+      $('#3').addClass("black");
+    }
+    //a4
+    if ( a4top>factsTop && a4top<toolkitTop ) {
+      console.log('changed a4 class to black');
+      $('#4').removeClass();
+      $('#4').addClass("white");
+    }
+    if ( a4top<factsTop ) {
+      console.log('changed a4 class to black');
+      $('#4').removeClass();
+      $('#4').addClass("black");
+    }
+    if ( a4top>toolkitTop ) {
+      console.log('changed a4 class to black');
+      $('#4').removeClass();
+      $('#4').addClass("black");
+    }
+  });
+};
 // ========================ON DOCUMENT LOAD======================
 
 $(document).ready(function() {
+
+  // Link Transition Function
+  linkTransition();
+  // Link Styler Function
+  linkStyler();
+
+
   $('#close').hide();
   var map = new Map('#vmap');
   map.statChange();
   $("#close").on('click', function(event){
     $("#vmap").attr('class', 'center');
     $('#close').hide();
-
-
-    var map = new Map('#vmap');
-    
-    map.statChange();
-
-    $("#close").on('click', function(event){
-      $("#vmap").attr('class', 'center');
-      $('#close').hide();
-    })
-
   });
-
-
-
-
-
-
-
-  })
 });
 

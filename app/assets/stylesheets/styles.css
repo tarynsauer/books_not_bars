@@ -3,8 +3,6 @@ html,
 body{
   height: 100%; width: 100%;
   margin: 0; padding: 0;
-  background: rgba(218,33,50,1);
-  overflow: hidden;
 }
 
 .cover{
@@ -135,7 +133,7 @@ section#explore > div#vmap > svg > g > path{
 section#explore > div#vmap.display{
   -webkit-transform: translateY(80px) translateZ(200px) rotateX(65deg);
     display: table;
-    margin: 1% auto;
+    margin: 1% auto;      console.log(board.count);      console.log(board.count);      console.log(board.count);      console.log(board.count);      console.log(board.count);
     height: 880px; width: 880px;
     text-align: center;
 }
