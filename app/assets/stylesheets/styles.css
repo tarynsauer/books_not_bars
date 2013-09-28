@@ -3,6 +3,8 @@ html,
 body{
   height: 100%; width: 100%;
   margin: 0; padding: 0;
+  background: rgba(218,33,50,1);
+  overflow: hidden;
 }
 
 .cover{
@@ -112,7 +114,7 @@ section#explore {
 section#explore > div#vmap{
   -webkit-transform-origin: bottom center;
   -webkit-transform-style: preserve-3d;
-  -webkit-transition: all 1.2s linear;
+  -webkit-transition: all 1s ease-in-out;
   margin: 1% auto;
   height: 880px; width: 880px;
   opacity: 0.9;
@@ -159,14 +161,32 @@ section#explore > div.stats ul > li{
 }
 section#explore > div.stats ul > li:last-child{
   border: none;
+  padding-top: 80px; 
 }
-section#explore > div.stats ul > li > h3,
-section#explore > div.stats ul > li > p{
+
+
+section.home > div.stats ul > li > h3,
+section.home > div.stats ul > li > p{
   display: inline;
   margin: 4px;
 }
 
-section#toolkit{
+
+section.home > div.stats > div#donut_holder{
+  position: fixed;
+  top: 100px;
+  left:25%;
+  opacity: 1;
+  height: 300px;
+  width: 560px;
+  -webkit-transition: all 1s ease-in-out;
+}
+section.home > div.stats > div#donut_holder .arc,
+section.home > div.stats > div#donut_holder g{
+  -webkit-transition: all 1s ease-in-out; 
+}
+section.home > div#vmap > .arc_show{
+  opacity: 0.6;
   height:950px;
   background-color: white
   color: black;
