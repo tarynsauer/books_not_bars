@@ -13,7 +13,8 @@
         <% end %>
         </td>
         <% if rep["contact_form"] %>
-          <td><%= link_to rep["contact_form"] %></td>
+          <td><input type="text" value="<%= @form_message %>"></input>
+            <%= link_to "Copy to clipboard and go to web form", rep["contact_form"] %></td>
         <% else %>
           <td>n/a</td>
         <% end %>
