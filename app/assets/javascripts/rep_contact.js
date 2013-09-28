@@ -13,7 +13,11 @@ var getGeoCoordinates = function() {
 
       $.get('/legislators', data, function(response){
         $('#contactInfo').html(response);
-        $("#contactReps").hide();
+
+        $(document).ready(getZipcode);
+        $(document).ready(copyToClipboard);
+        $(document).on('page:load', getZipcode);
+        $(document).on('page:load', copyToClipboard);
       });
     };
 
@@ -27,13 +31,10 @@ var getGeoCoordinates = function() {
 
 var getZipcode = function() {
     $("#zipForm").submit(function( event ) {
-     alert('test!!!!!');
-
     event.preventDefault();
-
-    $.get('/zipcode', data, function(response){
+    var data = $('#zipcode').val();
+    $.get('/zipcode', { zipcode: data } , function(response){
       $('#contactInfo').html(response);
-      $("#contactReps").hide();
     });
   });
 };
@@ -46,24 +47,16 @@ var getPetition = function() {
   });
 };
 
-function CopyToClipboard(text) {
-    Copied = text.createTextRange();
-    Copied.execCommand("Copy");
-}
-
 var copyToClipboard = function() {
-  $("#copy-button").click(function( event ) {
+  $('.copyClipboard').click(function(event){
     event.preventDefault();
-    // var formText = $()
-     alert('test!!!!!');
-     // CopyToClipboard(formText);
+    var formText = $(this).prev().val();
+    console.log(formText);
   });
 };
 
 $(document).ready(getGeoCoordinates);
-$(document).ready(getZipcode);
 $(document).ready(getPetition);
 
 $(document).on('page:load', getGeoCoordinates);
-$(document).on('page:load', getZipcode);
 $(document).on('page:load', getPetition);

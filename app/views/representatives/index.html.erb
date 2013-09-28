@@ -1,4 +1,5 @@
 <% if @response %>
+  <a href="#">Find your representatives by area code.</a>
   <table>
     <th>Legislator</th>
     <th>Twitter</th>
@@ -14,8 +15,8 @@
         </td>
         <% if rep["contact_form"] %>
           <% intro = rep["title"] + ". " + rep["last_name"] + ", "  %>
-          <td><input type="text" value="<%= intro + @form_message %>"></input>
-            <%= link_to "Copy to clipboard", id: "copyClipboard" %>
+          <td><input type="text" onclick="this.select();" value="<%= intro + @form_message %>"></input>
+            <a href="" class="copyClipboard" id="">Copy to clipboard</a>
             <%= link_to "Go to web form", rep["contact_form"], id: "copy-button" %></td>
         <% else %>
           <td>n/a</td>
