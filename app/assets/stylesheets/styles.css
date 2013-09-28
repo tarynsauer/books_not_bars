@@ -166,7 +166,7 @@ section#explore > div.stats ul > li{
 }
 section#explore > div.stats ul > li:last-child{
   border: none;
-  padding-top: 80px; 
+  padding-top: 80px;
 }
 
 
@@ -188,7 +188,7 @@ section.home > div.stats > div#donut_holder{
 }
 section.home > div.stats > div#donut_holder .arc,
 section.home > div.stats > div#donut_holder g{
-  -webkit-transition: all 1s ease-in-out; 
+  -webkit-transition: all 1s ease-in-out;
 }
 section.home > div#vmap > .arc_show{
   opacity: 0.6;
@@ -242,5 +242,9 @@ button#agree{
   bottom:5%; right:5%;
   z-index:999;
   color:rgba(240,242,241,0.95);
+}
+
+.zipcode-form {
+  display: none;
 }
 
