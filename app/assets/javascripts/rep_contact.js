@@ -46,6 +46,20 @@ var getPetition = function() {
   });
 };
 
+function CopyToClipboard(text) {
+    Copied = text.createTextRange();
+    Copied.execCommand("Copy");
+}
+
+var copyToClipboard = function() {
+  $("#copy-button").click(function( event ) {
+    event.preventDefault();
+    // var formText = $()
+     alert('test!!!!!');
+     // CopyToClipboard(formText);
+  });
+};
+
 $(document).ready(getGeoCoordinates);
 $(document).ready(getZipcode);
 $(document).ready(getPetition);
