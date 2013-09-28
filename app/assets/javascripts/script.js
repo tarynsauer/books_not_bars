@@ -119,7 +119,6 @@ Map.prototype.statChange = function(){
 }
 
 Map.prototype.assignStats = function(state, pupil_cost, inmate_cost) {
-  debugger
   $('#state').text(state);
   $('#pupil_cost').text(pupil_cost);
   $('#inmate_cost').text(inmate_cost);
@@ -152,7 +151,7 @@ var linkStyler = function() {
 
     var a1 = $('a#1');
     var a2 = $('a#2');
-    // var a3 = $('a#3');
+    var a3 = $('a#3');
     var a4 = $('a#4');
 
     var a1top = $('a#1').offset().top + $('#situation').offset().top;
