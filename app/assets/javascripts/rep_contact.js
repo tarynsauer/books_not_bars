@@ -38,8 +38,18 @@ var getZipcode = function() {
   });
 };
 
+var getPetition = function() {
+    $("#signPetition").click(function( event ) {
+     alert('test!!!!!');
+    event.preventDefault();
+
+  });
+};
+
 $(document).ready(getGeoCoordinates);
 $(document).ready(getZipcode);
+$(document).ready(getPetition);
 
 $(document).on('page:load', getGeoCoordinates);
 $(document).on('page:load', getZipcode);
+$(document).on('page:load', getPetition);
