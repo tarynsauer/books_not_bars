@@ -49,3 +49,5 @@ gem 'httparty'
 
 # Loads environment variables
 gem "figaro"
+
+gem 'zeroclipboard-rails'
