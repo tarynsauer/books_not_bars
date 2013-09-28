@@ -3,12 +3,6 @@ html,
 body{
   height: 100%; width: 100%;
   margin: 0; padding: 0;
-  /*background: rgba(218,33,50,1);*/
-  /*no-repeat center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;*/
 }
 
 .cover{
@@ -31,8 +25,6 @@ nav{
   top:0; left:0;
   z-index:2;
   padding:0px 40px;
-
-
 }
 
 nav ul{
@@ -43,15 +35,35 @@ nav ul{
 
 nav ul li{
   list-style: none;
-  color: gray;
-  font-family: 'Lato', sans-serif;
-  font-size: .8em;
-  font-weight: 100;
 }
 
-nav ul li a{
+nav > ul > li > a {
   text-decoration: none;
+  font-weight: 300;
+  color: black;
 }
+
+.black {
+  color: black;
+}
+
+.white {
+  color: white;
+}
+
+  /*nav > ul> li > a:link {color:'#000'; font-weight: 300;}
+  nav > ul> li > a:visited {color:'#000'; font-weight: 300;}
+  nav > ul> li > a:hover {color:'#000'; font-weight: 700;}
+  nav > ul> li > a:active {color:'#000'; font-weight: 700;}*/
+
+
+
+
+  nav ul a li.white:link {color:'white';font-weight: 300;}       unvisited link
+  nav ul a li.white:visited {color:'white';font-weight: 300;}  /* visited link
+  /*nav ul a li.white:hover {color:'white';font-weight: 700;}  /* mouse over link */*/
+  /*nav ul a li.white:active {color:'white'; font-weight: 700;}  /* selected link */*/*/
+*/
 
 footer{
 position: absolute;
