@@ -4,11 +4,7 @@ body{
   height: 100%; width: 100%;
   margin: 0; padding: 0;
   background: rgba(218,33,50,1);
-  /*no-repeat center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;*/
+  overflow: hidden;
 }
 
 .cover{
@@ -39,7 +35,6 @@ position: absolute;
  height: 60px;
  bottom:0; left:0;
  z-index:2;
- /*padding:0px 40px;*/
  background:rgba(240,242,241,0);
 }
 nav > h1{
@@ -86,7 +81,7 @@ section.home h2{
 section.home > div#vmap{
   -webkit-transform-origin: bottom center;
   -webkit-transform-style: preserve-3d;
-  -webkit-transition: all 1.2s linear;
+  -webkit-transition: all 1s ease-in-out;
   margin: 1% auto;
   height: 880px; width: 880px;
   opacity: 0.9;
@@ -134,12 +129,32 @@ section.home > div.stats ul > li{
 }
 section.home > div.stats ul > li:last-child{
   border: none;
+  padding-top: 80px; 
 }
+
 section.home > div.stats ul > li > h3,
 section.home > div.stats ul > li > p{
   display: inline;
   margin: 4px;
 }
+
+section.home > div.stats > div#donut_holder{
+  position: fixed;
+  top: 100px;
+  left:25%;
+  opacity: 1;
+  height: 300px;
+  width: 560px;
+  -webkit-transition: all 1s ease-in-out;
+}
+section.home > div.stats > div#donut_holder .arc,
+section.home > div.stats > div#donut_holder g{
+  -webkit-transition: all 1s ease-in-out; 
+}
+section.home > div#vmap > .arc_show{
+  opacity: 0.6;
+}
+
 button#close{
   border: none;
   border-radius: none;

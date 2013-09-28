@@ -11,11 +11,11 @@ function toggleOverlay(){
   }
 }
 $(function() {
-  toggleOverlay();
+  // toggleOverlay();
 
-$('#closeOverlay').click(function() {
-  toggleOverlay();
-});
+// $('#closeOverlay').click(function() {
+  // toggleOverlay();
+// });
 
 });
 

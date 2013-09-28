@@ -98,17 +98,59 @@ textarea {
    ========================================================================== */
 
 
- .chart rect {
-  stroke: white;
-  fill: steelblue;
+.chart text {
+    fill: rgba(218,33,50,1);   
 }
 
 
+.chart rect {
+  stroke: none;
+  fill: rgba(210,210,210,0.9);
+}
 
 
+.donut path,
+.axis path,
+.axis line {
+  fill: none;
+  /*stroke: #000;*/
+  shape-rendering: crispEdges;
+}
+
+.y.axis line {
+  stroke: #777;
+  stroke-dasharray: 2,2;
+}
+.arrow {
+  stroke: #000;
+  stroke-width: 1.5px;
+}
+/*
+.outer,
+.inner {
+  shape-rendering: crispEdges;
+}
+
+.outer {
+  fill: none;
+  stroke: #000;
+}
+
+.inner {
+  /*fill: #ccc;*/
+  /*stroke: #000;*/
+  /*stroke-dasharray: 3, 4;*/
+}
 
 
+svg {
+  padding: 10px 0 0 10px;
+}
 
+.arc path {
+  stroke: #fff;
+  shape-rendering: auto;
+}
 
 
 
