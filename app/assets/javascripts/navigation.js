@@ -47,16 +47,17 @@ var linkStyler = function() {
 var resetClass = function(top,topA,topB,class) {
 //top=a1Top, topA=factsTop, topB=toolkitTop, class
   if ( top>topA && top<topB ) {
+    // console.log('changed a1 class to black');
     $('#1').removeClass();
     $('#1').addClass(a);
   }
   if ( top<topA ) {
-    console.log('changed a1 class to black');
+    // console.log('changed a1 class to black');
     $('#1').removeClass();
     $('#1').addClass("black");
   }
   if ( top>topB ) {
-    console.log('changed a1 class to black');
+    // console.log('changed a1 class to black');
     $('#1').removeClass();
     $('#1').addClass("black");
   }
