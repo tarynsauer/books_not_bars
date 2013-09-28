@@ -1,5 +1,4 @@
 <% if @response %>
-  <a href="#">Find your representatives by area code.</a>
   <table>
     <th>Legislator</th>
     <th>Twitter</th>
@@ -24,6 +23,7 @@
       </tr>
     <% end %>
   </table>
+  <a href="#" id="findByZipcode">Find your representatives by zipcode instead.</a>
 <% else %>
    <%= render 'zipcode_form' %>
 <% end %>
