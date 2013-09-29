@@ -246,11 +246,6 @@ button#close{
   /*stroke-dasharray: 3, 4;*/
 /*}*/
 
-
-svg {
-  padding: 10px 0 0 10px;
-}
-
 .arc path {
   /*stroke: #fff;*/
   shape-rendering: auto;
