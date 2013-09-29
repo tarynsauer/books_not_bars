@@ -15,7 +15,7 @@ var getGeoCoordinates = function() {
         $('#contactInfo').html(response);
 
         $(document).ready(getZipcode);
-        $(document).ready(copyToClipboard);
+        $(document).ready(findByZipcode);
         $(document).on('page:load', getZipcode);
         $(document).on('page:load', findByZipcode);
       });
@@ -36,9 +36,9 @@ var getZipcode = function() {
     $.get('/zipcode', { zipcode: data } , function(response){
       $('#contactInfo').html(response);
       $(document).ready(getZipcode);
-      $(document).ready(findByZipcode);
-      $(document).on('page:load', getZipcode);
-      $(document).on('page:load', findByZipcode);
+    $(document).ready(findByZipcode);
+    $(document).on('page:load', getZipcode);
+    $(document).on('page:load', findByZipcode);
     });
   });
 };
@@ -53,22 +53,6 @@ var findByZipcode = function() {
     $(document).ready(findByZipcode);
     $(document).on('page:load', getZipcode);
     $(document).on('page:load', findByZipcode);
-  });
-};
-
-var getPetition = function() {
-    $("#signPetition").click(function( event ) {
-     alert('test!!!!!');
-    event.preventDefault();
-
-  });
-};
-
-var copyToClipboard = function() {
-  $('.copyClipboard').click(function(event){
-    event.preventDefault();
-    var formText = $(this).prev().val();
-    console.log(formText);
   });
 };
 
