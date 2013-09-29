@@ -3,7 +3,7 @@ var getOrgsMap = function() {
 
   function initialize() {
     var mapOptions = {
-      zoom: 6,
+      zoom: 10,
       mapTypeId: google.maps.MapTypeId.ROADMAP
     };
     map = new google.maps.Map(document.getElementById('map-canvas'),
