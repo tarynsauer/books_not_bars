@@ -19,3 +19,4 @@ production:
   database: first_production_postgresql
   pool: 5
   timeout: 5000
+
