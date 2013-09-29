@@ -99,7 +99,7 @@ textarea {
 
 
 .chart text {
-    fill: rgba(218,33,50,1);   
+    fill: rgba(218,33,50,1);
 }
 
 
@@ -125,6 +125,7 @@ textarea {
   stroke: #000;
   stroke-width: 1.5px;
 }
+
 /*
 .outer,
 .inner {
@@ -140,7 +141,7 @@ textarea {
   /*fill: #ccc;*/
   /*stroke: #000;*/
   /*stroke-dasharray: 3, 4;*/
-}
+/*}*/
 
 
 svg {
