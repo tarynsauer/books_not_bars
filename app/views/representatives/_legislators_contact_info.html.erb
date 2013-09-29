@@ -1,3 +1,4 @@
+<div id="contactInfo">
 <div class="legislators-contact-info">
   <% if @response %>
     <table>
@@ -25,8 +26,9 @@
     </table>
 
     </div>
+  </div>
   <% else %>
      <%= render 'zipcode_form' %>
   <% end %>
-  <div class="zipcode-form"><%= render 'zipcode_form' %></div>
+  <div class="zipcode-form"></div>
   <a href="#" id="findByZipcode">Find representatives by zipcode.</a>
