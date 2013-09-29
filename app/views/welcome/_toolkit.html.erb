@@ -6,6 +6,6 @@
       <%= hidden_field_tag(:longitude) %>
       <%= submit_tag "Contact your representatives", id: "contactReps" %>
     <% end %>
-    <a id="showOrgs" href="/organizations">Support a cause near you</a>
+    <%= link_to "Support a cause near you", organizations_path, id: "showOrgs" %>
   </div>
 </section>

@@ -50,3 +50,7 @@ var findByZipcode = function() {
 
 $(document).ready(getGeoCoordinates);
 $(document).on('page:load', getGeoCoordinates);
+$(document).ready(getZipcode);
+$(document).ready(findByZipcode);
+$(document).on('page:load', getZipcode);
+$(document).on('page:load', findByZipcode);
