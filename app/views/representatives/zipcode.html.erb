@@ -1,18 +1,1 @@
-<% if @response %>
-  <table>
-    <th>Legislator</th>
-    <th>Twitter</th>
-    <th>Facebook</th>
-    <th>Email Form</th>
-    <% @response["results"].each do |rep| %>
-      <tr>
-        <td><%= rep["first_name"] + " " + rep["last_name"]%></td>
-        <td><%= link_to rep["twitter_id"]  %></td>
-        <td><%= link_to rep["facebook_id"] %></td>
-        <td><%= link_to rep["contact_form"] %></td>
-      </tr>
-    <% end %>
-  </table>
-<% else %>
-   <%= render 'zipcode_form' %>
-<% end %>
+<%= render 'legislators_contact_info' %>

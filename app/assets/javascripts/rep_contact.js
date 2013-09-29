@@ -13,7 +13,13 @@ var getGeoCoordinates = function() {
 
       $.get('/legislators', data, function(response){
         $('#contactInfo').html(response);
-        $("#contactReps").hide();
+
+        $(document).ready(getZipcode);
+        $(document).ready(findByZipcode);
+        $(document).ready(copyToClipboard);
+        $(document).on('page:load', getZipcode);
+        $(document).on('page:load', findByZipcode);
+        $(document).on('page:load', copyToClipboard);
       });
     };
 
@@ -27,14 +33,26 @@ var getGeoCoordinates = function() {
 
 var getZipcode = function() {
     $("#zipForm").submit(function( event ) {
-     alert('test!!!!!');
-
     event.preventDefault();
-
-    $.get('/zipcode', data, function(response){
+    var data = $('#zipcode').val();
+    $.get('/zipcode', { zipcode: data } , function(response){
       $('#contactInfo').html(response);
-      $("#contactReps").hide();
     });
+  });
+};
+
+var findByZipcode = function() {
+    $("#findByZipcode").click(function( event ) {
+    event.preventDefault();
+    $('.legislators-contact-info').hide();
+    $('.zipcode-form').show();
+
+      $(document).ready(getZipcode);
+      $(document).ready(findByZipcode);
+      $(document).ready(copyToClipboard);
+      $(document).on('page:load', getZipcode);
+      $(document).on('page:load', findByZipcode);
+      $(document).on('page:load', copyToClipboard);
   });
 };
 
@@ -46,10 +64,16 @@ var getPetition = function() {
   });
 };
 
+var copyToClipboard = function() {
+  $('.copyClipboard').click(function(event){
+    event.preventDefault();
+    var formText = $(this).prev().val();
+    console.log(formText);
+  });
+};
+
 $(document).ready(getGeoCoordinates);
-$(document).ready(getZipcode);
 $(document).ready(getPetition);
 
 $(document).on('page:load', getGeoCoordinates);
-$(document).on('page:load', getZipcode);
 $(document).on('page:load', getPetition);
