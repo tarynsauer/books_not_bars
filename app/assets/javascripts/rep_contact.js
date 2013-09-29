@@ -15,11 +15,9 @@ var getGeoCoordinates = function() {
         $('#contactInfo').html(response);
 
         $(document).ready(getZipcode);
-        $(document).ready(findByZipcode);
         $(document).ready(copyToClipboard);
         $(document).on('page:load', getZipcode);
         $(document).on('page:load', findByZipcode);
-        $(document).on('page:load', copyToClipboard);
       });
     };
 
@@ -37,22 +35,24 @@ var getZipcode = function() {
     var data = $('#zipcode').val();
     $.get('/zipcode', { zipcode: data } , function(response){
       $('#contactInfo').html(response);
+      $(document).ready(getZipcode);
+      $(document).ready(findByZipcode);
+      $(document).on('page:load', getZipcode);
+      $(document).on('page:load', findByZipcode);
     });
   });
 };
 
 var findByZipcode = function() {
-    $("#findByZipcode").click(function( event ) {
+  $("#findByZipcode").click(function( event ) {
     event.preventDefault();
     $('.legislators-contact-info').hide();
     $('.zipcode-form').show();
 
-      $(document).ready(getZipcode);
-      $(document).ready(findByZipcode);
-      $(document).ready(copyToClipboard);
-      $(document).on('page:load', getZipcode);
-      $(document).on('page:load', findByZipcode);
-      $(document).on('page:load', copyToClipboard);
+    $(document).ready(getZipcode);
+    $(document).ready(findByZipcode);
+    $(document).on('page:load', getZipcode);
+    $(document).on('page:load', findByZipcode);
   });
 };
 
