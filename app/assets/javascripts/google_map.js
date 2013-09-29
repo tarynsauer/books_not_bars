@@ -52,19 +52,5 @@ var getOrgsMap = function() {
   google.maps.event.addDomListener(window, 'load', initialize);
 };
 
-// var showOrgsMap = function() {
-//   $('#showOrgs').click(function( event ) {
-//     event.preventDefault();
-//     $('#showOrgs').hide();
-//     $('#map-section').show();
-//     $(document).ready(getOrgsMap);
-//     $(document).on('page:load', getOrgsMap);
-//     google.maps.event.trigger(map,'resize');
-//   });
-// };
-
 $(document).ready(getOrgsMap);
 $(document).on('page:load', getOrgsMap);
-
-// $(document).ready(showOrgsMap);
-// $(document).on('page:load', showOrgsMap);
