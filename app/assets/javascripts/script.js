@@ -89,8 +89,8 @@ Map.prototype.statChange = function(){
   var self = this;
 
   $(this.elem).on('regionClick.jqvmap', function(event, code, region){
-    $('#chart_holder').children().remove();
-    $('#donut_holder').children().remove();
+    $('#chart_holder').show();
+    $('#donut_holder').show();
     self.elem.attr('class', 'display');
 
     $('#close').show();
@@ -142,7 +142,7 @@ var linkTransition = function() {
 var linkStyler = function() {
   $(window).scroll( function () {
 
-    var situationTop = 0;
+    var situationTop = 75;
     var factsTop = $('#facts').offset().top - situationTop;
     var exploreTop = $('#explore').offset().top - situationTop;
     var toolkitTop = $('#toolkit').offset().top - situationTop;
