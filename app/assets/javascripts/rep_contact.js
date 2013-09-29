@@ -13,7 +13,6 @@ var getGeoCoordinates = function() {
 
       $.get('/legislators', data, function(response){
         $('#contactInfo').html(response);
-
         $(document).ready(getZipcode);
         $(document).ready(findByZipcode);
         $(document).on('page:load', getZipcode);
