@@ -22,6 +22,7 @@ body{
   display: inline;
   position:absolute;
   bottom: 0;
+  left: 0;
   z-index: 90;
   width: 100%;
   height: 75px;
@@ -43,7 +44,7 @@ body{
   width: 300;
   height: auto;
   position: relative;
-  margin-left: 5%;
+  margin-left: 15%;
   display: inline;
 }
 
@@ -150,6 +151,20 @@ section#explore {
   background-color: rgba(218,33,50,1);
 /*  margin-top: 0px;*/
 }
+
+#showOrgs {
+  background-image: url('localActionBlueonWhite.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: inline-block;
+  position: relative;
+  top: 20%;
+  left: 20%;
+  height: 400px;
+  width: 400px;
+}
+
+#
 
 
 
