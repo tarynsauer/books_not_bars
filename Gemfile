@@ -48,6 +48,7 @@ end
 # gem 'debugger', group: [:development, :test]
 
 gem 'httparty'
+gem 'rails_12factor', group: :production
 
 # Loads environment variables
 gem "figaro"
