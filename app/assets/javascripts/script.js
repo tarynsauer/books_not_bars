@@ -109,6 +109,7 @@ $(document).ready(function() {
   linkTransition();
   // Link Styler Function
   linkStyler();
+   $(".live-tile, .flip-list").not(".exclude").liveTile();
 
 });
 

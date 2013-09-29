@@ -2,9 +2,40 @@
 
   <div id='factsDiv'>
     <div class="factPanel">
-      <div id="factPanel1"></div>
-      <div id="factPanel2"></div>
+     <!--  <div id="factPanel1"> -->
+        <div id="factPanel1" class="red live-tile" data-mode="flip" data-delay="4000">
+          <div>
+              <img class="full" src="/images/sample/3tw.gif" alt="3" />
+              <span class="tile-title">flip tile front</span>
+          </div>
+          <div>
+              <img class="full" src="/images/sample/4tw.gif" alt="4" />
+              <span class="tile-title">flip tile back</span>
+          </div>
+        </div>
+      <!-- </div> -->
+
+          <!-- Carousel Tile that slides 4 tile faces every 2.5 seconds -->
+    <div id="factPanel2" class="live-tile" data-mode="carousel" data-direction="horizontal" data-delay="2500">
+        <div>
+            <h1>$167,731 per inmate in NYC</h1>
+            <span class="tile-title">source</span>
+        </div>
+        <div>
+            <h1>300% national increase in incarcerations between 1982-2010</h1>
+            <span class="tile-title accent">source</span>
+        </div>
+        <div>
+            <h1>1 year of early childhood education --> decreases likilihood of incarceration by 40%</h1>
+            <span class="tile-title">source</span>
+        </div>
+        <div>
+            <h1></h1>
+            <span class="tile-title accent">source</span>
+        </div>
     </div>
+      </div>
+    <!-- </div> -->
   </div>
 
   <div class="nextZone" id="factsZone">
