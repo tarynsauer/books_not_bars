@@ -14,6 +14,8 @@ CurrentBooksBar::Application.routes.draw do
 
   get '/legislators' => "representatives#index"
 
+  get '/organizations' => "organizations#index"
+
   get '/map' => "map#index"
 
   get '/zipcode' => "representatives#zipcode"

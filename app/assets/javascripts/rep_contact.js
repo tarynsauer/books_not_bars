@@ -1,6 +1,4 @@
 var getGeoCoordinates = function() {
-  $("#contactReps").click(function(event) {
-    event.preventDefault();
     var options = {
       enableHighAccuracy: true,
       timeout: 5000,
@@ -9,16 +7,11 @@ var getGeoCoordinates = function() {
 
     function success(pos) {
       var crd = pos.coords;
-      var data = { latitude: crd.latitude, longitude: crd.longitude }
+      var latitude = crd.latitude;
+      var longitude = crd.longitude;
 
-      $.get('/legislators', data, function(response){
-        $('#contactInfo').html(response);
-
-        $(document).ready(getZipcode);
-        $(document).ready(findByZipcode);
-        $(document).on('page:load', getZipcode);
-        $(document).on('page:load', findByZipcode);
-      });
+      $('#latitude').val(latitude);
+      $('#longitude').val(longitude);
     };
 
     function error(err) {
@@ -26,7 +19,6 @@ var getGeoCoordinates = function() {
     };
 
     navigator.geolocation.getCurrentPosition(success, error, options);
-  });
 };
 
 var getZipcode = function() {
@@ -58,3 +50,7 @@ var findByZipcode = function() {
 
 $(document).ready(getGeoCoordinates);
 $(document).on('page:load', getGeoCoordinates);
+$(document).ready(getZipcode);
+$(document).ready(findByZipcode);
+$(document).on('page:load', getZipcode);
+$(document).on('page:load', findByZipcode);

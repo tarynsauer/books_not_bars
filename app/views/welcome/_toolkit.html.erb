@@ -1,11 +1,11 @@
 <section id = 'toolkit'>
   <div id='toolkitDiv'>
     <h1>Take action</h1>
-    <a id="contactReps" href="#">Contact your representatives</a>
-    <a id="showOrgs" href="#">Support a cause near you</a>
-    <div id="map-section">
-      <div id="map-canvas"></div>
-    <div>
+    <%= form_tag("/legislators", method: "get") do %>
+      <%= hidden_field_tag(:latitude) %>
+      <%= hidden_field_tag(:longitude) %>
+      <%= submit_tag "Contact your representatives", id: "contactReps" %>
+    <% end %>
+    <%= link_to "Support a cause near you", organizations_path, id: "showOrgs" %>
   </div>
-  <div id="contactInfo"></div>
 </section>
