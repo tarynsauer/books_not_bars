@@ -57,7 +57,4 @@ var findByZipcode = function() {
 };
 
 $(document).ready(getGeoCoordinates);
-$(document).ready(getPetition);
-
 $(document).on('page:load', getGeoCoordinates);
-$(document).on('page:load', getPetition);
