@@ -194,7 +194,7 @@ button#agree{
 
 #map-canvas {
   height: 300px;
-  width: 35%;
+  width: 100%;
   border: 2px solid gray;
   margin: auto;
   padding-top: 10px;
