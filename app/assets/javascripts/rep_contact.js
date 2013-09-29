@@ -27,10 +27,12 @@ var getZipcode = function() {
     var data = $('#zipcode').val();
     $.get('/zipcode', { zipcode: data } , function(response){
       $('#contactInfo').html(response);
+      $('.zipcode-form').hide();
+      $('#findByZipcode').show();
       $(document).ready(getZipcode);
-    $(document).ready(findByZipcode);
-    $(document).on('page:load', getZipcode);
-    $(document).on('page:load', findByZipcode);
+      $(document).ready(findByZipcode);
+      $(document).on('page:load', getZipcode);
+      $(document).on('page:load', findByZipcode);
     });
   });
 };
@@ -39,7 +41,8 @@ var findByZipcode = function() {
   $("#findByZipcode").click(function( event ) {
     event.preventDefault();
     $('.legislators-contact-info').hide();
-    $('.zipcode-form').show();
+    $('#findByZipcode').hide();
+    $('.zipcode-form').first().show();
 
     $(document).ready(getZipcode);
     $(document).ready(findByZipcode);
