@@ -284,3 +284,14 @@ button#agree{
   display: none;
 }
 
+#map-canvas {
+  height: 300px;
+  width: 35%;
+  border: 2px solid gray;
+  margin: auto;
+  padding-top: 10px;
+}
+
+#map-section {
+  display: none;
+}
