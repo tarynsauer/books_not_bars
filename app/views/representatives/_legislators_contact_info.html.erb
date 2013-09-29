@@ -1,5 +1,5 @@
 <div id="contactInfo">
-<div class="legislators-contact-info">
+  <div class="legislators-contact-info">
   <% if @response %>
     <table>
       <th>Legislator</th>
@@ -24,11 +24,10 @@
         </tr>
       <% end %>
     </table>
-
-    </div>
   </div>
+</div>
   <% else %>
      <%= render 'zipcode_form' %>
   <% end %>
-  <div class="zipcode-form"></div>
+  <div class="zipcode-form"><%= render 'zipcode_form' %></div>
   <a href="#" id="findByZipcode">Find representatives by zipcode.</a>
