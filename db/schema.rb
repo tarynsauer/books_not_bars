@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20130925234149) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "states", force: true do |t|
     t.string   "name"
     t.integer  "edu_per_capita"
