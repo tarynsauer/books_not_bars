@@ -20,12 +20,9 @@ body{
 
 nav{
   position: fixed;
-  top: 40px;
-  height: 80px;
-  top:0; left:0;
+  top:15%;
+  left:4%;
   z-index:2;
-  padding:0px 10px;
-  border: 1px dashed red;
 }
 
 nav ul {
@@ -33,6 +30,7 @@ nav ul {
 }
 nav ul li{
   list-style: none;
+  padding: 10px 0px;
 }
 
 nav > ul > li > a {
@@ -59,25 +57,30 @@ nav > ul > li > a {
 
   nav ul a li.white:link {color:'white';font-weight: 300;}       unvisited link
   nav ul a li.white:visited {color:'white';font-weight: 300;}  /* visited link
-  /*nav ul a li.white:hover {color:'white';font-weight: 700;}  /* mouse over link */*/
-  /*nav ul a li.white:active {color:'white'; font-weight: 700;}  /* selected link */*/*/
-*/
+  /*nav ul a li.white:hover {color:'white';font-weight: 700;}  /* mouse over link */
+  /*nav ul a li.white:active {color:'white'; font-weight: 700;}  /* selected link */
 
-#4to1 {
-  position: fixed;
-  float:right;
-  top: 100px;
-  left: 30%;
+#sitPic {
+  position: absolute;
+  top: 10%;
+  right: 10%;
+  font-family: 'AmericanTypewriter';
+  font-size: 40em;
 }
 
-footer{
-position: absolute;
- width: 100%;
- height: 60px;
- bottom:0; left:0;
- z-index:2;
- background:rgba(240,242,241,0);
- font-family: "Trebuchet MS", Helvetica, sans-serif;
+.factPanel {
+  top: 25%;
+  margin-left: 20%;
+  margin-right: 20%;
+  position: absolute;
+}
+
+.factPanel div {
+  border: 5px solid white;
+  display: inline-block;
+  height: 350px;
+  width: 350px;
+  margin: 20px;
 }
 
 div.container,
@@ -105,7 +108,7 @@ section#facts{
 background-color: black;
 color: white;
 height: 950px;
-margin-bottom: -16px;
+margin-bottom: -20px;
 
 }
 
