@@ -126,7 +126,7 @@ Map.prototype.assignStats = function(state, pupil_cost, inmate_cost) {
 
 // ========================Navigation Scripts====================
 var linkTransition = function() {
-  $('a[href^="#"]').on('click',function (e) {
+  $('a[href^="#"].navLinks').on('click',function (e) {
       e.preventDefault();
 
       var target = this.hash,
