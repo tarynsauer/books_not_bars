@@ -16,6 +16,8 @@ CurrentBooksBar::Application.routes.draw do
 
   get '/organizations' => "organizations#index"
 
+  get '/map' => "map#index"
+
   get '/zipcode' => "representatives#zipcode"
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
