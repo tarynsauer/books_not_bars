@@ -1,12 +1,19 @@
 <section id = 'toolkit'>
-  <div id='toolkitDiv'>
+  	<div id='toolkitPanel'>
+	  	<div class="toolkitIcon" id="reps">
+		    <%= form_tag("/legislators", method: "get") do %>
+		      <%= hidden_field_tag(:latitude) %>
+		      <%= hidden_field_tag(:longitude) %>
+		      <%= image_submit_tag 'tweetCongressBlueOnWhite.png', id: "contactReps" %>
+		    <% end %>
+		    <span id="iconClear"></span>
+		    <div class="iconText"> Tweet Your Congressman </div>
+	    </div>
 
-    <%= form_tag("/legislators", method: "get") do %>
-      <%= hidden_field_tag(:latitude) %>
-      <%= hidden_field_tag(:longitude) %>
-      <%= image_submit_tag 'tweetCongressBlueOnWhite.png', id: "contactReps" %>
-    <% end %>
-
-    <%= link_to image_tag('localActionBlueonWhite.png', :border=>0), :action => 'index', :controller => 'organizations', :id => 'showOrgs' %>
-  </div>
+	    <div class="toolkitIcon" id="orgs">
+	    	<%= link_to image_tag('localActionBlueonWhite.png', :border=>0), {:action => 'index', :controller => 'organizations'}, :id => 'showOrgs' %>
+	    	<span id="iconClear"></span>
+	    	<div class="iconText"> Get Involved Locally </div>
+	    </div>
+  	</div>
 </section>
