@@ -35,6 +35,25 @@ var setInfoWindow = function(infowindow, marker) {
   });
 }
 
+var codeAddress = function(zipCode) {
+  geocoder.geocode( { 'address': zipCode}, function(results, status) {
+    if (status == google.maps.GeocoderStatus.OK) {
+      //Got result, center the map and put it out there
+      map.setCenter(results[0].geometry.location);
+    } else {
+      alert("Geocode was not successful for the following reason: " + status);
+    }
+  });
+}
+
+// var getZipcode = function() {
+//   $('.rerenderMap #zipcode').submit(event) {
+//     event.preventDefault();
+//     alert('whaaaaahh');
+//   }
+//   });
+// }
+
 var getOrgsMap = function() {
   google.maps.visualRefresh = true;
 
@@ -42,6 +61,7 @@ var getOrgsMap = function() {
     var myLatlng = new google.maps.LatLng(41.8833,87.8000);
     var mapOptions = {
       zoom: 10,
+      mapTypeControl: false,
       mapTypeId: google.maps.MapTypeId.ROADMAP
     };
     map = new google.maps.Map(document.getElementById('map-canvas'),
@@ -55,7 +75,7 @@ var getOrgsMap = function() {
 
     var markers = [
       { 'name': 'Logan Square', 'location': [41.912945, -87.642746], 'description': '<div class="infoWindow">1. This is an example description</div>'},
-      { 'name': 'Loop', 'location': [41.85569, -87.626266], 'description': '<div class="infoWindow">2. Yeahhhhhhh!!!!!!!!!!!!!!/div>'}
+      { 'name': 'Loop', 'location': [41.85569, -87.626266], 'description': '<div class="infoWindow">2. Yeahhhhhhh!!!!!!!!!!!!!!</div>'}
       ];
 
     var markers_array = makeMarkers(markers);
@@ -96,3 +116,6 @@ var getOrgsMap = function() {
 
 $(document).ready(getOrgsMap);
 $(document).on('page:load', getOrgsMap);
+
+$(document).ready(getZipcode);
+$(document).on('page:load', getZipcode);
