@@ -20,16 +20,15 @@
     <table>
       <% @response["results"].each do |rep| %>
        <tr>
-        <td><% web_form_link_text = rep["first_name"] + " " + rep["last_name"] + "'s web form" %></td>
+        <td><%= rep["first_name"] + " " + rep["last_name"]%></td>
         <% if rep["contact_form"] %>
         <% intro = rep["title"] + ". " + rep["last_name"] + ", "  %>
-          <td><input type="text" onclick="this.select();" value="<%= intro + @form_message %>"></input>
-          <%= link_to web_form_link_text, rep["contact_form"], id: "copy-button", target: "_blank" %></td>
-        <% else %>
-          <td>n/a</td>
-        <% end %>
-      </tr>
+        <td><input type="text" onclick="this.select();" value="<%= intro + @form_message %>"></input>
+          <%= link_to "Go to web form", rep["contact_form"], id: "copy-button" %></td>
+      <% else %>
+        <td>n/a</td>
       <% end %>
+      </tr>
     </table>
   </div>
 </div>
