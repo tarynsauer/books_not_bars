@@ -1,6 +1,8 @@
 var makeMarkers = function(markers) {
   var markers_array = [];
+
   if (markers) {
+    console.log("here")
     for (var i = 0; i < markers.length; i++) {
       var details = markers[i];
       markers[i] = new google.maps.Marker({
@@ -12,8 +14,9 @@ var makeMarkers = function(markers) {
       });
       markers_array.push(markers[i]);
     }
-    return markers_array;
   }
+
+  return markers_array;
 }
 
 var makeInfoWindow = function(markers) {

@@ -52,3 +52,5 @@ gem 'rails_12factor', group: :production
 
 # Loads environment variables
 gem "figaro"
+gem 'jasmine-rails', group: [:development, :test]
+#gem 'jasmine-jquery-rails', group: [:development, :test]
