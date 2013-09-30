@@ -18,7 +18,7 @@ var linkTransition = function() {
 var linkStyler = function() {
   $(window).scroll( function () {
 
-    var situationTop = 75;
+    var situationTop = 50;
     var factsTop = $('#facts').offset().top - situationTop;
     var exploreTop = $('#explore').offset().top - situationTop;
     var toolkitTop = $('#toolkit').offset().top - situationTop;
@@ -109,6 +109,7 @@ $(document).ready(function() {
   linkTransition();
   // Link Styler Function
   linkStyler();
+   $(".live-tile, .flip-list").not(".exclude").liveTile();
 
 });
 

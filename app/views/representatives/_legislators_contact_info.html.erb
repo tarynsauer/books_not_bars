@@ -1,4 +1,5 @@
-<div class="legislators-contact-info">
+<div id="contactInfo">
+  <div class="legislators-contact-info">
   <% if @response %>
     <table>
       <th>Legislator</th>
@@ -8,7 +9,7 @@
         <tr>
           <td><%= rep["first_name"] + " " + rep["last_name"]%></td>
           <% if rep["twitter_id"] %>
-            <td><a href="https://twitter.com/intent/tweet?screen_name=<%= rep["twitter_id"] %>&text=<%= @message %>&hashtags=booksnotbars" class='twitter-mention-button' data-size='large' data-related='<%= rep["twitter_id"] %>'>Tweet to @<%= rep["twitter_id"] %></a>
+            <td><a href="https://twitter.com/intent/tweet?screen_name=<%= rep["twitter_id"] %>&text=<%= @message %>&hashtags=booksnotbars"  class="twitter-mention-button" data-lang="en">Tweet to @<%= rep["twitter_id"] %></a>
           <% else %>
             <td>n/a</td>
           <% end %>
@@ -23,8 +24,8 @@
         </tr>
       <% end %>
     </table>
-
-    </div>
+  </div>
+</div>
   <% else %>
      <%= render 'zipcode_form' %>
   <% end %>

@@ -1,11 +1,16 @@
 <section id = 'toolkit'>
   <div id='toolkitDiv'>
-    <h1>Take action</h1>
-    <a id="contactReps" href="#">Contact your representatives</a>
-    <a id="showOrgs" href="#">Support a cause near you</a>
-    <div id="map-section">
-      <div id="map-canvas"></div>
-    <div>
+    <!-- <h1>Take action</h1> -->
+    <%= form_tag("/legislators", method: "get") do %>
+      <%= hidden_field_tag(:latitude) %>
+      <%= hidden_field_tag(:longitude) %>
+      <%= image_submit_tag 'tweetCongressBlueOnWhite.png', id: "contactReps" %>
+    <% end %>
+
+    <a href='/organizations'><div class="toolkitIcons" id="showOrgs"></div></a>
+	<div class="toolkitText">
+	  <span>TweetCongress</span>
+	  <span>LocalActivities</span>
+	</div>
   </div>
-  <div id="contactInfo"></div>
 </section>

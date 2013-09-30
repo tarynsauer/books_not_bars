@@ -1,0 +1,256 @@
+
+html,
+body{
+  height: 100%; width: 100%;
+  margin: 0; padding: 0;
+}
+
+.cover{
+  background: url('blackorchid.png') repeat;
+  position: fixed;
+  height: 100%; width: 100%;
+  opacity: 0.7;
+}
+
+.center{
+  display: table;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.nextZone {
+  display: inline;
+  position:absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 90;
+  width: 100%;
+  height: 50px;
+}
+
+#sitZone {
+  background-color: black;
+}
+#factsZone {
+  background-color: rgba(218,33,50,1);
+}
+#exploreZone {
+  background-color: white;
+}
+
+.tick {
+  top:0px;
+  z-index: 100;
+  width: 300;
+  height: auto;
+  position: relative;
+  margin-left: 15%;
+  display: inline;
+}
+
+#factsTick {
+border-color: black transparent transparent transparent;
+}
+
+#exploreTick {
+border-color: rgba(218,33,50,1) transparent transparent transparent;
+}
+
+nav{
+  position: fixed;
+  top:15%;
+  left:5%;
+  z-index:2;
+  width: 15%;
+}
+
+nav ul {
+  padding: 0;
+}
+nav ul li{
+  list-style: none;
+  padding: 10px 0px;
+}
+
+nav > ul > li > a {
+  text-decoration: none;
+  font-weight: 300;
+  color: black;
+  font-size: auto:;
+}
+
+.black {
+  color: black;
+}
+
+.white {
+  color: white;
+}
+
+a.black:link {color:'#000'; font-weight: 300;}
+a.black:visited {color:'#000'; font-weight: 300;}
+a.black:hover {color:'#000'; font-weight: 700;}
+a.black:active {color:'#000'; font-weight: 700;}
+
+a.white:link {color:'white';font-weight: 300;}
+a.white:visited {color:'white';font-weight: 300;}
+a.white:hover {color:'white';font-weight: 700;}
+a.white:active {color:'white'; font-weight: 700;}
+
+#sitPic {
+  position: absolute;
+  top: 10%;
+  right: 10%;
+  font-family: 'AmericanTypewriter';
+  font-size: 35vw; /* vw ~ view width ; 1vw = 1% of window */
+}
+
+.factPanel {
+  top: 25%;
+  margin-left: 20%;
+  margin-right: 20%;
+  position: absolute;
+}
+
+.factPanel div {
+  border: 5px solid white;
+  display: inline-block;
+  height: 350px;
+  width: 350px;
+  margin: 20px;
+}
+
+div.container,
+section.explore{
+  height: 100%; width: 100%;
+  margin: 0; padding: 0;
+}
+
+section{
+  height:100%;
+  width: 100%;
+  top: 0; left:0;
+  -webkit-perspective: 15000; perspective: 15000;
+}
+
+section#situation{
+background-color: white;
+}
+
+section#toolkit{
+background-color: white;
+height: 103%;
+}
+
+section#facts{
+background-color: black;
+color: white;
+/*margin-bottom: -40px;*/
+
+}
+
+section#explore {
+  background-color: rgba(218,33,50,1);
+/*  margin-top: 0px;*/
+}
+
+#toolkitDiv {
+  display: block;
+  position: absolute;
+  top: 20%;
+  right:0px;
+  width: 70%;
+  height: 75%;
+  /*border: 1px dashed blue;*/
+  padding-right: 10%;
+
+}
+
+.toolkitIcons {
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: inline-block;
+  position: relative;
+  min-height: 90%;
+  min-width: 45%;
+  /*border: 1px dashed red;*/
+  display: inline-block;
+  margin-left: 2%;
+  margin-right: 2%;
+  font-family: 'AmericanTypewriter';
+}
+
+#showOrgs {
+  background-image: url('localActionBlueonWhite.png');
+}
+
+#showReps {
+  background-image: url('tweetCongressBlueOnWhite.png');
+}
+
+.toolkitText span {
+  font-family: 'AmericanTypewriter';
+  margin-left: 15%;
+  margin-right: 15%
+}
+
+
+
+
+/* ----------------------OVERLAY----------------------*/
+
+div#overlay {
+  display: none;
+  z-index: 2;
+  background: #000;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  text-align: center;
+}
+div#specialBox{
+  display: none;
+  position: fixed;
+  z-index: 3;
+  margin: 150px 30% 0px 30%;
+  width: 500px;
+  height: 300px;
+  background: rgba(255,255,255,0.5);
+  color: #000;
+}
+button#agree{
+  border: none;
+  border-radius: none;
+  width: 200px;
+  height: 50px;
+  background: rgba(21,21,21,1);
+  position: absolute;
+  bottom:5%; right:5%;
+  z-index:999;
+  color:rgba(240,242,241,0.95);
+}
+
+.zipcode-form {
+  display: none;
+}
+
+#map-canvas {
+  height: 325px;
+  width: 100%;
+  margin: auto;
+  padding-top: 10px;
+  position:absolute;
+  left: 0;
+  bottom: 0;
+}
+
+.orgsWrapper {
+  min-height: 200px;
+}
+
+.gm-style-iw {
+  max-height:250px;
+  overflow-y:auto;
+}

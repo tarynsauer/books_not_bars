@@ -1,10 +1,10 @@
 class MapController < ApplicationController
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
+
   layout "map_layout"
   
   def index
-    
   end
 
   def update

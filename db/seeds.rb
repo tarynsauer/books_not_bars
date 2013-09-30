@@ -12,6 +12,6 @@ csv_text = File.read('db/source1.csv')
 csv = CSV.parse(csv_text, :headers => true)
 
 csv.each do |row|
-  p row.to_hash
+  # p row.to_hash
   State.create!(row.to_hash)
 end
