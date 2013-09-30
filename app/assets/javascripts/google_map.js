@@ -46,11 +46,10 @@ var codeAddress = function(zipCode) {
   });
 }
 
-// var getZipcode = function() {
-//   $('.rerenderMap #zipcode').submit(event) {
+// var rerenderWithZipcode = function() {
+//   $('#rerenderMap').submit(function( event ) {
 //     event.preventDefault();
 //     alert('whaaaaahh');
-//   }
 //   });
 // }
 
@@ -117,5 +116,6 @@ var getOrgsMap = function() {
 $(document).ready(getOrgsMap);
 $(document).on('page:load', getOrgsMap);
 
-$(document).ready(getZipcode);
-$(document).on('page:load', getZipcode);
+$(document).ready(rerenderWithZipcode);
+$(document).on('page:load', rerenderWithZipcode);
+
