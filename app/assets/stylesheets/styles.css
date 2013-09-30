@@ -245,3 +245,7 @@ button#agree{
   left: 0;
   bottom: 0;
 }
+
+.orgsWrapper {
+  min-height: 200px;
+}
