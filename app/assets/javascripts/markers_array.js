@@ -7,8 +7,8 @@ var markers = [
 '<p><b>1443 W Division St</b></p>'+
 '<p>Chicago, IL 60642</p>'+
 '<p>BUILD’s mission is to engage at-risk youth in the schools and on the streets, so they can realize their educational and career potential and contribute to the stability, safety and well being of our communities. </p>'+
-'<p>now serves over 3,500 youth annually in 11 Chicago communities: West Town, Humboldt Park, Cabrini Green, Logan Square, Hermosa, Belmont Cragin, East Garfield Park, North Lawndale, Englewood, Brighton Park and Austin. BUILD also continues to serve teens from the Cook County Juvenile Temporary Detention Center (CCJTDC), helping them successfully reintegrate into their home communities and the public school system and stay away from crime and the court system. </p>'+
-'<p>For more information, visit <a href="http://www.peakchicago.org/" target="_blank">http://www.buildchicago.org/g</a>.</p>'+
+'<p>For more information, visit <a href="http://www.peakchicago.org/" target="_blank">http://www.buildchicago.org/</a>.</p>'+
+'<p><a href="https://twitter.com/intent/tweet?screen_name=buildchicago&text=Much%20love%20for%20BUILD%20Chicago&hashtags=buildchicago,booksnotbars" class="twitter-mention-button" data-lang="en">Tweet to @buildchicago</p>' +
 '</div>'+
 '</div>'},
 { 'name': 'Loop', 'location': [41.85569, -87.626266], 'description': '<div id="content">'+
@@ -23,3 +23,5 @@ var markers = [
 '</div>'+
 '</div>'}
 ];
+
+
