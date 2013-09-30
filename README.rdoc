@@ -23,3 +23,5 @@ Standard Rails App:
 * Deployment instructions
 
 * ...
+
+All pull-request merges have a requisite 1 Emoji minimum: <http://www.emoji-cheat-sheet.com/>
