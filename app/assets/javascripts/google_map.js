@@ -36,6 +36,7 @@ var setInfoWindow = function(infowindow, marker) {
 }
 
 var codeAddress = function(zipCode) {
+  var geocoder = new google.maps.Geocoder();
   geocoder.geocode( { 'address': zipCode}, function(results, status) {
     if (status == google.maps.GeocoderStatus.OK) {
       //Got result, center the map and put it out there
@@ -46,12 +47,17 @@ var codeAddress = function(zipCode) {
   });
 }
 
-// var rerenderWithZipcode = function() {
-//   $('#rerenderMap').submit(function( event ) {
-//     event.preventDefault();
-//     alert('whaaaaahh');
-//   });
-// }
+var rerenderWithZipcode = function() {
+  $('#rerender').submit(function( event ) {
+    event.preventDefault();
+    var newPosition = $('#zipcode').val();
+    if(newPosition.length > 0 ) {
+      var newPosition = $('#zipcode').val();
+      $('#zipcode').val('');
+      codeAddress(newPosition);
+    }
+  });
+}
 
 var getOrgsMap = function() {
   google.maps.visualRefresh = true;
@@ -133,12 +139,13 @@ var getOrgsMap = function() {
 
   if($("#map-canvas").length > 0 ) {
     initialize();
+    rerenderWithZipcode();
   }
 };
 
 $(document).ready(getOrgsMap);
 $(document).on('page:load', getOrgsMap);
 
-// $(document).ready(rerenderWithZipcode);
-// $(document).on('page:load', rerenderWithZipcode);
+$(document).ready(rerenderWithZipcode);
+$(document).on('page:load', rerenderWithZipcode);
 
