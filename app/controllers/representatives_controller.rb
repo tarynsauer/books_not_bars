@@ -1,4 +1,5 @@
 class RepresentativesController < ApplicationController
+  layout 'action_toolkit'
 
   def index
     @response = Sunlight_Foundation.response(params[:latitude], params[:longitude])
