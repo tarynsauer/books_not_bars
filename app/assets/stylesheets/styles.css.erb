@@ -25,7 +25,7 @@ body{
   left: 0;
   z-index: 90;
   width: 100%;
-  height: 75px;
+  height: 50px;
 }
 
 #sitZone {
@@ -61,6 +61,7 @@ nav{
   top:15%;
   left:5%;
   z-index:2;
+  width: 15%;
 }
 
 nav ul {
@@ -75,6 +76,7 @@ nav > ul > li > a {
   text-decoration: none;
   font-weight: 300;
   color: black;
+  font-size: auto:;
 }
 
 .black {
@@ -111,23 +113,25 @@ a.white:active {color:'white'; font-weight: 700;}
 }
 
 .factPanel div {
-  border: 2px solid white;
+  border: 1px solid white;
   display: inline-block;
-  height: 440px;
+  height: 450px;
   width: 880px;
   margin: 20px;
+}
 
+.revolving{
+  background-image: url(<%= asset_path 'revolvingDoor.jpg' %>)
+}
+
+.abc{
+  background-image: url(<%= asset_path 'abc.jpg' %>)
 }
 
 .fact-figure1{
-  font-size: 4em;
   color: rgba(218,33,50,1);
+  font-size: 3em;
 
-}
-
-.factoid-text1{
-  font-family: sans-serif;
-  font-weight: 300;
 }
 
 div.container,
@@ -164,19 +168,46 @@ section#explore {
 /*  margin-top: 0px;*/
 }
 
-#showOrgs {
-  background-image: url('localActionBlueonWhite.png');
-  background-repeat: no-repeat;
-  background-size: cover;
-  display: inline-block;
-  position: relative;
+#toolkitDiv {
+  display: block;
+  position: absolute;
   top: 20%;
-  left: 20%;
-  height: 400px;
-  width: 400px;
+  right:0px;
+  width: 70%;
+  height: 75%;
+  /*border: 1px dashed blue;*/
+  padding-right: 10%;
+
 }
 
-#
+.toolkitIcons {
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: inline-block;
+  position: relative;
+  min-height: 90%;
+  min-width: 45%;
+  /*border: 1px dashed red;*/
+  display: inline-block;
+  margin-left: 2%;
+  margin-right: 2%;
+  font-family: 'AmericanTypewriter';
+}
+
+#showOrgs {
+  background-image: url('localActionBlueonWhite.png');
+}
+
+#showReps {
+  background-image: url('tweetCongressBlueOnWhite.png');
+}
+
+.toolkitText span {
+  font-family: 'AmericanTypewriter';
+  margin-left: 15%;
+  margin-right: 15%
+}
+
 
 
 
