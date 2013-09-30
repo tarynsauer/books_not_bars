@@ -4,3 +4,6 @@
 require File.expand_path('../config/application', __FILE__)
 
 CurrentBooksBar::Application.load_tasks
+
+# require 'jasmine-phantom/tasks.rake'
+# load 'jasmine-phantom/tasks.rake'
