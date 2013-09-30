@@ -10,8 +10,6 @@ var getOrgsMap = function() {
     map = new google.maps.Map(document.getElementById('map-canvas'),
         mapOptions);
 
-
-
     // Try HTML5 geolocation
     if(navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(function(position) {
@@ -19,29 +17,29 @@ var getOrgsMap = function() {
                                          position.coords.longitude);
 
     var markers = [
-      { 'name': 'Logan Square', 'location': [41.912945, -87.642746], 'description': 'This is an example description'},
-      { 'name': 'Loop', 'location': [41.85569, -87.626266], 'description': 'This is another example!!!'}
+      { 'name': 'Logan Square', 'location': [41.912945, -87.642746], 'description': '1. This is an example description'},
+      { 'name': 'Loop', 'location': [41.85569, -87.626266], 'description': '2. This is another example!!!'}
       ];
 
-    var infowindows = [];
+    // var infowindows = [];
 
     if (markers) {
       for (var i = 0; i < markers.length; i++) {
         var details = markers[i];
-        infowindows[i] = new google.maps.InfoWindow({
-          content: details.description,
-          maxWidth: 200
-        });
+        // infowindows[i] = new google.maps.InfoWindow({
+        //   content: details.description,
+        //   maxWidth: 200
+        // });
         markers[i] = new google.maps.Marker({
           title: details.name,
           position: new google.maps.LatLng(
               details.location[0], details.location[1]),
           map: map
         });
-        google.maps.event.addListener(markers[i], 'click', function() {
-          var infowindow = infowindows[i];
-          infowindow.open(map,markers[i]);
-        });
+        // google.maps.event.addListener(markers[i], 'click', function() {
+        //   var infowindow = infowindows[i];
+        //   infowindow.open(map,markers[i]);
+        // });
       }
     }
 
