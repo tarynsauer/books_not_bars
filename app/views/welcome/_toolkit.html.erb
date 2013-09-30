@@ -1,12 +1,10 @@
 <section id = 'toolkit'>
   <div id='toolkitDiv'>
-    <!-- <h1>Take action</h1> -->
-    <%= form_tag("/legislators", method: "get") do %>
-      <%= hidden_field_tag(:latitude) %>
-      <%= hidden_field_tag(:longitude) %>
-      <%= submit_tag "Contact your representatives", id: "contactReps" %>
-    <% end %>
-    
-    <a href='/organizations' id="showOrgs"></a>
+  	<a href='/legislators'><div class="toolkitIcons" id="showReps"></div></a>
+    <a href='/organizations'><div class="toolkitIcons" id="showOrgs"></div></a>
+	<div class="toolkitText">
+	  <span>TweetCongress</span>
+	  <span>LocalActivities</span>
+	</div>
   </div>
 </section>
