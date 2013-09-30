@@ -130,27 +130,26 @@ section{
   height:100%;
   width: 100%;
   top: 0; left:0;
+  -webkit-perspective: 15000; perspective: 15000;
 }
 
 section#situation{
 background-color: white;
 }
 
-section#toolkit{
-background-color: white;
-height: 103%;
-}
 
 section#facts{
 background-color: black;
 color: white;
-/*margin-bottom: -40px;*/
-
 }
 
 section#explore {
   background-color: rgba(218,33,50,1);
-/*  margin-top: 0px;*/
+}
+
+section#toolkit{
+background-color: white;
+height: 100%;
 }
 
 #toolkitDiv {
@@ -160,7 +159,6 @@ section#explore {
   right:0px;
   width: 70%;
   height: 75%;
-  /*border: 1px dashed blue;*/
   padding-right: 10%;
 
 }
@@ -172,19 +170,10 @@ section#explore {
   position: relative;
   min-height: 90%;
   min-width: 45%;
-  /*border: 1px dashed red;*/
   display: inline-block;
   margin-left: 2%;
   margin-right: 2%;
   font-family: 'AmericanTypewriter';
-}
-
-#showOrgs {
-  background-image: url('localActionBlueonWhite.png');
-}
-
-#showReps {
-  background-image: url('tweetCongressBlueOnWhite.png');
 }
 
 .toolkitText span {
@@ -253,3 +242,4 @@ button#agree{
   max-height:250px;
   overflow-y:auto;
 }
+*/
