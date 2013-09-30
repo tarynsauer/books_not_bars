@@ -176,35 +176,47 @@ section#explore {
 section#toolkit{
 background-color: white;
 height: 100%;
+width: 100%;
 }
 
-#toolkitDiv {
+#toolkitPanel {
   display: block;
-  position: absolute;
+  position: relative;
   top: 20%;
   right:0px;
   width: 70%;
   height: 75%;
-
 }
 
-.toolkitIcons {
-  background-repeat: no-repeat;
-  background-size: contain;
-  display: inline-block;
-  position: relative;
-  min-height: 90%;
-  min-width: 45%;
-  display: inline-block;
-  margin-left: 2%;
-  margin-right: 2%;
-  font-family: 'AmericanTypewriter';
+.toolkitIcon {
+  display: table-cell;
+  vertical-align: top;
+  margin: 0;
+  top: 0;
+  text-align: center;
 }
 
+#contactReps {
+  top: 0;
+  margin-right:2%;
+  padding:0;
+  width: 90%;
+}
 
+#showOrgs img{
+  top: 0;
+  margin-left:2%;
+  padding:0;
+  width: 90%;
+}
 
+.iconText {
+  margin-top: 15px;
+}
 
-
+#iconClear {
+  clear: down;
+}
 /* ----------------------OVERLAY----------------------*/
 
 div#overlay {
