@@ -104,18 +104,30 @@ a.white:active {color:'white'; font-weight: 700;}
 }
 
 .factPanel {
-  top: 25%;
-  margin-left: 20%;
+  top: 10%;
+  margin-left: 30%;
   margin-right: 20%;
   position: absolute;
 }
 
 .factPanel div {
-  border: 5px solid white;
+  border: 2px solid white;
   display: inline-block;
-  height: 350px;
-  width: 350px;
+  height: 440px;
+  width: 880px;
   margin: 20px;
+
+}
+
+.fact-figure1{
+  font-size: 4em;
+  color: rgba(218,33,50,1);
+
+}
+
+.factoid-text1{
+  font-family: sans-serif;
+  font-weight: 300;
 }
 
 div.container,
