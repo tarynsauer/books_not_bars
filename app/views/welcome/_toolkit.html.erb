@@ -1,10 +1,12 @@
 <section id = 'toolkit'>
   <div id='toolkitDiv'>
-  	<a href='/legislators'><div class="toolkitIcons" id="showReps"></div></a>
-    <a href='/organizations'><div class="toolkitIcons" id="showOrgs"></div></a>
-	<div class="toolkitText">
-	  <span>TweetCongress</span>
-	  <span>LocalActivities</span>
-	</div>
+
+  	<%= form_tag("/legislators", method: "get") do %>
+      <%= hidden_field_tag(:latitude) %>
+      <%= hidden_field_tag(:longitude) %>
+      <%= image_submit_tag 'tweetCongressBlueOnWhite.png', id: "contactReps" %>
+    <% end %>
+
+    <%= link_to image_tag('localActionBlueonWhite.png', :border=>0), :action => 'index', :controller => 'organizations', :id => 'showOrgs' %>
   </div>
 </section>

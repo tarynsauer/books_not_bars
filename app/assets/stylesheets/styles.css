@@ -180,14 +180,8 @@ section#explore {
   font-family: 'AmericanTypewriter';
 }
 
-#showOrgs {
-  background-image: url('localActionBlueonWhite.png');
-}
 
-#showReps {
-  background-image: url('tweetCongressBlueOnWhite.png');
-}
-
+.toolkitDiv form, a { display: inline-block; }
 .toolkitText span {
   font-family: 'AmericanTypewriter';
   margin-left: 15%;
