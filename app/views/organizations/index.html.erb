@@ -1,11 +1,11 @@
-<h1>Help out in your community </h1>
 <div class="orgsWrapper">
+  <h1>Help out in your community</h1>
   <div class="rerenderMap">
     <%= form_tag("/rerender", method: "get", id: "rerender" ) do %>
-    <%= label_tag(:zipcode, "To go to a new location, enter a zipcode: ") %>
-    <%= text_field_tag(:zipcode) %>
-    <%= submit_tag "Go" %>
-  <% end %>
+      <%= label_tag(:zipcode, "To go to a new location, enter a zipcode: ") %>
+      <%= text_field_tag(:zipcode) %>
+      <%= submit_tag "Go" %>
+    <% end %>
   </div>
 </div>
 <div id="map-section" data-role="page" >
