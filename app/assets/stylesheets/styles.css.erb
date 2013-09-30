@@ -105,34 +105,43 @@ a.white:active {color:'white'; font-weight: 700;}
   font-size: 35vw; /* vw ~ view width ; 1vw = 1% of window */
 }
 
-.factPanel {
-  top: 10%;
-  margin-left: 30%;
-  margin-right: 20%;
+#factPanel {
   position: absolute;
+  top: 20%;
+  margin-left: 30%;
+  margin-right: 30%;
+  width: 600px;
+  height: 370px;
+
 }
 
 .factPanel div {
-  border: 1px solid white;
   display: inline-block;
-  height: 450px;
-  width: 880px;
-  margin: 20px;
+
+  height: 370px;
+  width: 600px;
+  margin: 0px;
+  top: 20%;
+  left: 20%;
+  right: 20%;
 }
 
 .revolving{
-  background-image: url(<%= asset_path 'revolvingDoor.jpg' %>);
-  opacity: 1.0;
+  background-image: url(<%= asset_path 'revolvingDoor.png' %>);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .abc{
-  background-image: url(<%= asset_path 'abc.jpg' %>);
-  opacity: 1.0;
+  background-image: url(<%= asset_path 'abc.png' %>);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .recidivism{
-  background-image: url(<%= asset_path 'recidivism1barbwire.jpg' %>);
-  opacity: 1.0;
+  background-image: url(<%= asset_path 'recidivism1barbwire.png' %>);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .fact-figure1{
