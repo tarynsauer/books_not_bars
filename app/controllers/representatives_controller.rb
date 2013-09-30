@@ -1,6 +1,7 @@
 class RepresentativesController < ApplicationController
 
   def index
+    p params
     @response = Sunlight_Foundation.response(params[:latitude], params[:longitude])
     display_legislators_info(@response)
   end
