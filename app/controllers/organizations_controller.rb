@@ -1,6 +1,9 @@
 class OrganizationsController < ApplicationController
-  def index
 
+  def index
+  end
+
+  def rerender
   end
 
 end
