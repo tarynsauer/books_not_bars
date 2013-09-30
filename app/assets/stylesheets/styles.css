@@ -249,3 +249,8 @@ button#agree{
 .orgsWrapper {
   min-height: 200px;
 }
+
+.gm-style-iw {
+  max-height:250px;
+  overflow-y:auto;
+}
