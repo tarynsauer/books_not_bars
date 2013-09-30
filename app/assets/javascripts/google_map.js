@@ -1,3 +1,36 @@
+var makeMarkers = function(markers) {
+  var markers_array = [];
+  if (markers) {
+    for (var i = 0; i < markers.length; i++) {
+      var details = markers[i];
+      markers[i] = new google.maps.Marker({
+        title: details.name,
+        position: new google.maps.LatLng(
+            details.location[0], details.location[1]),
+        map: map,
+        description: details.description
+      });
+      markers_array.push(markers[i]);
+    }
+    return markers_array;
+  }
+}
+
+var makeInfoWindow = function(markers) {
+  var infowindows = [];
+  if (markers) {
+    for (var i = 0; i < markers.length; i++) {
+      var details = markers[i];
+      var infowindows = new google.maps.InfoWindow({
+        content: details.description,
+      });
+      google.maps.event.addListener(markers[i], 'click', function() {
+        infowindows.open(map,markers[i]);
+      });
+    }
+  }
+}
+
 var getOrgsMap = function() {
   google.maps.visualRefresh = true;
 
@@ -21,27 +54,9 @@ var getOrgsMap = function() {
       { 'name': 'Loop', 'location': [41.85569, -87.626266], 'description': '2. This is another example!!!'}
       ];
 
-    // var infowindows = [];
+    var markers_array = makeMarkers(markers);
 
-    if (markers) {
-      for (var i = 0; i < markers.length; i++) {
-        var details = markers[i];
-        // infowindows[i] = new google.maps.InfoWindow({
-        //   content: details.description,
-        //   maxWidth: 200
-        // });
-        markers[i] = new google.maps.Marker({
-          title: details.name,
-          position: new google.maps.LatLng(
-              details.location[0], details.location[1]),
-          map: map
-        });
-        // google.maps.event.addListener(markers[i], 'click', function() {
-        //   var infowindow = infowindows[i];
-        //   infowindow.open(map,markers[i]);
-        // });
-      }
-    }
+    makeInfoWindow(markers_array);
 
         map.setCenter(pos);
       }, function() {
@@ -64,6 +79,7 @@ var getOrgsMap = function() {
       map: map,
       // Center of continental U.S.A.
       position: new google.maps.LatLng(39.8282, 98.5795),
+      zoom: 4,
       content: content
     };
 
