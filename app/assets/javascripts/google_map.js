@@ -41,6 +41,7 @@ var codeAddress = function(zipCode) {
     if (status == google.maps.GeocoderStatus.OK) {
       //Got result, center the map and put it out there
       map.setCenter(results[0].geometry.location);
+      map.panBy(0,-110);
     } else {
       alert("Geocode was not successful for the following reason: " + status);
     }
@@ -83,8 +84,9 @@ var getOrgsMap = function() {
 
     makeInfoWindow(markers_array);
 
-        map.setCenter(pos);
-      }, function() {
+    map.setCenter(pos);
+    map.panBy(0,-110);
+    }, function() {
         handleNoGeolocation(true);
       });
     } else {
