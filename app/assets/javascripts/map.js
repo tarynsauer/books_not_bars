@@ -1,5 +1,5 @@
 var Map = function(selector){
-  this.elem = $(selector);
+  this.elem = $(selector); 
   this.elem.vectorMap({
     map: 'usa_en',
     backgroundColor: 'none',
@@ -17,18 +17,21 @@ var Map = function(selector){
 
 // =================================================================
 
-  var ChartTable = function(w, h, data_array){
+
+  var ChartTable = function(w, h, data_object){
     this.w = w;
     this.h = h;
-    this.data_array = data_array;
-    this.chart_width = (w + 50 ) * data_array.length;
+    this.data_array = [data_object.edu_per_capita, data_object.inc_per_capita];
+    
+    this.chart_width = (w + 80 ) * this.data_array.length;
+    console.log(this.data_array)
+    
+    var data_max = d3.max(this.data_array);
+    this.chart_height = data_max + 20;
 
-    var data_max = d3.max(data_array)
-    this.chart_height = data_max
+    this.x = d3.scale.linear().domain([0, this.data_array.length]).range([0, this.chart_width]);
 
-    this.x = d3.scale.linear().domain([0, data_array.length]).rangeRound([0, this.chart_width]);
-
-    this.y = d3.scale.linear().domain([0, data_max]).rangeRound([0,h]);
+    this.y = d3.scale.linear().domain([0, data_max]).range([h,0]);
   };
 
   ChartTable.prototype.render = function() {
@@ -41,9 +44,9 @@ var Map = function(selector){
 
     this.bars = this.chart.selectAll("rect")
       .data(self.data_array)
-      .enter().append("rect")
-      .attr("x", function(d,i) { return self.x(i) + 45; })
-      .attr("y", function(d) { return self.h}  )
+      .enter().append("svg:rect")
+      .attr("x", function(d,i) { return self.x(i) +50; })
+      .attr("y",  function(d) { return self.y(d)+self.h; })
       .attr("width", self.w)
       .attr("height", self.h);
 
@@ -51,9 +54,9 @@ var Map = function(selector){
 
     var yAxis = d3.svg.axis()
       .scale(self.y)
-      .tickSize(self.chart_height)
+      .tickSize(500)
       .orient("right");
-
+    
     var gy = self.chart.append("g")
       .attr("class", "y axis")
       .call(yAxis)
@@ -65,15 +68,14 @@ var Map = function(selector){
     var self = this
     this.selectAll("text")
         .attr("x", 2)
-        .attr("y", -5);
+        .attr("y", 10);
   }
 
   ChartTable.prototype.animateBars = function(time) {
     var self = this
     this.bars.transition()
-      .duration(2000)
-      .style("margin", '0')
-      .attr("y",function(d) { return self.h - self.y(d) - .5; });
+      .duration(1000)
+      .attr("y", function(d) { return self.y(d); });
   };
 
   Map.prototype.getCoord = function() {
@@ -81,52 +83,60 @@ var Map = function(selector){
       this.x_coord = event.pageX;
       this.y_coord = event.pageY;
     })
-  }
+  } 
 
 Map.prototype.statChange = function(){
-
+  
   var self = this;
 
   $(this.elem).on('regionClick.jqvmap', function(event, code, region){
-    $('#chart_holder').show();
-    $('#donut_holder').show();
-    self.elem.attr('class', 'display');
+     $('#chart_holder').children().remove();
+     $('#donut_holder').children().remove();
+      self.elem.attr('class', 'display');
+      $('#close').show(); 
+    
 
-    $('#close').show();
+      $.post('/map/update',{ state: region }, function(response){
+        
+
+    
+        var data_array = response.stats       
+        
 
 
-    $.post('/update',{ state: region }, function(response){
-      var data_array = [response.pupil_cost, response.inmate_cost]
-      var chart = new ChartTable(40, 400, data_array);
 
-      // ========================================================
-      var my_donut = new DonutChart(560, 300, "test_data.csv");
-      my_donut.renderDonut();
-      my_donut.buildArc();
-      my_donut.buildCircle();
-      my_donut.getCSV();
-      // ========================================================
+        var chart = new ChartTable(40, 400, data_array);
+      
 
-      $('#close').show();
-      $('.stats').show();
+        console.log(data_array);
+  
 
-      chart.render();
-      chart.animateBars(2000);
-      self.assignStats(region, '$'+ response.pupil_cost, '$'+ response.inmate_cost);
-    });
-  });
+// =================================================================
+        var my_donut = new DonutChart(560, 300, data_array);
+
+        my_donut.renderDonut();
+        my_donut.buildArc();
+        my_donut.buildCircle();
+        // my_donut.getData();
+// =================================================================
+
+        chart.render();
+        chart.animateBars(2000);
+        console.log(region);
+        self.assignStats(region, '$'+ data_array.edu_per_capita, '$'+ data_array.inc_per_capita)
+      })
+  }); 
 }
 
-Map.prototype.assignStats = function(state, pupil_cost, inmate_cost) {
-  $('#state').text(state);
-  $('#pupil_cost').text(pupil_cost);
-  $('#inmate_cost').text(inmate_cost);
+Map.prototype.assignStats = function(state, pupil_cost, inmate_cost){
+  $('#state').text(state)
+  $('#inmate_cost').text(inmate_cost)
+  $('#pupil_cost').text(pupil_cost)
 }
-
-// ========================ON DOCUMENT LOAD======================
 
 ready = function() {
   $('#close').hide();
+
   var map = new Map('#vmap');
   map.statChange();
   $("#close").on('click', function(event){
@@ -138,5 +148,3 @@ ready = function() {
 
 $(document).ready(ready);
 $(document).on('page:load', ready);
-
-
