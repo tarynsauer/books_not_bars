@@ -173,11 +173,14 @@ section#explore {
   background-color: rgba(218,33,50,1);
 }
 
+<<<<<<< HEAD:app/assets/stylesheets/styles.css.erb
+=======
 section#toolkit{
 background-color: white;
 height: 100%;
 }
 
+>>>>>>> 899f14a3ee09e002c7be48db4ccfc7ad84b48348:app/assets/stylesheets/styles.css.erb
 #toolkitDiv {
   display: block;
   position: absolute;
@@ -185,6 +188,11 @@ height: 100%;
   right:0px;
   width: 70%;
   height: 75%;
+<<<<<<< HEAD:app/assets/stylesheets/styles.css.erb
+  /*border: 1px dashed blue;*/
+=======
+>>>>>>> 899f14a3ee09e002c7be48db4ccfc7ad84b48348:app/assets/stylesheets/styles.css.erb
+  padding-right: 10%;
 
 }
 
@@ -195,12 +203,32 @@ height: 100%;
   position: relative;
   min-height: 90%;
   min-width: 45%;
+<<<<<<< HEAD:app/assets/stylesheets/styles.css.erb
+  /*border: 1px dashed red;*/
+=======
+>>>>>>> 899f14a3ee09e002c7be48db4ccfc7ad84b48348:app/assets/stylesheets/styles.css.erb
   display: inline-block;
   margin-left: 2%;
   margin-right: 2%;
   font-family: 'AmericanTypewriter';
 }
 
+<<<<<<< HEAD:app/assets/stylesheets/styles.css.erb
+#showOrgs {
+  background-image: url('localActionBlueonWhite.png');
+}
+
+#showReps {
+  background-image: url('tweetCongressBlueOnWhite.png');
+}
+
+=======
+>>>>>>> 899f14a3ee09e002c7be48db4ccfc7ad84b48348:app/assets/stylesheets/styles.css.erb
+.toolkitText span {
+  font-family: 'AmericanTypewriter';
+  margin-left: 15%;
+  margin-right: 15%
+}
 
 
 

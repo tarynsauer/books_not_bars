@@ -16,13 +16,30 @@ ActiveRecord::Schema.define(version: 20130925234149) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "comments", force: true do |t|
+    t.string   "commenter"
+    t.text     "body"
+    t.integer  "post_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "comments", ["post_id"], name: "index_comments_on_post_id", using: :btree
+
+  create_table "posts", force: true do |t|
+    t.string   "title"
+    t.text     "text"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "states", force: true do |t|
     t.string   "name"
     t.integer  "edu_per_capita"
     t.integer  "inc_per_capita"
     t.integer  "whites_in_prison_per100k"
-    t.integer  "blacks_in_prison_per100k"
     t.integer  "latinos_in_prison_per100k"
+    t.integer  "blacks_in_prison_per100k"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

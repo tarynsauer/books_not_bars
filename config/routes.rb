@@ -1,4 +1,5 @@
 CurrentBooksBar::Application.routes.draw do
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -12,6 +13,11 @@ CurrentBooksBar::Application.routes.draw do
 
   post '/update' => 'welcome#update'
 
+
+  post '/map/update' => 'map#update'
+  
+
+
   get '/legislators' => "representatives#index"
 
   get '/organizations' => "organizations#index"
@@ -19,6 +25,8 @@ CurrentBooksBar::Application.routes.draw do
   get '/map' => "map#index"
 
   get '/zipcode' => "representatives#zipcode"
+
+  get '/rerender' => "organizations#rerender"
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
