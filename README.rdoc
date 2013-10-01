@@ -33,17 +33,18 @@ The app is built with Ruby 1.9.3p374, Rails 4.0.0, HTML5 and CSS3, Jquery, and a
 1. Fork and then clone to your computer.  The repo is located at: https://github.com/tarynsauer/CurrentBooksBar.
 
 2. Install all gems:
-```
-    $ bundle install
+```bash
+    bundle install
 ```
 
 3. Setup the database:
+```bash
+    rake db:drop && rake db:setup
 ```
-    $ rake db:drop && rake db:setup
-```
+
 4. Configure API Keys
-```
-    $ rails generate figaro:install
+```bash
+    rails generate figaro:install
 ```
 Edit your config/application.yaml file and add the following:
 * Your Google Maps API key as GOOGLE_MAPS_API_KEY: XXXXXX..
@@ -51,7 +52,6 @@ You can retrieve one at: https://developers.google.com/maps/signup
 * Your Sunlight Labs API key as: SUNLIGHT_API_KEY: XXXXXXX..
 You can retrieve one at: http://sunlightfoundation.com/api/
 
-All pull-request merge comments have a requisite 1 Emoji minimum: <http://www.emoji-cheat-sheet.com/>
 
 
 
