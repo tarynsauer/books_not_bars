@@ -5,23 +5,23 @@
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
-  <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
-
+  <script type="text/javascript"
+    src="https://maps.googleapis.com/maps/api/js?key=<%= ENV["GOOGLE_MAPS_API_KEY"] %>&sensor=true">
+  </script>
 </head>
+<header></header> 
   <body>
-
     <nav>
       <ul>
         <li><a class="navLinks" id="1" href="#situation">THE SITUATION</a></li>
-        <li><a class="navLinks" id="2" href="#facts">THE FACTS</a></li>
-        <li><a class="navLinks" id="3" href="#explore">EXPLORE</a></li>
-        <li><a class="navLinks" id="4" href="#toolkit">TAKE ACTION</a></li>
+         <li><a class="navLinks" id="2" href="#explore">EXPLORE</a></li>
+         <li><a class="navLinks" id="3" href="#facts">THE FACTS</a></li>
+         <li><a class="navLinks" id="4" href="#toolkit">TAKE ACTION</a></li>
       </ul>
     </nav>
 
     <div class="container">
       <%= yield %>
-       <%= render "welcome/overlay" %>
     </div>
 
     <footer>

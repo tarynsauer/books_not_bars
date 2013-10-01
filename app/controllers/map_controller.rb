@@ -3,21 +3,16 @@ class MapController < ApplicationController
   # For APIs, you may want to use :null_session instead.
 
   layout "map_layout"
-  
+
   def index
   end
 
   def update
-    p "xxxx-xxxxx"*200
+
+        
     p state_obj = State.where(name: params[:state])
 
-    # if state_obj.first.edu_per_capita
-    #   pupil_cost = state_obj.first.edu_per_capita
-    # end
-
-    # if state_obj.first.inc_per_capita
-    #   inmate_cost = state_obj.first.inc_per_capita
-    # end
+    state_obj = State.where(name: params[:state])
 
     my_obj = state_obj[0]
     

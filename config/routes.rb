@@ -8,10 +8,7 @@ CurrentBooksBar::Application.routes.draw do
 
   post '/update' => 'welcome#update'
 
-
   post '/map/update' => 'map#update'
-  
-
 
   get '/legislators' => "representatives#index"
 
@@ -22,6 +19,11 @@ CurrentBooksBar::Application.routes.draw do
   get '/zipcode' => "representatives#zipcode"
 
   get '/rerender' => "organizations#rerender"
+
+  get '/mobile' => "mobile#index"
+
+
+  mount JasmineRails::Engine => "/specs" if defined?(JasmineRails)
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
