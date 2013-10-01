@@ -1,4 +1,8 @@
 require 'spec_helper'
+# it "navigates to the welcome_path as the root" do
+ #      visit root_path
+  #   page.current_path.should eq('/')
+  # end
 
 describe "Welcome" do
   describe "GET /" do
