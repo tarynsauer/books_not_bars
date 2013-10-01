@@ -5,6 +5,7 @@ class OrganizationsController < ApplicationController
   end
 
   def rerender
+  	render :index
   end
 
 end
