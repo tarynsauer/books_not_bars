@@ -101,6 +101,26 @@ var linkStyler = function() {
     }
   });
 };
+
+var fadeCaro = function(){
+  $('.revolving').fadeOut(4000, function() {
+    $('.recidivism').fadeIn(100, function(){
+      $('.recidivism').fadeOut(4000, function() {
+        $('.abc').fadeIn(100, function(){
+          $('.abc').fadeOut(4000, function() {
+            $('.revolving').fadeIn(100, function(){
+              fadeCaro();
+            });
+          });
+        });
+      });
+    });
+  });
+};
+
+var slideCaro = function(){
+  $(".live-tile, .flip-list").not(".exclude").liveTile();
+};
 // ========================ON DOCUMENT LOAD======================
 
 $(document).ready(function() {
@@ -109,7 +129,7 @@ $(document).ready(function() {
   linkTransition();
   // Link Styler Function
   linkStyler();
-   $(".live-tile, .flip-list").not(".exclude").liveTile();
+   fadeCaro();
 
 });
 

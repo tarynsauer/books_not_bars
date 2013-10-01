@@ -93,19 +93,54 @@ a.white:active {color:'white'; font-weight: 700;}
   font-size: 35vw; 
 }
 
-.factPanel {
-  top: 25%;
-  margin-left: 20%;
-  margin-right: 20%;
+#factPanel {
   position: absolute;
+  top: 20%;
+  margin-left: 30%;
+  margin-right: 30%;
+  width: 600px;
+  height: 370px;
+
 }
 
 .factPanel div {
-  border: 5px solid white;
   display: inline-block;
-  height: 350px;
-  width: 350px;
-  margin: 20px;
+
+  height: 370px;
+  width: 600px;
+  margin: 0px;
+  top: 20%;
+  left: 20%;
+  right: 20%;
+}
+
+.revolving{
+  background-image: url(<%= asset_path 'revolvingDoor.png' %>);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.abc{
+  background-image: url(<%= asset_path 'abc.png' %>);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.recidivism{
+  background-image: url(<%= asset_path 'recidivism1barbwire.png' %>);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.fact-figure1{
+  color: rgba(218,33,50,1);
+  font-size: 3em;
+
+}
+
+.abc h1{
+  color: black;
+  opacity: 1.0
 }
 
 div.container,
@@ -138,41 +173,50 @@ section#explore {
 section#toolkit{
 background-color: white;
 height: 100%;
+width: 100%;
 }
 
-#toolkitDiv {
+#toolkitPanel {
   display: block;
-  position: absolute;
+  position: relative;
   top: 20%;
   right:0px;
   width: 70%;
   height: 75%;
-  padding-right: 10%;
-
 }
 
-.toolkitIcons {
-  background-repeat: no-repeat;
-  background-size: contain;
-  display: inline-block;
-  position: relative;
-  min-height: 90%;
-  min-width: 45%;
-  display: inline-block;
-  margin-left: 2%;
-  margin-right: 2%;
-  font-family: 'AmericanTypewriter';
+.toolkitIcon {
+  display: table-cell;
+  vertical-align: top;
+  margin: 0;
+  top: 0;
+  text-align: center;
 }
 
-.toolkitText span {
-  font-family: 'AmericanTypewriter';
-  margin-left: 15%;
-  margin-right: 15%
+#contactReps {
+  top: 0;
+  margin-right:2%;
+  padding:0;
+  width: 90%;
 }
 
+<<<<<<< HEAD
 */
 
+#showOrgs img{
+  top: 0;
+  margin-left:2%;
+  padding:0;
+  width: 90%;
+}
 
+.iconText {
+  margin-top: 15px;
+}
+
+#iconClear {
+  clear: down;
+}
 /* ----------------------OVERLAY----------------------*/
 
 /*div#overlay {
@@ -231,3 +275,4 @@ button#agree{
   overflow-y:auto;
 }
 */
+

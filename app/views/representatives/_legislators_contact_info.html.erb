@@ -1,33 +1,36 @@
 <div id="contactInfo">
+  <a href="#" id="findByZipcode">Find representatives by zipcode.</a>
   <div class="legislators-contact-info">
-  <% if @response %>
+  <% if @response != nil %>
+    <h2>Tweet it</h2>
     <table>
-      <th>Legislator</th>
-      <th>Twitter</th>
-      <th>Email Form</th>
       <% @response["results"].each do |rep| %>
         <tr>
-          <td><%= rep["first_name"] + " " + rep["last_name"]%></td>
           <% if rep["twitter_id"] %>
+            <td><%= rep["first_name"] + " " + rep["last_name"]%></td>
             <td><a href="https://twitter.com/intent/tweet?screen_name=<%= rep["twitter_id"] %>&text=<%= @message %>&hashtags=booksnotbars"  class="twitter-mention-button" data-lang="en">Tweet to @<%= rep["twitter_id"] %></a>
-          <% else %>
-            <td>n/a</td>
           <% end %>
           </td>
-          <% if rep["contact_form"] %>
-            <% intro = rep["title"] + ". " + rep["last_name"] + ", "  %>
-            <td><input type="text" onclick="this.select();" value="<%= intro + @form_message %>"></input>
-              <%= link_to "Go to web form", rep["contact_form"], id: "copy-button" %></td>
-          <% else %>
-            <td>n/a</td>
-          <% end %>
         </tr>
+      <% end %>
+    </table>
+
+    <h2>Send a message online</h2>
+    <table class="web-form-list">
+      <% @response["results"].each do |rep| %>
+       <tr>
+        <td><% web_form_link_text = rep["first_name"] + " " + rep["last_name"] + "'s web form" %></td>
+        <% if rep["contact_form"] %>
+        <% intro = rep["title"] + ". " + rep["last_name"] + ", "  %>
+          <td><textarea onclick="this.select();"><%= intro + @form_message %></textarea>
+          <%= link_to web_form_link_text, rep["contact_form"], :class => "web-form-link", target: "_blank" %></td>
+        <% end %>
+      </tr>
       <% end %>
     </table>
   </div>
 </div>
-  <% else %>
-     <%= render 'zipcode_form' %>
-  <% end %>
-  <div class="zipcode-form"><%= render 'zipcode_form' %></div>
-  <a href="#" id="findByZipcode">Find representatives by zipcode.</a>
+<% else %>
+   <%= render 'zipcode_form' %>
+<% end %>
+<div class="zipcode-form"><%= render 'zipcode_form' %></div>
