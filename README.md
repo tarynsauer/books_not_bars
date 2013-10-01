@@ -54,6 +54,11 @@ Edit your config/application.yaml file and add the following: <br />
   b) Your Sunlight Labs API key as: SUNLIGHT_API_KEY: XXXXXXX..
      Retrieve one here: http://sunlightfoundation.com/api/
 
+5. Good to go!
+```bash
+    rails s
+```
+You should now see the app on your localhost:3000
 
 
 
