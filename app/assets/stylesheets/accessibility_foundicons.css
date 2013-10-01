@@ -21,6 +21,31 @@ src: url('Born.otf');
 font-family: Dense;
 src: url('Dense-Regular.otf');
 }
+@font-face{
+font-family: Dist;
+src: url('DistProTh.otf');
+}
+
+@font-face{
+font-family: Bebas;
+src: url('bebas.ttf');
+}
+@font-face{
+font-family: Lora-Bold;
+src: url('Lora-Bold.ttf');
+}
+@font-face{
+font-family: Lora-BoldItalic;
+src: url('Lora-BoldItalic.ttf');
+}
+@font-face{
+font-family: Lora-Italic;
+src: url('Lora-Italic.ttf');
+}
+@font-face{
+font-family: Lora-Regular;
+src: url('Lora-Regular.ttf');
+}
 
 @font-face {font-family: 'IdealistSans';src: url('webfonts/28772F_0_0.eot');src: url('webfonts/28772F_0_0.eot?#iefix') format('embedded-opentype'),url('webfonts/28772F_0_0.woff') format('woff'),url('webfonts/28772F_0_0.ttf') format('truetype');}
 
@@ -35,6 +60,9 @@ src: url('Dense-Regular.otf');
 
 
 @font-face {font-family: 'Myra4FCaps-Light';src: url('webfonts/28772F_4_0.eot');src: url('webfonts/28772F_4_0.eot?#iefix') format('embedded-opentype'),url('webfonts/28772F_4_0.woff') format('woff'),url('webfonts/28772F_4_0.ttf') format('truetype');}
+
+
+
 
 
 /* font-face */

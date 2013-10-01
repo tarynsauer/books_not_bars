@@ -28,7 +28,11 @@ CurrentBooksBar::Application.routes.draw do
 
   get '/rerender' => "organizations#rerender"
 
+  get '/mobile' => "mobile#index"
+
+
   mount JasmineRails::Engine => "/specs" if defined?(JasmineRails)
+
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 
