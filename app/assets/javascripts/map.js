@@ -98,31 +98,18 @@ Map.prototype.statChange = function(){
 
       $.post('/map/update',{ state: region }, function(response){
         
-
-    
         var data_array = response.stats       
         
-
-
-
         var chart = new ChartTable(40, 400, data_array);
       
-
-        console.log(data_array);
+        // console.log(data_array);
   
-
 // =================================================================
-        var my_donut = new DonutChart(560, 300, data_array);
-
-        my_donut.renderDonut();
-        my_donut.buildArc();
-        my_donut.buildCircle();
-        // my_donut.getData();
+      
 // =================================================================
 
         chart.render();
         chart.animateBars(2000);
-        console.log(region);
         self.assignStats(region, '$'+ data_array.edu_per_capita, '$'+ data_array.inc_per_capita)
       })
   }); 
@@ -148,3 +135,18 @@ ready = function() {
 
 $(document).ready(ready);
 $(document).on('page:load', ready);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

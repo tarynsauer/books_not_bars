@@ -8,15 +8,11 @@ class MapController < ApplicationController
   end
 
   def update
+
+        
+    p state_obj = State.where(name: params[:state])
+
     state_obj = State.where(name: params[:state])
-
-    # if state_obj.first.edu_per_capita
-    #   pupil_cost = state_obj.first.edu_per_capita
-    # end
-
-    # if state_obj.first.inc_per_capita
-    #   inmate_cost = state_obj.first.inc_per_capita
-    # end
 
     my_obj = state_obj[0]
     if request.xhr?
