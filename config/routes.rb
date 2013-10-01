@@ -15,7 +15,6 @@ CurrentBooksBar::Application.routes.draw do
 
 
   post '/map/update' => 'map#update'
-  
 
 
   get '/legislators' => "representatives#index"

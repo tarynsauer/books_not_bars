@@ -1,3 +1,38 @@
+var getCoordinatesFromAddress = function(markers) {
+  var markers_list = [];
+  var geocoder = new google.maps.Geocoder();
+  var deferreds = [];
+
+  if (markers) {
+
+    for (var i = 0; i < markers.length; i++) {
+      (function() {
+        var details = markers[i];
+        var deferred = new $.Deferred()
+        deferreds.push(deferred);
+
+        geocoder.geocode( { 'address': details.address_location }, function(results, status) {
+          if (status == google.maps.GeocoderStatus.OK) {
+            details.address_location = new google.maps.LatLng(
+              results[0].geometry.location.lb, results[0].geometry.location.mb);
+            markers_list.push(details);
+          } else {
+            alert("Geocode was not successful for the following reason: " + status);
+          }
+          deferred.resolve();
+        });
+
+        })();
+    }
+  }
+
+  $.when.apply($, deferreds).done(function() {
+    var markers_array = makeMarkers(markers_list);
+    makeInfoWindow(markers_array);
+  })
+
+}
+
 var makeMarkers = function(markers) {
   var markers_array = [];
   if (markers) {
@@ -5,15 +40,17 @@ var makeMarkers = function(markers) {
       var details = markers[i];
       markers[i] = new google.maps.Marker({
         title: details.name,
-        position: new google.maps.LatLng(
-            details.location[0], details.location[1]),
+        position: details.address_location,
+        // position: new google.maps.LatLng(
+        //     details.location[0], details.location[1]),
         map: map,
         description: details.description
       });
       markers_array.push(markers[i]);
     }
-    return markers_array;
   }
+  console.log(markers_array);
+  return markers_array;
 }
 
 var makeInfoWindow = function(markers) {
@@ -62,8 +99,10 @@ var rerenderWithZipcode = function() {
 
 var getOrgsMap = function() {
   google.maps.visualRefresh = true;
+  var geocoder;
 
   function initialize() {
+    geocoder = new google.maps.Geocoder();
     var myLatlng = new google.maps.LatLng(41.8833,87.8000);
     var mapOptions = {
       zoom: 11,
@@ -80,9 +119,7 @@ var getOrgsMap = function() {
                                          position.coords.longitude);
 
     // Gets markers array from markers_array.js file
-    var markers_array = makeMarkers(markers);
-
-    makeInfoWindow(markers_array);
+    getCoordinatesFromAddress(markers);
 
     map.setCenter(pos);
     map.panBy(0,-110);
