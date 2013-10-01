@@ -1,27 +1,56 @@
 == README
 
-Working Project Name: Books Not Bars
+Books Not Bars: An interactive site to explore patterns in US corrections
+Live demo: http://booksNotBars.herokuapp.com
 
-Team: Lyel Resner (Project Manager), Taryn Sauer, Nick Smit, Josh Suich
+Created by:
+* Lyel Resner
+* Taryn Sauer
+* Nick Smit
+* Josh Suich
 
-Standard Rails App:
+== About
 
-* Ruby version: ruby 1.9.3p374
+A final group project for Dev Bootcamp (Chicago, IL).
 
-* Rails version: Rails 4.0.0
+BooksNotBars falls out from team member Lyel Resner's experience as an educator in the Bronx, NY.  Some of his former students spent time in Juvenile Detention - at costs upwards of $200,000 per year.  Meanwhile, their schools were understaffed, lacked basic resources like textbooks and computers, and were unable to afford supplemntary or after-school programs.
 
-* Configuration
+These stark dualities are not specific to NYC - they represent a national pattern of allocating significantly more resources to incarceration than to education.
 
-* Database creation
+BooksNotBars is an effort to educate people about some of these jarring figures and provide them with the tools to take action.
 
-* Database initialization
+== Technologies and Process
 
-* How to run the test suite: Clone, Bundle, Rake up DB... see if it works.
+BooksNotBars is a front-end heavy app. This is because 1) Our group wanted to dive deeper intro front-end technologies, and 2) We rely heavily on data visualizations and interactivity to communicate our message.
 
-* Services (job queues, cache servers, search engines, etc.)
+The app is built with Ruby 1.9.3p374, Rails 4.0.0, HTML5 and CSS3, Jquery, and JavaScript. We utilized multplie JS libraries, including D3, Donuts, and Vmap. Both the Google Maps and Twitter APIs were used for our action toolkit. Heroku was used for deployment, git for editing changes, and and agile SCRUM process to ensure dlexibility in product development and ongoing group communication.  Tests were written in RSpec and Jasmine.
 
-* Deployment instructions
 
-* ...
 
+== Deployment instructions
+
+Setting up your development environment
+
+Fork and then clone to your computer
+
+Install all gems:
+
+$ bundle install
+Setup the database:
+
+$ rake db:create && rake db:migrate
+Load CSV files into your local database.  You should have hospitals and over 163,000
+
+$ rake import:all
+Optional: Use the Figaro gem to set your Google Maps API key. (The app should run on your local machine without this step):
+
+$ rails generate figaro:install
+Edit your config/application.yaml file and add your google maps api key as GOOGLE_API_DEV.
 All pull-request merge comments have a requisite 1 Emoji minimum: <http://www.emoji-cheat-sheet.com/>
+
+
+
+
+
+
+
