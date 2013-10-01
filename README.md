@@ -21,7 +21,9 @@ BooksNotBars is an effort to educate people about some of these jarring figures 
 
 ### Technologies and Process
 
-BooksNotBars is a front-end heavy app. This is because 1) Our group wanted to dive deeper intro front-end technologies, and 2) We rely heavily on data visualizations and interactivity to communicate our message.
+BooksNotBars is a front-end heavy app. This is because<br /> 
+1) Our group wanted to dive deeper intro front-end technologies, and <br />
+2) We rely heavily on data visualizations and interactivity to communicate our message.
 
 The app is built with Ruby 1.9.3p374, Rails 4.0.0, HTML5 and CSS3, Jquery, and a good deal of Object-Oriented JavaScript. We utilized multiple Javascript libraries, including D3, Donuts, and Vmap. Both the Google Maps and Sunlight Labs APIs were used for our action toolkit. Heroku was used for deployment, git for editing changes, and an agile SCRUM process to ensure flexibility in product development and ongoing group communication.  Tests were written in RSpec and Jasmine, with Travis-CI.
 
@@ -46,8 +48,8 @@ The app is built with Ruby 1.9.3p374, Rails 4.0.0, HTML5 and CSS3, Jquery, and a
 ```bash
     rails generate figaro:install
 ```
-Edit your config/application.yaml file and add the following:
-  a) Your Google Maps API key as GOOGLE_MAPS_API_KEY: XXXXXX..<br />
+Edit your config/application.yaml file and add the following: <br />
+  a) Your Google Maps API key as GOOGLE_MAPS_API_KEY: XXXXXXX..
      Retrieve one here: https://developers.google.com/maps/signup<br /><br />
   b) Your Sunlight Labs API key as: SUNLIGHT_API_KEY: XXXXXXX..
      Retrieve one here: http://sunlightfoundation.com/api/
