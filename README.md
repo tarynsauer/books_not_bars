@@ -21,7 +21,7 @@ BooksNotBars is an effort to educate people about some of these jarring figures 
 
 ### Technologies and Process
 
-BooksNotBars is a front-end heavy app. This is because<br /> 
+BooksNotBars is a front-end heavy app. This is because:<br /> 
 1) Our group wanted to dive deeper intro front-end technologies, and <br />
 2) We rely heavily on data visualizations and interactivity to communicate our message.
 
