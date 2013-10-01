@@ -17,13 +17,13 @@ end
 
 describe "Map" do
   describe "GET /map" do
-    it "opens the root path" do
+    it "opens the map path" do
       get map_path
       response.status.should be(200)
     end
   end
   describe "POST /map/update" do
-    it "posts to the root path" do
+    it "posts to the update map path" do
       post map_update_path
       response.status.should be(200)
     end
@@ -32,22 +32,44 @@ end
 
 describe "Representatives" do
   describe "GET /legislators" do
-  	# => v-- STOPPED WORK HERE --v
-    it "opens the root path" do
-      get welcome_path
+    it "opens the legislators path" do
+      get legislators_path
       response.status.should be(200)
     end
   end
 end
-describe "Welcome" do
-  describe "GET /" do
-    it "opens the root path" do
-      get welcome_path
+describe "Organizations" do
+  describe "GET /organizations" do
+    it "opens the organizations path" do
+      get organizations_path
       response.status.should be(200)
     end
   end
 end
-
+describe "Map" do
+  describe "GET /map" do
+    it "opens the map path" do
+      get map_path
+      response.status.should be(200)
+    end
+  end
+end
+describe "Zipcode" do
+  describe "GET /zipcode" do
+    it "opens the organizations path" do
+      get zipcode_path
+      response.status.should be(200)
+    end
+  end
+end
+describe "Rerender" do
+  describe "GET /rerender" do
+    it "opens the rerender path" do
+      get rerender_path
+      response.status.should be(200)
+    end
+  end
+end
 # legislators GET  /legislators(.:format)   	representatives#index
 # zipcode GET  /zipcode(.:format)       		representatives#zipcode
 
