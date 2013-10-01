@@ -4,16 +4,16 @@ Books Not Bars: An interactive site to explore patterns in US corrections
 Live demo: http://booksNotBars.herokuapp.com
 
 Created by:
-* Lyel Resner
-* Taryn Sauer
-* Nick Smit
-* Josh Suich
+* Lyel Resner (Git: @lresner)
+* Taryn Sauer (Git: @tarynsauer)
+* Nick Smit (Git:@voodoolabs)
+* Josh Suich (Git: @jsuich)
 
 == About
 
 A final group project for Dev Bootcamp (Chicago, IL).
 
-BooksNotBars falls out from team member Lyel Resner's experience as an educator in the Bronx, NY.  Some of his former students spent time in Juvenile Detention - at costs upwards of $200,000 per year.  Meanwhile, their schools were understaffed, lacked basic resources like textbooks and computers, and were unable to afford supplemntary or after-school programs.
+BooksNotBars falls out from team member Lyel Resner's experience as an educator in the Bronx, NY.  Some of his former students spent time in Juvenile Detention - at costs upwards of $200,000 per year.  Meanwhile, their schools were understaffed, lacked basic resources like textbooks and computers, and were unable to afford supplamentary or after-school programs.
 
 These stark dualities are not specific to NYC - they represent a national pattern of allocating significantly more resources to incarceration than to education.
 
@@ -23,23 +23,27 @@ BooksNotBars is an effort to educate people about some of these jarring figures 
 
 BooksNotBars is a front-end heavy app. This is because 1) Our group wanted to dive deeper intro front-end technologies, and 2) We rely heavily on data visualizations and interactivity to communicate our message.
 
-The app is built with Ruby 1.9.3p374, Rails 4.0.0, HTML5 and CSS3, Jquery, and JavaScript. We utilized multplie JS libraries, including D3, Donuts, and Vmap. Both the Google Maps and Twitter APIs were used for our action toolkit. Heroku was used for deployment, git for editing changes, and and agile SCRUM process to ensure dlexibility in product development and ongoing group communication.  Tests were written in RSpec and Jasmine.
+The app is built with Ruby 1.9.3p374, Rails 4.0.0, HTML5 and CSS3, Jquery, and a good deal of Object-Oriented JavaScript. We utilized multiple Javascript libraries, including D3, Donuts, and Vmap. Both the Google Maps and Twitter APIs were used for our action toolkit. Heroku was used for deployment, git for editing changes, and an agile SCRUM process to ensure flexibility in product development and ongoing group communication.  Tests were written in RSpec and Jasmine.
 
 
 
-== Deployment instructions
+== Deployment Instructions
 
-Setting up your development environment
 
-Fork and then clone to your computer
+_Fork and then clone to your computer_
+1. The repo is located at: https://github.com/tarynsauer/CurrentBooksBar
 
-Install all gems:
+_Install all gems:_
 
 $ bundle install
-Setup the database:
+
+
+_Setup the database:_
 
 $ rake db:create && rake db:migrate
 Load CSV files into your local database.  You should have hospitals and over 163,000
+
+-Configure API Keys_
 
 $ rake import:all
 Optional: Use the Figaro gem to set your Google Maps API key. (The app should run on your local machine without this step):
