@@ -47,8 +47,8 @@ The app is built with Ruby 1.9.3p374, Rails 4.0.0, HTML5 and CSS3, Jquery, and a
     rails generate figaro:install
 ```
 Edit your config/application.yaml file and add the following:
-  a) Your Google Maps API key as GOOGLE_MAPS_API_KEY: XXXXXX..
-     Retrieve one here: https://developers.google.com/maps/signup
+  a) Your Google Maps API key as GOOGLE_MAPS_API_KEY: XXXXXX..<br />
+     Retrieve one here: https://developers.google.com/maps/signup<br /><br />
   b) Your Sunlight Labs API key as: SUNLIGHT_API_KEY: XXXXXXX..
      Retrieve one here: http://sunlightfoundation.com/api/
 
