@@ -21,6 +21,7 @@ CurrentBooksBar::Application.routes.draw do
 
   resources :organizations
 
+  resources :locations
 
   get '/map' => "map#index"
 
