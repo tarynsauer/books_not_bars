@@ -44,7 +44,7 @@ var linkStyler = function() {
     if ( a1top<factsTop ) {
       console.log('changed a1 class to black');
       $('#1').removeClass();
-      $('#1').addClass("black");
+      $('#1').addClass("white");
     }
     if ( a1top>toolkitTop ) {
       console.log('changed a1 class to black');
@@ -60,7 +60,7 @@ var linkStyler = function() {
     if ( a2top<factsTop ) {
       console.log('changed a2 class to black');
       $('#2').removeClass();
-      $('#2').addClass("black");
+      $('#2').addClass("white");
     }
     if ( a2top>toolkitTop ) {
       console.log('changed a2 class to black');
@@ -76,7 +76,7 @@ var linkStyler = function() {
     if ( a3top<factsTop ) {
       console.log('changed a3 class to black');
       $('#3').removeClass();
-      $('#3').addClass("black");
+      $('#3').addClass("white");
     }
     if ( a3top>toolkitTop ) {
       console.log('changed a3 class to black');
@@ -92,7 +92,7 @@ var linkStyler = function() {
     if ( a4top<factsTop ) {
       console.log('changed a4 class to black');
       $('#4').removeClass();
-      $('#4').addClass("black");
+      $('#4').addClass("white");
     }
     if ( a4top>toolkitTop ) {
       console.log('changed a4 class to black');
