@@ -13,10 +13,7 @@ CurrentBooksBar::Application.routes.draw do
 
   post '/update' => 'welcome#update'
 
-
   post '/map/update' => 'map#update'
-
-
 
   get '/legislators' => "representatives#index"
 
