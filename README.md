@@ -1,4 +1,4 @@
-== README
+####README
 
 Books Not Bars: An interactive site to explore patterns in US corrections
 Live demo: http://booksNotBars.herokuapp.com
@@ -9,7 +9,7 @@ Created by:
 * Nick Smit (Git:@voodoolabs)
 * Josh Suich (Git: @jsuich)
 
-== About
+### About
 
 A final group project for Dev Bootcamp (Chicago, IL).
 
@@ -19,7 +19,7 @@ These stark dualities are not specific to NYC - they represent a national patter
 
 BooksNotBars is an effort to educate people about some of these jarring figures and provide them with the tools to take action.
 
-== Technologies and Process
+### Technologies and Process
 
 BooksNotBars is a front-end heavy app. This is because 1) Our group wanted to dive deeper intro front-end technologies, and 2) We rely heavily on data visualizations and interactivity to communicate our message.
 
@@ -27,8 +27,8 @@ The app is built with Ruby 1.9.3p374, Rails 4.0.0, HTML5 and CSS3, Jquery, and a
 
 
 
-== Deployment Instructions
-### Setting up your development environment
+### Deployment Instructions
+
 
 1. Fork and then clone to your computer.  The repo is located at: https://github.com/tarynsauer/CurrentBooksBar.
 
@@ -47,10 +47,10 @@ The app is built with Ruby 1.9.3p374, Rails 4.0.0, HTML5 and CSS3, Jquery, and a
     rails generate figaro:install
 ```
 Edit your config/application.yaml file and add the following:
-* Your Google Maps API key as GOOGLE_MAPS_API_KEY: XXXXXX..
-You can retrieve one at: https://developers.google.com/maps/signup
-* Your Sunlight Labs API key as: SUNLIGHT_API_KEY: XXXXXXX..
-You can retrieve one at: http://sunlightfoundation.com/api/
+  a) Your Google Maps API key as GOOGLE_MAPS_API_KEY: XXXXXX..
+     Retrieve one here: https://developers.google.com/maps/signup
+  b) Your Sunlight Labs API key as: SUNLIGHT_API_KEY: XXXXXXX..
+     Retrieve one here: http://sunlightfoundation.com/api/
 
 
 
