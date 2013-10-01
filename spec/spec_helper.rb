@@ -14,6 +14,8 @@ ActiveRecord::Migration.check_pending! if defined?(ActiveRecord::Migration)
 
 RSpec.configure do |config|
   
+  # config.fail_fast = true
+
   config.mock_framework = :rspec
   # Use color in STDOUT
   config.color_enabled = true

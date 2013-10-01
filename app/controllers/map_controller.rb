@@ -20,6 +20,7 @@ class MapController < ApplicationController
     # end
 
     my_obj = state_obj[0]
+    
     if request.xhr?
      render json: { stats: my_obj }
     end
