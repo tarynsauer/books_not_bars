@@ -1,37 +1,37 @@
-var getCoordinatesFromAddress = function(markers) {
-  var markers_list = [];
-  var geocoder = new google.maps.Geocoder();
-  var deferreds = [];
+// var getCoordinatesFromAddress = function(markers) {
+//   var markers_list = [];
+//   var geocoder = new google.maps.Geocoder();
+//   var deferreds = [];
 
-  if (markers) {
+//   if (markers) {
 
-    for (var i = 0; i < markers.length; i++) {
-      (function() {
-        var details = markers[i];
-        var deferred = new $.Deferred()
-        deferreds.push(deferred);
+//     for (var i = 0; i < markers.length; i++) {
+//       (function() {
+//         var details = markers[i];
+//         var deferred = new $.Deferred()
+//         deferreds.push(deferred);
 
-        geocoder.geocode( { 'address': details.address_location }, function(results, status) {
-          if (status == google.maps.GeocoderStatus.OK) {
-            details.address_location = new google.maps.LatLng(
-              results[0].geometry.location.lb, results[0].geometry.location.mb);
-            markers_list.push(details);
-          } else {
-            alert("Geocode was not successful for the following reason: " + status);
-          }
-          deferred.resolve();
-        });
+//         geocoder.geocode( { 'address': details.address_location }, function(results, status) {
+//           if (status == google.maps.GeocoderStatus.OK) {
+//             details.address_location = new google.maps.LatLng(
+//               results[0].geometry.location.lb, results[0].geometry.location.mb);
+//             markers_list.push(details);
+//           } else {
+//             alert("Geocode was not successful for the following reason: " + status);
+//           }
+//           deferred.resolve();
+//         });
 
-        })();
-    }
-  }
+//         })();
+//     }
+//   }
 
-  $.when.apply($, deferreds).done(function() {
-    var markers_array = makeMarkers(markers_list);
-    makeInfoWindow(markers_array);
-  })
+//   $.when.apply($, deferreds).done(function() {
+//     var markers_array = makeMarkers(markers_list);
+//     makeInfoWindow(markers_array);
+//   })
 
-}
+// }
 
 var makeMarkers = function(markers) {
   var markers_array = [];
@@ -120,7 +120,14 @@ var getOrgsMap = function() {
                                          position.coords.longitude);
 
     // Gets markers array from markers_array.js file
-    getCoordinatesFromAddress(markers);
+    // getCoordinatesFromAddress(markers);
+
+    $.get( "/organizations/show_for_map", function( response ) {
+        console.log( response);
+        alert( "Load was performed.");
+      // var markers_array = makeMarkers(markers_list);
+      // makeInfoWindow(markers_array);
+    });
 
     map.setCenter(pos);
     map.panBy(0,-110);
