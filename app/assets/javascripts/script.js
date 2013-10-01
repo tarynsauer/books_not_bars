@@ -103,12 +103,12 @@ var linkStyler = function() {
 };
 
 var fadeCaro = function(){
-  $('.revolving').fadeOut(4000, function() {
-    $('.recidivism').fadeIn(100, function(){
-      $('.recidivism').fadeOut(4000, function() {
-        $('.abc').fadeIn(100, function(){
-          $('.abc').fadeOut(4000, function() {
-            $('.revolving').fadeIn(100, function(){
+  $('.nycprice').fadeOut(4000, function() {
+    $('.incrate').fadeIn(100, function(){
+      $('.incrate').fadeOut(4000, function() {
+        $('.earlyed').fadeIn(100, function(){
+          $('.earlyed').fadeOut(4000, function() {
+            $('.nycprice').fadeIn(100, function(){
               fadeCaro();
             });
           });
