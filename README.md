@@ -36,17 +36,17 @@ The app is built with Ruby 1.9.3p374, Rails 4.0.0, HTML5 and CSS3, Jquery, and a
 
 2. Install all gems:
 ```bash
-    bundle install
+    $ bundle install
 ```
 
 3. Setup the database:
 ```bash
-    rake db:drop && rake db:setup
+    $ rake db:drop && rake db:setup
 ```
 
 4. Configure API Keys
 ```bash
-    rails generate figaro:install
+    $ rails generate figaro:install
 ```
 Edit your config/application.yaml file and add the following: <br />
   a) Your Google Maps API key as GOOGLE_MAPS_API_KEY: XXXXXXX..
@@ -56,7 +56,7 @@ Edit your config/application.yaml file and add the following: <br />
 
 5. Good to go!
 ```bash
-    rails s
+    $ rails s
 ```
 You should now see the app on your localhost:3000
 
