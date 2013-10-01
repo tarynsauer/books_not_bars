@@ -13,7 +13,7 @@ Created by:
 
 A final group project for Dev Bootcamp (Chicago, IL).
 
-BooksNotBars falls out from team member Lyel Resner's experience as an educator in the Bronx, NY.  Some of his former students spent time in Juvenile Detention - at costs upwards of $200,000 per year.  Meanwhile, their schools were understaffed, lacked basic resources like textbooks and computers, and were unable to afford supplamentary or after-school programs.
+BooksNotBars falls out from team member Lyel Resner's experience as an educator in the Bronx, NY.  Some of his former students spent time in Juvenile Detention - at costs upwards of $200,000 per year.  Meanwhile, their schools were understaffed, lacked basic resources like textbooks and computers, and were unable to afford supplamentary or after-school programs. The same students that were incarcerated excelled in adequately-resourced learning environments.
 
 These stark dualities are not specific to NYC - they represent a national pattern of allocating significantly more resources to incarceration than to education.
 
@@ -23,7 +23,7 @@ BooksNotBars is an effort to educate people about some of these jarring figures 
 
 BooksNotBars is a front-end heavy app. This is because 1) Our group wanted to dive deeper intro front-end technologies, and 2) We rely heavily on data visualizations and interactivity to communicate our message.
 
-The app is built with Ruby 1.9.3p374, Rails 4.0.0, HTML5 and CSS3, Jquery, and a good deal of Object-Oriented JavaScript. We utilized multiple Javascript libraries, including D3, Donuts, and Vmap. Both the Google Maps and Twitter APIs were used for our action toolkit. Heroku was used for deployment, git for editing changes, and an agile SCRUM process to ensure flexibility in product development and ongoing group communication.  Tests were written in RSpec and Jasmine.
+The app is built with Ruby 1.9.3p374, Rails 4.0.0, HTML5 and CSS3, Jquery, and a good deal of Object-Oriented JavaScript. We utilized multiple Javascript libraries, including D3, Donuts, and Vmap. Both the Google Maps and Twitter APIs were used for our action toolkit. Heroku was used for deployment, git for editing changes, and an agile SCRUM process to ensure flexibility in product development and ongoing group communication.  Tests were written in RSpec and Jasmine, with Travis-CI.
 
 
 
@@ -37,11 +37,11 @@ _Install all gems:_
 
 $ bundle install
 
-
 _Setup the database:_
 
-$ rake db:create && rake db:migrate
-Load CSV files into your local database.  You should have hospitals and over 163,000
+$ rake db:setup
+This will create the database, migrate the tables, and seed the database with the included CSV file.
+You should have data for 50 states across XXXX columns.
 
 -Configure API Keys_
 
