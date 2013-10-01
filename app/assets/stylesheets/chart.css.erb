@@ -85,7 +85,12 @@ textarea {
 /* ==========================================================================
    Browse Happy prompt
    ========================================================================== */
-
+html,
+body{
+  height: 100%; width: 100%;
+  margin: 0; padding: 0;
+  min-height: 2000px;
+}
 .browsehappy {
     margin: 0.2em 0;
     background: #ccc;
@@ -93,10 +98,170 @@ textarea {
     padding: 0.2em 0;
 }
 
+nav{
+  position: fixed;
+  top:15%;
+  left:5%;
+  z-index:2;
+  width: 15%;
+}
+
+nav ul {
+  padding: 0;
+}
+nav ul li{
+  list-style: none;
+  padding: 10px 0px;
+}
+
+nav > ul > li > a {
+  text-decoration: none;
+  font-weight: 300;
+  color: black;
+  font-size: auto:;
+}
+
+.black {
+  color: black;
+}
+
+.white {
+  color: white;
+}
+
+a.black:link {color:'#000'; font-weight: 300;}
+a.black:visited {color:'#000'; font-weight: 300;}
+a.black:hover {color:'#000'; font-weight: 700;}
+a.black:active {color:'#000'; font-weight: 700;}
+
+a.white:link {color:'white';font-weight: 300;}
+a.white:visited {color:'white';font-weight: 300;}
+a.white:hover {color:'white';font-weight: 700;}
+a.white:active {color:'white'; font-weight: 700;}
+
+.cover_gradient{
+position:absolute;
+top:0;
+background: -moz-radial-gradient(center, ellipse cover,  rgba(0,0,0,0) 0%, rgba(0,0,0,0.38) 52%, rgba(0,0,0,0.94) 100%); /* FF3.6+ */
+background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,rgba(0,0,0,0)), color-stop(52%,rgba(0,0,0,0.38)), color-stop(100%,rgba(0,0,0,0.94))); /* Chrome,Safari4+ */
+background: -webkit-radial-gradient(center, ellipse cover,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.38) 52%,rgba(0,0,0,0.94) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-radial-gradient(center, ellipse cover,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.38) 52%,rgba(0,0,0,0.94) 100%); /* Opera 12+ */
+background: -ms-radial-gradient(center, ellipse cover,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.38) 52%,rgba(0,0,0,0.94) 100%); /* IE10+ */
+background: radial-gradient(ellipse at center,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.38) 52%,rgba(0,0,0,0.94) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#f0000000',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+  z-index:-1;
+  height: 800px;
+  width: 100%;
+
+}
+header{
+  height:77px;
+  background: rgba(21,21,21,1);
+  width: 100%;
+  position: fixed;
+  top:0; left: 0;
+  z-index:40;
+}
+
+.cover{
+  background: url('blackorchid.png') repeat;
+  position: absolute;
+  top: 0;
+  height: 100%; width: 100%;
+  opacity: 0.7;
+}
+
+.center{
+  display: table;
+  margin: 0 auto;
+  text-align: center;
+}
+
+section{
+  height:900px;
+  width: 100%;
+  top: 0; left:0;
+  -webkit-perspective: 15000; perspective: 15000;
+}
+section#facts{
+background-color: black;
+color: white;
+}
+
+section#explore {
+  background-color: rgba(218,33,50,1); 
+}
+
+section#toolkit{
+background-color: white;
+/*height: 100%;*/
+}
+
+section#situation{
+  background: url(edubg1.jpg) no-repeat center center; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+section#situation > div.intro{
+  position: relative;
+  top: 280px;
+  width: 600px;
+  height: 500px;
+  color: rgba(254,254,254,0.9);
+  font-family: 'Dist', sans-serif;
+  font-weight: 100;
+}
+section#situation > div.intro h1.main{
+  font-family: 'FuturaNDBook';
+  font-size: 80px;
+  margin: 0;
+  text-shadow: 0 0 2px rgba(255,255,255,1), 0 0 2px rgba(255,255,255,1), 0 0 2px rgba(255,255,255,1), 0 0 3px rgba(218,33,50,0.7), 0 0 3px rgba(218,33,50,0.7), 0 0 3px rgba(218,33,50,0.7), 0 0 3px rgba(218,33,50,0.7), 0 0 3px rgba(218,33,50,0.7);
+}
+
+section#situation button{
+  border: none;
+  border-radius: 8px;
+  background-color: rgba(218,33,50,0.9);
+  width: 250px;
+  height: 66px;
+  margin:10px;
+  color: rgba(254,254,254,0.9);
+}
+
+section#explore{
+  position: relative;
+  
+}
+section#explore > div.about{
+  position: absolute;
+  top:300px;
+  left: 350px;
+  width: 450px;
+  height: auto;
+  color: rgba(254,254,254,0.9);
+  font-family: 'Dist', sans-serif;
+  font-weight: 100;
+}
+section#explore >  h1{
+  color: rgba(255,255,255,1);
+  font-family: 'FuturaNDBook';
+  font-size: 60px;
+  margin: 0px;
+  position: relative;
+  top:80px;
+  left: 350px;
+  text-shadow: 0 0 2px rgba(255,255,255,1), 0 0 2px rgba(255,255,255,1), 0 0 2px rgba(255,255,255,1), 0 0 3px rgba(21,21,21,0.7), 0 0 3px rgba(21,21,21,0.7), 0 0 3px rgba(21,21,21,0.7), 0 0 3px rgba(21,21,21,0.7), 0 0 3px rgba(21,21,21,0.7);
+}
+section#explore > div.about p{
+  font-size: 18px;
+}
+
 /* ==========================================================================
    Map's custom styles
    ========================================================================== */
-section.home,
+/*section#explore,
 .map_container{
   width: 100%;
   height: 100%;
@@ -104,69 +269,57 @@ section.home,
   top:0;
   left: 0;
   z-index:1;
-
 }
-
-.map_cover{
-  background: url('blackorchid.png') repeat;
-  height: 100%; width: 100%;
-  opacity: 0.9;
-  position: fixed;
-  top:0;
-  left:0;
-  z-index: 1;
-}
-
-section.home {
+*/
+section#explore {
   background: rgba(218,33,50,1);
 /*  margin-top: 0px;*/
 -webkit-perspective: 15000; perspective: 15000;
 }
 
-section.home > div#vmap{
+section#explore > div#vmap{
   -webkit-transform-origin: bottom center;
   -webkit-transform-style: preserve-3d;
   -webkit-transition: all 1s ease-in-out;
-  margin: 1% auto;
-  height: 60%; width: 60%;
+  margin: 0 auto;
+  height: 55%; width: 55%;
   opacity: 0.9;
-  top: 10%;
+  top: 20%;
+  left:15%; 
 }
 
-section.home > div#vmap > svg > g > path{
+section#explore > div#vmap > svg > g > path{
   -webkit-filter: drop-shadow(0px 10px 0px rgba(255,255,255,1),
     0px 14px 10px rgba(255,255,255,1),
     0px 24px 2px rgba(255,255,255,1),
     0px 34px 30px rgba(255,255,255,1));
 }
 
-section.home > div#vmap.display{
+section#explore > div#vmap.display{
   -webkit-transform: translateY(50px) translateZ(200px) rotateX(65deg);
-    display: table;
-    margin: 1% auto; 
-    height: 880px; width: 880px;
+    display: table; 
     text-align: center;
 }
 
 
-section.home > div.stats{
+section#explore > div.stats{
   text-align: right;
   color: rgba(240,242,241,0.8);
   background: rgba(21,21,21,1);
-  position: fixed;
+  position: absolute;
   width: 250px;
   height: 100%;
   top: 0;
-  left:0;
-  padding:0; margin: 0;
+  right:0;
+  padding:0 0 0 0; margin: 0;
 }
-section.home > div.stats > ul {
-  padding:10px 8px; margin: 0;
+section#explore > div.stats > ul {
+  padding:80px 0 0; margin: 0;
   text-align: right;
   font-size: 14px;
   height: 300px;
 }
-section.home > div.stats ul > li{
+section#explore > div.stats ul > li{
   list-style: none;
   padding:5px 0;
   border-bottom: #ccc inset 1px;
@@ -175,51 +328,51 @@ section.home > div.stats ul > li{
   width: 100%;
 }
 
-section.home > div.stats ul > li:last-child{
+section#explore > div.stats ul > li:last-child{
   /*border: none;*/
   /*padding-top: 80px;*/
 }
 
 
-section.home > div.stats ul > li > h3,
-section.home > div.stats ul > li > p{
+section#explore > div.stats ul > li > h3,
+section#explore > div.stats ul > li > p{
   display: inline;
-  margin: 4px;
+  margin: 4px 18px;
 }
 
-section.home > div.stats > ul > div#chart_holder{
+section#explore > div.stats > ul > div#chart_holder{
   
   padding:10px;
 }
 
-section.home > div.stats > ul > div#chart_holder{
+section#explore > div.stats > ul > div#chart_holder{
   height: ;
 }
 
 
 
-section.home > div.stats > div#donut_holder{
-  position: fixed;
-  top: 100px;
-  left:25%;
+section#explore div#donut_holder{
+  position: relative;
+  bottom: 0px;
+  left:0;
   opacity: 1;
-  height: 300px;
-  width: 560px;
+  border: 1px blue solid;
   -webkit-transition: all 1s ease-in-out;
 }
 
 
-section.home > div.stats > div#donut_holder .arc,
-section.home > div.stats > div#donut_holder g{
+section#explore > div.stats > div#donut_holder .arc,
+section#explore > div.stats > div#donut_holder g{
   -webkit-transition: all 1s ease-in-out;
 }
 
-section.home > div#vmap > .arc_show{
+section#explore > div#vmap > .arc_show{
   opacity: 0.6;
   height:950px;
   background-color: white
   color: black;
 }
+
 
 button#close{
   border: none;
@@ -228,12 +381,41 @@ button#close{
   height: 50px;
   background: rgba(21,21,21,1);
   position: absolute;
-  bottom:5%; right:5%;
+  bottom:10%; left:350px;
   z-index:999;
   color:rgba(240,242,241,0.95);
 }
 
+section#facts{
+  background: url(sadInPrisonBW.jpeg) no-repeat center center; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+section#facts > div.intro{
+  position: relative;
+  top: 280px;
+  width: 600px;
+  height: 500px;
+  color: rgba(254,254,254,0.9);
+  font-family: 'Dist', sans-serif;
+  font-weight: 100;
+}
+.factPanel {
+  top: 10%;
+  margin-left: 30%;
+  margin-right: 20%;
+  position: absolute;
+}
 
+.factPanel div {
+  border: 0px solid white;
+  display: inline-block;
+  height: 500px;
+  width: 880px;
+  margin: 20px;
+}
 
 /* ==========================================================================
    SVG Styles
@@ -284,9 +466,14 @@ button#close{
   stroke-dasharray: 3, 4;
 }
 
-.arc text{
-  fill: rgba(250,250,250,1);
+.arc {
+  fill: #ccc;
+  stroke: #000;
+  stroke-dasharray: 3, 4;
 }
+
+.arc text{fill: rgba(250,250,250,1);}
+
   /*fill: #ccc;*/
   /*stroke: #000;*/
   /*stroke-dasharray: 3, 4;*/
@@ -295,6 +482,19 @@ button#close{
 .arc path {
   shape-rendering: auto;
 }
+
+
+.axis text {
+  font: 10px sans-serif;
+}
+
+.axis line,
+.axis path {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
 
 /* ==========================================================================
    Helper classes
