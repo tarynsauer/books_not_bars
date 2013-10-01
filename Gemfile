@@ -57,4 +57,5 @@ gem 'rails_12factor', group: :production
 gem "figaro"
 
 gem 'jasmine-rails', group: [:development, :test]
+
 #gem 'jasmine-jquery-rails', group: [:development, :test]
