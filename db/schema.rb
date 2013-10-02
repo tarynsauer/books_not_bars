@@ -19,7 +19,6 @@ ActiveRecord::Schema.define(version: 20131001222623) do
   create_table "locations", force: true do |t|
     t.string   "title"
     t.string   "organization_name"
-    t.string   "full_address"
     t.string   "address_street"
     t.string   "city"
     t.string   "state"
