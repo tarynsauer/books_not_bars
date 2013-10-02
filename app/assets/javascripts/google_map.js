@@ -1,37 +1,37 @@
-var getCoordinatesFromAddress = function(markers) {
-  var markers_list = [];
-  var geocoder = new google.maps.Geocoder();
-  var deferreds = [];
+// var getCoordinatesFromAddress = function(markers) {
+//   var markers_list = [];
+//   var geocoder = new google.maps.Geocoder();
+//   var deferreds = [];
 
-  if (markers) {
+//   if (markers) {
 
-    for (var i = 0; i < markers.length; i++) {
-      (function() {
-        var details = markers[i];
-        var deferred = new $.Deferred()
-        deferreds.push(deferred);
+//     for (var i = 0; i < markers.length; i++) {
+//       (function() {
+//         var details = markers[i];
+//         var deferred = new $.Deferred()
+//         deferreds.push(deferred);
 
-        geocoder.geocode( { 'address': details.address_location }, function(results, status) {
-          if (status == google.maps.GeocoderStatus.OK) {
-            details.address_location = new google.maps.LatLng(
-              results[0].geometry.location.lb, results[0].geometry.location.mb);
-            markers_list.push(details);
-          } else {
-            alert("Geocode was not successful for the following reason: " + status);
-          }
-          deferred.resolve();
-        });
+//         geocoder.geocode( { 'address': details.address_location }, function(results, status) {
+//           if (status == google.maps.GeocoderStatus.OK) {
+//             details.address_location = new google.maps.LatLng(
+//               results[0].geometry.location.lb, results[0].geometry.location.mb);
+//             markers_list.push(details);
+//           } else {
+//             alert("Geocode was not successful for the following reason: " + status);
+//           }
+//           deferred.resolve();
+//         });
 
-        })();
-    }
-  }
+//       })();
+//     }
+//   }
 
-  $.when.apply($, deferreds).done(function() {
-    var markers_array = makeMarkers(markers_list);
-    makeInfoWindow(markers_array);
-  })
+//   $.when.apply($, deferreds).done(function() {
+//     var markers_array = makeMarkers(markers_list);
+//     makeInfoWindow(markers_array);
+//   })
 
-}
+// }
 
 var makeMarkers = function(markers) {
   var markers_array = [];
@@ -40,12 +40,11 @@ var makeMarkers = function(markers) {
     for (var i = 0; i < markers.length; i++) {
       var details = markers[i];
       markers[i] = new google.maps.Marker({
-        title: details.name,
-        // position: details.address_location,
+        title: details.title,
         position: new google.maps.LatLng(
-            details.position[0], details.position[1]),
+            details.latitude, details.longitude),
         map: map,
-        description: details.description
+        description: details.full_description
       });
       markers_array.push(markers[i]);
     }
@@ -164,18 +163,9 @@ var getOrgsMap = function() {
   }
 };
 
-// var newEventSubmitted = function() {
-//   $(".submitOrganizationLocation").click(function( event ) {
-//     console.log(";alksdjfl;aksdjfl;skdjf");
-//   });
-// }
-
 $(document).ready(getOrgsMap);
 $(document).on('page:load', getOrgsMap);
 
 $(document).ready(rerenderWithZipcode);
 $(document).on('page:load', rerenderWithZipcode);
-
-// $(document).ready(newEventSubmitted);
-// $(document).on('page:load', newEventSubmitted);
 

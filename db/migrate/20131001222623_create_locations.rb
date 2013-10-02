@@ -2,9 +2,7 @@ class CreateLocations < ActiveRecord::Migration
   def change
     create_table :locations do |t|
       t.string :title
-      t.string :position
       t.string :organization_name
-      t.string :full_address
       t.string :address_street
       t.string :city
       t.string :state
@@ -13,6 +11,8 @@ class CreateLocations < ActiveRecord::Migration
       t.text :description
       t.string :website
       t.string :twitter_handle
+      t.float :latitude
+      t.float :longitude
 
       t.timestamps
     end
