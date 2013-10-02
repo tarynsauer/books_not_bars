@@ -21,7 +21,12 @@ class LocationsController < ApplicationController
   end
 
   def edit
-    @location = Location.find(params[:id])
+    @location = Location.where(id: params[:id]).first
+    if @location
+      @location
+    else
+      redirect_to locations_path
+    end
   end
 
   def show
@@ -31,8 +36,13 @@ class LocationsController < ApplicationController
   def update
     params.permit!
     @location = Location.find(params[:id])
-    @location.update(params[:location])
     redirect_to @location
+    @location = Location.where(id: params[:id]).first
+    if @location
+      @location.update(params[:location])
+    else
+      redirect_to locations_path
+    end
   end
 
   def destroy
