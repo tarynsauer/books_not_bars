@@ -146,6 +146,13 @@ var fadeCaro = function(){
 var slideCaro = function(){
   $(".live-tile, .flip-list").not(".exclude").liveTile();
 };
+
+var buttonCaro = function(selector){
+  $()
+
+};
+
+
 // ========================ON DOCUMENT LOAD======================
 
 $(document).ready(function() {
@@ -154,7 +161,8 @@ $(document).ready(function() {
   linkTransition();
   // Link Styler Function
   linkStyler();
-  animateCaro();
+  // animateCaro();
+  slideCaro();
 
 });
 
