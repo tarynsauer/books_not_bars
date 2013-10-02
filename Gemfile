@@ -59,3 +59,5 @@ gem "figaro"
 gem 'jasmine-rails', group: [:development, :test]
 
 #gem 'jasmine-jquery-rails', group: [:development, :test]
+
+gem "geocoder"
