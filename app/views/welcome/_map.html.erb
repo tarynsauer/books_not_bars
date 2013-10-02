@@ -24,9 +24,9 @@
   </div>
 
   <div class="ranking">
+    <ol class="center">
     <% states = State.order('spending_ratio DESC') %>
-      <ol class="ranking_col1">
-        <% states.each do |state| %>
+        <% states[10..20].each do |state| %>
           <% if state.spending_ratio %>
             <li id="state_name">
               <%=state.name%>: <span><%=state.spending_ratio%></span>
