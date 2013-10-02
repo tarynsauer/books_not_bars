@@ -1,0 +1,47 @@
+ <section id="explore">
+ <button id="close" value="close">close</button>
+  <div  id="vmap" class="center"></div>
+
+
+  <div class="stats">
+    <ul>
+      <li><h2 id="state">U.S.A </h2></li>
+      
+      <li><h3>Spending Ratio</h3>
+        <p id="spending_ratio">1</p>
+      </li>
+      
+      <li><h3>Cost per pupil</h3>
+        <p id="pupil_cost">10,000</p>
+      </li>
+      
+      <li><h3>Cost per inmate</h3>
+        <p id="inmate_cost">40,000</p>
+      </li>
+    
+    </ul>
+  
+  </div>
+
+  <div class="ranking">
+    <ol class="center">
+    <% states = State.order('spending_ratio DESC') %>
+        <% states[10..20].each do |state| %>
+          <% if state.spending_ratio %>
+            <li id="state_name">
+              <%=state.name%>: <span><%=state.spending_ratio%></span>
+            </li>
+          <% end %>
+        <% end %>
+      </ol>
+    </div>
+
+  <div id="chart_holder"></div>
+<!-- 
+  <div class="nextZone" id="exploreZone">
+    <svg class="tick" xmlns="http://www.w3.org/2000/svg" version="1.1">
+      <polygon points="0,0 150,0 75,50" style="fill:rgba(218,33,50,1);"/>
+    </svg>
+  </div>
+ -->
+</section>
