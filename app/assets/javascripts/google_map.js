@@ -1,30 +1,30 @@
-var getCoordinatesFromAddress = function(markers) {
-  var markers_list = [];
-  var geocoder = new google.maps.Geocoder();
-  var deferreds = [];
+// var getCoordinatesFromAddress = function(markers) {
+//   var markers_list = [];
+//   var geocoder = new google.maps.Geocoder();
+//   var deferreds = [];
 
-  if (markers) {
+//   if (markers) {
 
-    for (var i = 0; i < markers.length; i++) {
-      (function() {
-        var details = markers[i];
-        var deferred = new $.Deferred()
-        deferreds.push(deferred);
+//     for (var i = 0; i < markers.length; i++) {
+//       (function() {
+//         var details = markers[i];
+//         var deferred = new $.Deferred()
+//         deferreds.push(deferred);
 
-        geocoder.geocode( { 'address': details.address_location }, function(results, status) {
-          if (status == google.maps.GeocoderStatus.OK) {
-            details.address_location = new google.maps.LatLng(
-              results[0].geometry.location.lb, results[0].geometry.location.mb);
-            markers_list.push(details);
-          } else {
-            alert("Geocode was not successful for the following reason: " + status);
-          }
-          deferred.resolve();
-        });
+//         geocoder.geocode( { 'address': details.address_location }, function(results, status) {
+//           if (status == google.maps.GeocoderStatus.OK) {
+//             details.address_location = new google.maps.LatLng(
+//               results[0].geometry.location.lb, results[0].geometry.location.mb);
+//             markers_list.push(details);
+//           } else {
+//             alert("Geocode was not successful for the following reason: " + status);
+//           }
+//           deferred.resolve();
+//         });
 
-      })();
-    }
-  }
+//       })();
+//     }
+//   }
 
   $.when.apply($, deferreds).done(function() {
     var markers_array = makeMarkers(markers_list);
@@ -164,16 +164,17 @@ var getOrgsMap = function() {
   }
 };
 
-var newEventSubmitted = function() {
-  $(".submitOrganizationLocation").click(function( event ) {
-    event.preventDefault();
-    $.post( "/locations/create", function( data ) {
+// var newEventSubmitted = function() {
+//   $(".submitOrganizationLocation").submit(function( event ) {
+//     event.preventDefault();
+//     console.log("here");
+//     $.post( "/locations/create", function( data ) {
 
-     alert("WORKS!!!");
+//      alert("WORKS!!!");
 
-    });
-  });
-}
+//     });
+//   });
+// }
 
 $(document).ready(getOrgsMap);
 $(document).on('page:load', getOrgsMap);
@@ -181,6 +182,6 @@ $(document).on('page:load', getOrgsMap);
 $(document).ready(rerenderWithZipcode);
 $(document).on('page:load', rerenderWithZipcode);
 
-$(document).ready(newEventSubmitted);
-$(document).on('page:load', newEventSubmitted);
+// $(document).ready(newEventSubmitted);
+// $(document).on('page:load', newEventSubmitted);
 
