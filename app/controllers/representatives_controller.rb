@@ -2,6 +2,7 @@ class RepresentativesController < ApplicationController
   layout 'action_toolkit'
 
   def index
+
     if params[:latitude]
       @response = Sunlight_Foundation.response(params[:latitude], params[:longitude])
     else
@@ -21,7 +22,12 @@ class RepresentativesController < ApplicationController
   end
 
   def find_by_state
+    @us_states       = us_states
     @representatives = Representative.all.to_a
+  end
+
+  def state_results
+    p params
   end
 
 end

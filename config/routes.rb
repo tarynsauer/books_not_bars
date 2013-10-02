@@ -14,6 +14,8 @@ CurrentBooksBar::Application.routes.draw do
 
   get '/legislators/find_by_state' => "representatives#find_by_state"
 
+  post '/legislators/state_results' => "representatives#state_results"
+
   get '/organizations/show_for_map' => "organizations#show_for_map"
 
   resources :organizations
