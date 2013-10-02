@@ -102,6 +102,27 @@ var linkStyler = function() {
   });
 };
 
+var fadeSlideIn = function(toShow){
+  // fade out all slides that aren't this selector
+  $("#factPanel2").children().not('[style="display: none;"]').fadeOut(4000, function(){
+    $(toShow).fadeIn(100);
+  })
+}
+
+var animateCaro = function() {
+  // loop through each of these classes
+  var nextFrameIndex = 0;
+  var frames = [".nycprice", ".incrate", ".earlyed", ".earlyed2"];
+  window.caroAnimate = setInterval(function() {
+    nextFrameIndex += 1;
+    if(nextFrameIndex ==frames.length) {
+      nextFrameIndex = 0;
+    }
+
+    fadeSlideIn(frames[nextFrameIndex]);
+  }, 4100);
+
+}
 var fadeCaro = function(){
   $('.nycprice').fadeOut(4000, function() {
     $('.incrate').fadeIn(100, function(){
@@ -133,7 +154,7 @@ $(document).ready(function() {
   linkTransition();
   // Link Styler Function
   linkStyler();
-   fadeCaro();
+  animateCaro();
 
 });
 
