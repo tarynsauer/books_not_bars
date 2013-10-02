@@ -1,0 +1,10 @@
+<%= form_for @location do |f| %>
+  Title: <%= f.text_field :title %><br />
+  Organization name: <%= f.text_field :organization_name %><br />
+  Address: <%= f.text_field :address_street %><br />
+  City: <%= f.text_field :city %> State: <%= f.text_field :state %> Zipcode: <%= f.text_field :zipcode %> <br />
+  Description: <%= f.text_area :description %><br />
+  Website: <%= f.url_field :website %><br />
+  Twitter handle: <%= f.text_field :twitter_handle %><br />
+  <%= f.submit :class => "submitOrganizationLocation" %>
+<% end %>

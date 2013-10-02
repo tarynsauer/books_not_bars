@@ -12,7 +12,11 @@ CurrentBooksBar::Application.routes.draw do
 
   get '/legislators' => "representatives#index"
 
-  get '/organizations' => "organizations#index"
+  get '/organizations/show_for_map' => "organizations#show_for_map"
+
+  resources :organizations
+
+  resources :locations
 
   get '/map' => "map#index"
 
