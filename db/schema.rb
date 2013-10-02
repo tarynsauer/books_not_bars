@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 20130925234149) do
     t.integer  "whites_in_prison_per100k"
     t.integer  "latinos_in_prison_per100k"
     t.integer  "blacks_in_prison_per100k"
+    t.float    "spending_ratio"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
