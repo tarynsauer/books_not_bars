@@ -6,8 +6,6 @@ gem 'rails', '4.0.0'
 # # Use postgresql as the database for Active Record
 gem 'pg'
 
-
-
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 
@@ -35,6 +33,11 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+group :development, :test do
+	gem "rspec-rails", '~>2.0'
+	gem "capybara"
+end
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
@@ -52,5 +55,7 @@ gem 'rails_12factor', group: :production
 
 # Loads environment variables
 gem "figaro"
+
 gem 'jasmine-rails', group: [:development, :test]
+
 #gem 'jasmine-jquery-rails', group: [:development, :test]
