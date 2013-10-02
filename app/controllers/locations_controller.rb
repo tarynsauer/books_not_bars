@@ -2,10 +2,7 @@ class LocationsController < ApplicationController
   layout 'location'
 
   def index
-  end
-
-  def new
-    @location = Location.new
+    @locations = Location.all.to_a
   end
 
   def create
@@ -22,8 +19,25 @@ class LocationsController < ApplicationController
     redirect_to @location
   end
 
+  def new
+    @location = Location.new
+  end
+
+  def edit
+    @location = Location.find(params[:id])
+  end
+
   def show
     @location = Location.find(params[:id])
+  end
+
+  def update
+    @location = Location.find(params[:id])
+    @location.update(params[:location])
+  end
+
+  def destroy
+    @location.destroy
   end
 
   private
