@@ -10,7 +10,7 @@ class CreateLocations < ActiveRecord::Migration
       t.string :state
       t.string :zipcode
       t.text :full_description
-      t.string :description
+      t.text :description
       t.string :website
       t.string :twitter_handle
 

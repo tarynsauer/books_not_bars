@@ -32,11 +32,14 @@ class LocationsController < ApplicationController
   end
 
   def update
+    params.permit!
     @location = Location.find(params[:id])
     @location.update(params[:location])
+    redirect_to @location
   end
 
   def destroy
+    @location = Location.find(params[:id])
     @location.destroy
   end
 
