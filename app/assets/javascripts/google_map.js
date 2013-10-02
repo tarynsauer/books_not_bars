@@ -22,7 +22,7 @@ var getCoordinatesFromAddress = function(markers) {
           deferred.resolve();
         });
 
-        })();
+      })();
     }
   }
 
@@ -164,11 +164,16 @@ var getOrgsMap = function() {
   }
 };
 
-// var newEventSubmitted = function() {
-//   $(".submitOrganizationLocation").click(function( event ) {
-//     console.log(";alksdjfl;aksdjfl;skdjf");
-//   });
-// }
+var newEventSubmitted = function() {
+  $(".submitOrganizationLocation").click(function( event ) {
+    event.preventDefault();
+    $.post( "/locations/create", function( data ) {
+
+     alert("WORKS!!!");
+
+    });
+  });
+}
 
 $(document).ready(getOrgsMap);
 $(document).on('page:load', getOrgsMap);
@@ -176,6 +181,6 @@ $(document).on('page:load', getOrgsMap);
 $(document).ready(rerenderWithZipcode);
 $(document).on('page:load', rerenderWithZipcode);
 
-// $(document).ready(newEventSubmitted);
-// $(document).on('page:load', newEventSubmitted);
+$(document).ready(newEventSubmitted);
+$(document).on('page:load', newEventSubmitted);
 

@@ -9,6 +9,9 @@ class LocationsController < ApplicationController
     params.permit!
     @location = Location.new(params[:location])
 
+    # Use Google javascript method to get lat/long coordinates based on the address provided
+    # Save the lat/longitude to the database
+
     # Formats location for Google maps info window
     if @location.zipcode || (@location.address_street && @location.city && @location.state)
       format_address_for_map(@location)
