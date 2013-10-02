@@ -16,7 +16,7 @@ csv.each do |row|
   state = State.create!(row.to_hash)
 
   if state.edu_per_capita && state.inc_per_capita
-    ratio = state.edu_per_capita.to_f/state.inc_per_capita
+    ratio = state.inc_per_capita.to_f/state.edu_per_capita
     ratio2 = ratio.round(2)
     state.update_attributes(:spending_ratio => ratio2)
   end
