@@ -6,18 +6,17 @@ CurrentBooksBar::Application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'welcome#index'
 
-  # Example of regular route:
-
-  # get 'products/:id' => 'catalog#view'
-  # get '/animation' => 'animation'
-
   post '/update' => 'welcome#update'
 
   post '/map/update' => 'map#update'
 
   get '/legislators' => "representatives#index"
 
-  get '/organizations' => "organizations#index"
+  get '/organizations/show_for_map' => "organizations#show_for_map"
+
+  resources :organizations
+
+  resources :locations
 
   get '/map' => "map#index"
 
@@ -25,7 +24,11 @@ CurrentBooksBar::Application.routes.draw do
 
   get '/rerender' => "organizations#rerender"
 
+  get '/mobile' => "mobile#index"
+
+
   mount JasmineRails::Engine => "/specs" if defined?(JasmineRails)
+
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 

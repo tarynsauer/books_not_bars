@@ -37,14 +37,13 @@ var makeMarkers = function(markers) {
   var markers_array = [];
 
   if (markers) {
-    console.log("here")
     for (var i = 0; i < markers.length; i++) {
       var details = markers[i];
       markers[i] = new google.maps.Marker({
         title: details.name,
-        position: details.address_location,
-        // position: new google.maps.LatLng(
-        //     details.location[0], details.location[1]),
+        // position: details.address_location,
+        position: new google.maps.LatLng(
+            details.position[0], details.position[1]),
         map: map,
         description: details.description
       });
@@ -120,7 +119,14 @@ var getOrgsMap = function() {
                                          position.coords.longitude);
 
     // Gets markers array from markers_array.js file
-    getCoordinatesFromAddress(markers);
+    // getCoordinatesFromAddress(markers);
+
+    $.get( "/organizations/show_for_map", function( response ) {
+
+      var markers_array = makeMarkers(response.markers);
+
+      makeInfoWindow(markers_array);
+    });
 
     map.setCenter(pos);
     map.panBy(0,-110);
@@ -158,9 +164,18 @@ var getOrgsMap = function() {
   }
 };
 
+// var newEventSubmitted = function() {
+//   $(".submitOrganizationLocation").click(function( event ) {
+//     console.log(";alksdjfl;aksdjfl;skdjf");
+//   });
+// }
+
 $(document).ready(getOrgsMap);
 $(document).on('page:load', getOrgsMap);
 
 $(document).ready(rerenderWithZipcode);
 $(document).on('page:load', rerenderWithZipcode);
+
+// $(document).ready(newEventSubmitted);
+// $(document).on('page:load', newEventSubmitted);
 

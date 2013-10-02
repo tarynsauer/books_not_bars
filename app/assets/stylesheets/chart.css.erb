@@ -16,7 +16,7 @@ input,
 select,
 textarea {
     color: #222;
-    overflow-x: hidden; 
+    overflow-x: hidden;
 }
 
 html {
@@ -190,7 +190,7 @@ color: white;
 }
 
 section#explore {
-  background-color: rgba(218,33,50,1); 
+  background-color: rgba(218,33,50,1);
 }
 
 section#toolkit{
@@ -199,7 +199,7 @@ background-color: white;
 }
 
 section#situation{
-  background: url(edubg1.jpg) no-repeat center center; 
+  background: url(edubg1.jpg) no-repeat center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -253,7 +253,7 @@ section#anecdote >  h1{
   color: rgba(255,255,255,1);
   font-family: 'FuturaNDBook';
   font-weight: 100;
-  font-size: 60px;
+  font-size: 52px;
   margin: 0px;
   position: relative;
   top:90px;
@@ -292,7 +292,9 @@ section#explore > div#vmap{
   height: 75%; width: 75%;
   opacity: 0.9;
   top: 13%;
+  left:15%;
 }
+.title{font-size: 1.8em;}
 
 section#explore > div#vmap > svg > g > path{
   -webkit-filter: drop-shadow(0px 10px 0px rgba(255,255,255,1),
@@ -303,7 +305,7 @@ section#explore > div#vmap > svg > g > path{
 
 section#explore > div#vmap.display{
   -webkit-transform: translateY(50px) translateZ(200px) rotateX(65deg);
-    display: table; 
+    display: table;
     text-align: center;
 }
 
@@ -363,6 +365,7 @@ section#explore > div.stats ul > li > p{
   margin: 4px 18px;
 }
 
+
 section#explore > div#chart_holder{
   padding:10px;
   width: 250px;
@@ -413,7 +416,7 @@ button#close{
 }
 
 section#facts{
-  background: url(sadInPrisonBW.jpeg) no-repeat center center; 
+  background: url(sadInPrisonBW.jpeg) no-repeat center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -430,7 +433,7 @@ section#facts > div.intro{
 }
 
 .factPanel {
-  top: 10%;
+  top: 19%;
   margin-left: 30%;
   margin-right: 20%;
   position: absolute;
@@ -439,10 +442,80 @@ section#facts > div.intro{
 .factPanel div {
   border: 0px solid white;
   display: inline-block;
-  height: 500px;
-  width: 880px;
+  height: 700px;
+  width: 920px;
   margin: 20px;
 }
+
+.fact-red{
+  color: rgba(218,33,50,1);
+  font-size: 5em;
+  border-top: 1px solid white;
+  border-bottom: 1px solid white;
+
+}
+
+.fact-red2{
+  color: rgba(218,33,50,1);
+  font-size: 5em;
+  /*border-top: 1px solid white;
+  border-bottom: 1px solid white;
+*/
+}
+
+.fact-redbs{
+  color: rgba(218,33,50,1);
+  font-size: 3.5em;
+  border-left: 1px solid white;
+  border-right: 1px solid white;
+  padding: 20px;
+
+}
+.big{
+  font-size: 1.5em
+
+}
+
+.earlyed2 ul{
+  list-style: none;
+}
+
+.earlyed2 ul li{
+  display: inline-block;
+}
+.bigtext{
+  font-size: 2em;
+}
+.fact-blue{
+  color: rgba(218,33,50,1);
+  font-size: 5em;
+
+}
+
+div .cols1 {
+  display:inline-block;
+  width:20%;
+}
+
+div .hidden{
+  display:none;
+}
+.icons{
+  background-image: url(<%= asset_path 'circle-dashed-6-xxl.png' %>);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 10px;
+  width: 10px;
+}
+
+.testMain {
+  width:350px;
+  border:solid 1px;
+  color: white;
+  border:solid 1px;
+}
+
+
 
 /* ==========================================================================
    SVG Styles
@@ -518,7 +591,7 @@ section#facts > div.intro{
 
 /* ==========================================================================
    Helper classes
-   ========================================================================== 
+   ==========================================================================
 
 /*
  * Image replacement
