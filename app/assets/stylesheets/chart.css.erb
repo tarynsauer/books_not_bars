@@ -216,6 +216,7 @@ section#situation > div.intro{
 }
 section#situation > div.intro h1.main{
   font-family: 'FuturaNDBook';
+  font-weight: 100;
   font-size: 80px;
   margin: 0;
   text-shadow: 0 0 2px rgba(255,255,255,1), 0 0 2px rgba(255,255,255,1), 0 0 2px rgba(255,255,255,1), 0 0 3px rgba(218,33,50,0.7), 0 0 3px rgba(218,33,50,0.7), 0 0 3px rgba(218,33,50,0.7), 0 0 3px rgba(218,33,50,0.7), 0 0 3px rgba(218,33,50,0.7);
@@ -233,30 +234,35 @@ section#situation button{
 
 section#explore{
   position: relative;
-
 }
-section#explore > div.about{
+section#anecdote{
+  background: rgba(21,21,21,1);
+}
+section#anecdote > div.about{
   position: absolute;
   top:300px;
-  left: 350px;
-  width: 450px;
+  left: 750px;
+  width: 650px;
   height: auto;
   color: rgba(254,254,254,0.9);
   font-family: 'Dist', sans-serif;
   font-weight: 100;
 }
-section#explore >  h1{
+
+section#anecdote >  h1{
   color: rgba(255,255,255,1);
   font-family: 'FuturaNDBook';
+  font-weight: 100;
   font-size: 52px;
   margin: 0px;
   position: relative;
-  top:80px;
-  left: 350px;
+  top:90px;
+  left: 450px;
   text-shadow: 0 0 2px rgba(255,255,255,1), 0 0 2px rgba(255,255,255,1), 0 0 2px rgba(255,255,255,1), 0 0 3px rgba(21,21,21,0.7), 0 0 3px rgba(21,21,21,0.7), 0 0 3px rgba(21,21,21,0.7), 0 0 3px rgba(21,21,21,0.7), 0 0 3px rgba(21,21,21,0.7);
 }
-section#explore > div.about p{
-  font-size: 18px;
+section#anecdote > div.about p{
+  font-size: 20px;
+  line-height: 30px;
 }
 
 /* ==========================================================================
@@ -279,13 +285,13 @@ section#explore {
 }
 
 section#explore > div#vmap{
-  -webkit-transform-origin: bottom center;
+  -webkit-transform-origin: center center;
   -webkit-transform-style: preserve-3d;
   -webkit-transition: all 1s ease-in-out;
   margin: 0 auto;
-  height: 55%; width: 55%;
+  height: 75%; width: 75%;
   opacity: 0.9;
-  top: 20%;
+  top: 13%;
   left:15%;
 }
 .title{font-size: 1.8em;}
@@ -305,46 +311,67 @@ section#explore > div#vmap.display{
 
 
 section#explore > div.stats{
-  text-align: right;
+  text-align: left;
   color: rgba(240,242,241,0.8);
-  background: rgba(21,21,21,1);
+  /*background: rgba(21,21,21,1);*/ 
   position: absolute;
-  width: 230px;
-  height: 100%;
+  width: auto;
+  height: 100px;
   top: 0;
   right:0;
   padding:0 0 0 0; margin: 0;
 }
 section#explore > div.stats > ul {
-  padding:80px 0 0; margin: 0;
-  text-align: right;
+  padding:120px 0 0 ; margin: 0;
+  text-align: left;
   font-size: 14px;
   height: 300px;
+  width: 250px;
+  margin: 0 30px 0 0;
 }
 section#explore > div.stats ul > li{
   list-style: none;
   padding:5px 0;
   border-bottom: #ccc inset 1px;
   border-top: #ccc inset 1px;
-  text-align: right;
+  text-align: left;
   width: 100%;
+  /*display: inline;*/
 }
 
-section#explore > div.stats ul > li:last-child{
-  /*border: none;*/
-  /*padding-top: 80px;*/
+section#explore > div.ranking{
+  position: absolute;
+  bottom:0px;
+  left:0px;
+  color: rgba(255,255,255,1);
+  height: auto;
+  width: auto;
+  background: rgba(21,21,21,0.5);
+
+  padding:0px 5px 10px;
 }
 
-
+section#explore > div.ranking > ol > li{
+  float:left;
+  margin: 0 20px;
+  font-size: 13px;
+}
+section#explore > div.ranking > ol > li > span{
+  color:(21,21,21,1);
+}
 section#explore > div.stats ul > li > h3,
 section#explore > div.stats ul > li > p{
   display: inline;
   margin: 4px 18px;
 }
 
-section#explore > div.stats > ul > div#chart_holder{
 
+section#explore > div#chart_holder{
   padding:10px;
+  width: 250px;
+  right: 10px;
+  position: absolute;
+  bottom: 200px;
 }
 
 section#explore > div.stats > ul > div#chart_holder{
@@ -379,11 +406,11 @@ section#explore > div#vmap > .arc_show{
 button#close{
   border: none;
   border-radius: none;
-  width: 200px;
+  width: 250px;
   height: 50px;
   background: rgba(21,21,21,1);
   position: absolute;
-  bottom:10%; left:350px;
+  top:5%; right:30px;
   z-index:999;
   color:rgba(240,242,241,0.95);
 }
@@ -404,6 +431,7 @@ section#facts > div.intro{
   font-family: 'Dist', sans-serif;
   font-weight: 100;
 }
+
 .factPanel {
   top: 19%;
   margin-left: 30%;
@@ -494,13 +522,12 @@ div .hidden{
    ========================================================================== */
 
 .chart text {
-    fill: rgba(218,33,50,1);
+    fill: rgba(21,21,21,1);
 }
 
 
 .chart rect {
-  stroke: none;
-  fill: rgba(210,210,210,0.9);
+  fill: rgba(255,255,255,0.9);
 }
 
 
@@ -546,15 +573,9 @@ div .hidden{
 
 .arc text{fill: rgba(250,250,250,1);}
 
-  /*fill: #ccc;*/
-  /*stroke: #000;*/
-  /*stroke-dasharray: 3, 4;*/
-/*}*/
-
 .arc path {
   shape-rendering: auto;
 }
-
 
 .axis text {
   font: 10px sans-serif;
@@ -563,7 +584,7 @@ div .hidden{
 .axis line,
 .axis path {
   fill: none;
-  stroke: #000;
+  /*stroke: #000;*/
   shape-rendering: crispEdges;
 }
 
