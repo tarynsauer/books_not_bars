@@ -8,13 +8,13 @@ class MapController < ApplicationController
   end
 
   def update
-
         
     p state_obj = State.where(name: params[:state])
 
     state_obj = State.where(name: params[:state])
 
     my_obj = state_obj[0]
+    
     if request.xhr?
      render json: { stats: my_obj }
     end
