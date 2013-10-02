@@ -152,6 +152,17 @@ var buttonCaro = function(selector){
 
 };
 
+var flipTile = function(jqSelector){
+  var self = $(jqSelector);
+
+  var tile = self.liveTile({ repeatCount: 0, delay: 0});
+      self.liveTile("pause");
+    self.click(function(){
+      $(this).liveTile("play", 0);
+    });
+
+};
+
 
 // ========================ON DOCUMENT LOAD======================
 
@@ -162,7 +173,10 @@ $(document).ready(function() {
   // Link Styler Function
   linkStyler();
   // animateCaro();
-  slideCaro();
-
+  // slideCaro();
+  flipTile('#fact1');
+  flipTile('#fact2');
+  flipTile('#fact3');
+  flipTile('#fact4');
 });
 
