@@ -108,8 +108,12 @@ var fadeCaro = function(){
       $('.incrate').fadeOut(4000, function() {
         $('.earlyed').fadeIn(100, function(){
           $('.earlyed').fadeOut(4000, function() {
-            $('.nycprice').fadeIn(100, function(){
-              fadeCaro();
+            $('.earlyed2').fadeIn(100, function(){
+              $('.earlyed2').fadeOut(4000, function() {
+                $('.nycprice').fadeIn(100, function(){
+                  fadeCaro();
+                });
+              });
             });
           });
         });
