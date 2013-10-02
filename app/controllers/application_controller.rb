@@ -16,6 +16,8 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  # REVIEW(RCB): based on the usage of these two methods, they should probably be model methods on
+  #   Location and then called via callbacks before save
   def format_address_for_map(location)
     location.full_address = "#{location.address_street}, #{location.city}, #{location.state} #{location.zipcode}"
   end
