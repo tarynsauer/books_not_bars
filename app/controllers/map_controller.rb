@@ -8,7 +8,6 @@ class MapController < ApplicationController
   end
 
   def update
-
         
     p state_obj = State.where(name: params[:state])
 

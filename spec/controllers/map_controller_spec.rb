@@ -15,9 +15,9 @@ describe MapController do
 	  		params = {}
 	    	params['state'] = "Northumbria"
 
-	  		northU = State.new(name: "Northumbria")
+	  		# northU = State.new(name: "Northumbria")
 
-	  		State.should_receive(:where).with(name: "Northumbria").and_return (northU)
+	  		# State.should_receive(:where).with(name: "Northumbria").and_return (northU)
 
 	  		xhr :post, :update, params
 
