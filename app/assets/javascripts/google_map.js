@@ -26,12 +26,12 @@
 //     }
 //   }
 
-  $.when.apply($, deferreds).done(function() {
-    var markers_array = makeMarkers(markers_list);
-    makeInfoWindow(markers_array);
-  })
+//   $.when.apply($, deferreds).done(function() {
+//     var markers_array = makeMarkers(markers_list);
+//     makeInfoWindow(markers_array);
+//   })
 
-}
+// }
 
 var makeMarkers = function(markers) {
   var markers_array = [];
@@ -40,12 +40,11 @@ var makeMarkers = function(markers) {
     for (var i = 0; i < markers.length; i++) {
       var details = markers[i];
       markers[i] = new google.maps.Marker({
-        title: details.name,
-        // position: details.address_location,
+        title: details.title,
         position: new google.maps.LatLng(
-            details.position[0], details.position[1]),
+            details.latitude, details.longitude),
         map: map,
-        description: details.description
+        description: details.full_description
       });
       markers_array.push(markers[i]);
     }
@@ -164,24 +163,9 @@ var getOrgsMap = function() {
   }
 };
 
-// var newEventSubmitted = function() {
-//   $(".submitOrganizationLocation").submit(function( event ) {
-//     event.preventDefault();
-//     console.log("here");
-//     $.post( "/locations/create", function( data ) {
-
-//      alert("WORKS!!!");
-
-//     });
-//   });
-// }
-
 $(document).ready(getOrgsMap);
 $(document).on('page:load', getOrgsMap);
 
 $(document).ready(rerenderWithZipcode);
 $(document).on('page:load', rerenderWithZipcode);
-
-// $(document).ready(newEventSubmitted);
-// $(document).on('page:load', newEventSubmitted);
 
