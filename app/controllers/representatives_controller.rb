@@ -2,7 +2,11 @@ class RepresentativesController < ApplicationController
   layout 'action_toolkit'
 
   def index
-    @response = Sunlight_Foundation.response(params[:latitude], params[:longitude])
+    if params[:latitude]
+      @response = Sunlight_Foundation.response(params[:latitude], params[:longitude])
+    else
+      @response = Sunlight_Foundation.response(params[:latitude2], params[:longitude2])
+    end
     display_legislators_info(@response)
   end
 
