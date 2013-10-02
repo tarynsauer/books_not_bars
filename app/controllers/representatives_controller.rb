@@ -7,12 +7,21 @@ class RepresentativesController < ApplicationController
     else
       @response = Sunlight_Foundation.response(params[:latitude2], params[:longitude2])
     end
-    display_legislators_info(@response)
+
+    if @response["error"].empty? == false
+      redirect_to legislators_find_by_state_path
+    else
+      display_legislators_info(@response)
+    end
   end
 
   def zipcode
     @response = Sunlight_Foundation.response_by_zipcode(params[:zipcode])
     display_legislators_info(@response)
+  end
+
+  def find_by_state
+    @representatives = Representative.all.to_a
   end
 
 end

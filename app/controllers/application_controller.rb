@@ -7,7 +7,9 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   def display_legislators_info(response_data)
-    if response_data["results"].empty?
+    if response_data["error"].empty? == false
+      # handle Sunlight API error
+    elsif response_data["results"].empty?
       nil
     else
       state = State.where(name: response_data["results"].first["state_name"]).first
