@@ -146,6 +146,26 @@ var fadeCaro = function(){
 var slideCaro = function(){
   $(".live-tile, .flip-list").not(".exclude").liveTile();
 };
+
+var buttonCaro = function(selector){
+  $()
+
+};
+
+var flipTile = function(jqSelector){
+  var self = $(jqSelector);
+
+  var tile = self.liveTile({ repeatCount: 0, delay: 0});
+      self.liveTile("pause");
+    self.click(function(){
+      $(this).liveTile("play", 0);
+    });
+
+};
+
+
+!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+
 // ========================ON DOCUMENT LOAD======================
 
 $(document).ready(function() {
@@ -155,6 +175,12 @@ $(document).ready(function() {
   // Link Styler Function
   linkStyler();
   // animateCaro();
+  // slideCaro();
+  flipTile('#fact1');
+  flipTile('#fact2');
+  flipTile('#fact3');
+  flipTile('#fact4');
 
+  !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
 });
 
