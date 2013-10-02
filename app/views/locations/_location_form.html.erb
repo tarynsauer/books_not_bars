@@ -1,10 +1,12 @@
-<%= form_for @location do |f| %>
-  Title: <%= f.text_field :title %><br />
-  Organization name: <%= f.text_field :organization_name %><br />
-  Address: <%= f.text_field :address_street %><br />
-  City: <%= f.text_field :city %> State: <%= f.text_field :state %> Zipcode: <%= f.text_field :zipcode %> <br />
-  Description: <%= f.text_area :description %><br />
-  Website: <%= f.url_field :website %><br />
-  Twitter handle: <%= f.text_field :twitter_handle %><br />
-  <%= f.submit :class => "submitOrganizationLocation" %>
+<div class="locationForm">
+<%= form_for @location, :html => {:class => "submitOrganizationLocation"} do |f| %>
+  <p><%= f.label :title %> <%= f.text_field :title %></p>
+  <p><%= f.label :organization_name %> <%= f.text_field :organization_name %></p>
+  <p><%= f.label :address_street %> <%= f.text_field :address_street %><br />
+  <p><%= f.label :city %> <%= f.text_field :city %> <%= f.label :state %> <%= f.text_field :state %> <%= f.label :zipcode %> <%= f.text_field :zipcode %></p>
+  <p><%= f.label :description %> <%= f.text_area :description %></p>
+  <p><%= f.label :website %> <%= f.url_field :website %></p>
+  <p><%= f.label :twitter_handle %> <%= f.text_field :twitter_handle %></p>
+  <p><%= f.submit :class => "submitOrganizationLocation" %></p>
 <% end %>
+</div>
