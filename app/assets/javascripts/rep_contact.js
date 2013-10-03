@@ -41,6 +41,7 @@ var getZipcode = function() {
 
 var findByZipcode = function() {
   $("#findByZipcode").click(function( event ) {
+    console.log("test");
     event.preventDefault();
     $('.legislators-contact-info').hide();
     $('#findByZipcode').hide();
