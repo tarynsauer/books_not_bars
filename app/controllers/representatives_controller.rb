@@ -9,7 +9,7 @@ class RepresentativesController < ApplicationController
       @response = Sunlight_Foundation.response(params[:latitude2], params[:longitude2])
     end
 
-    if @response["error"].empty? == false
+    if @response["error"]
       redirect_to legislators_find_by_state_path
     else
       display_legislators_info(@response)
@@ -22,12 +22,15 @@ class RepresentativesController < ApplicationController
   end
 
   def find_by_state
-    @us_states       = us_states
-    @representatives = Representative.all.to_a
+    @us_states = us_states
   end
 
-  def state_results
-    p params
+  def show_by_state
+    @representatives = Representative.where(state: params[:state])
+    p @representatives
+    p "x" * 100
+    @state = State.where(postal_abbrev: params[:state]).first
+    state_messages(@state.name)
   end
 
 end

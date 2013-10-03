@@ -6,15 +6,20 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
+  def state_messages(state_name)
+    state = State.where(name: state_name).first
+    @message = "It's not OK that " + state.name + " spends $" + state.inc_per_capita.to_s + " to incarcerate an inmate per year and only $" + state.edu_per_capita.to_s + " to educate each pupil."
+    @form_message = @message + " Please work for prison and education spending reform. I support BooksNotBars."
+  end
+
   def display_legislators_info(response_data)
-    if response_data["error"].empty? == false
+    if response_data["error"]
       # handle Sunlight API error
+      return
     elsif response_data["results"].empty?
       nil
     else
-      state = State.where(name: response_data["results"].first["state_name"]).first
-      @message = "It's not OK that " + state.name + " spends $" + state.inc_per_capita.to_s + " to incarcerate an inmate per year and only $" + state.edu_per_capita.to_s + " to educate each pupil."
-      @form_message = @message + " Please work for prison and education spending reform. I support BooksNotBars."
+      state_messages(response_data["results"].first["state_name"])
     end
   end
 
@@ -63,7 +68,6 @@ class ApplicationController < ActionController::Base
       ['Oklahoma', 'OK'],
       ['Oregon', 'OR'],
       ['Pennsylvania', 'PA'],
-      ['Puerto Rico', 'PR'],
       ['Rhode Island', 'RI'],
       ['South Carolina', 'SC'],
       ['South Dakota', 'SD'],
@@ -77,5 +81,5 @@ class ApplicationController < ActionController::Base
       ['Wisconsin', 'WI'],
       ['Wyoming', 'WY']
     ]
-end
+  end
 end
