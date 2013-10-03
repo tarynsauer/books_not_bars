@@ -2,8 +2,8 @@
   	<div id='toolkitPanel'>
 	  	<div class="toolkitIcon" id="reps">
 		    <%= form_tag("/legislators", method: "get") do %>
-		      <%= hidden_field_tag(:latitude) %>
-		      <%= hidden_field_tag(:longitude) %>
+		      <%= hidden_field_tag(:latitude2) %>
+		      <%= hidden_field_tag(:longitude2) %>
 		      <%= image_submit_tag 'tweetCongressBlueOnWhite.png', id: "contactReps" %>
 		    <% end %>
 		    <span id="iconClear"></span>

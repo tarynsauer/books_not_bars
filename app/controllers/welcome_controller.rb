@@ -11,6 +11,8 @@ class WelcomeController < ApplicationController
     # render :index
   end
 
+  # REVIEW (RCB): Is this action used? I don't see a reference to it
+  #   If not, I recommend removing the code and routes
   def update
         
     p state_obj = State.where(name: params[:state])
