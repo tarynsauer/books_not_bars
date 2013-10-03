@@ -41,11 +41,11 @@ var getZipcode = function() {
 
 var findByZipcode = function() {
   $("#findByZipcode").click(function( event ) {
-    console.log("test");
     event.preventDefault();
     $('.legislators-contact-info').hide();
     $('#findByZipcode').hide();
     $('.zipcode-form').first().show();
+    $('.contactWrapper div.contactResultsContainer').remove();
 
     $(document).ready(getZipcode);
     $(document).ready(findByZipcode);
