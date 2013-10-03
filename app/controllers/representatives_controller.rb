@@ -1,5 +1,5 @@
 class RepresentativesController < ApplicationController
-  layout 'action_toolkit'
+  layout 'representatives'
 
   def index
 

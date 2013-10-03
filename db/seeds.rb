@@ -35,6 +35,17 @@ representatives_csv.each do |row|
   Representative.create!(row.to_hash)
 end
 
+def format_info_window_text(location)
+  location.full_description = "<h1 id='firstHeading' class='firstHeading'>#{location.title}</h1><div id='infoWindow'><p><b>#{location.address_street}</b><p>#{location.description}</p><p>For more information, visit <a href='#{location.website}' target='_blank'>#{location.website}</a>.</p><p><a href='https://twitter.com/intent/tweet?screen_name=#{location.twitter_handle}&text=Much%20love%20for%20&hashtags=#{location.twitter_handle},booksnotbars' class='twitter-mention-button' data-lang='en'>Tweet to @#{location.twitter_handle}</p>"
+end
+
+locations_text = File.read('db/locations_data.csv')
+locations_csv = CSV.parse(locations_text, :headers => true)
+locations_csv.each do |row|
+  location = Location.create!(row.to_hash)
+  format_info_window_text(location)
+  location.save
+end
 
 # states = State.all
 # states.each do |state|
