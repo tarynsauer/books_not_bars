@@ -173,7 +173,9 @@ header h1.logo{
   text-shadow: 0 0 2px rgba(21,21,21,1), 0 0 2px rgba(21,21,21,1), 0 0 2px rgba(21,21,21,1), 0 0 3px rgba(218,33,50,0.7), 0 0 3px rgba(218,33,50,0.7), 0 0 3px rgba(218,33,50,0.7), 0 0 3px rgba(218,33,50,0.7), 0 0 3px rgba(218,33,50,0.7);
 }
 .cover{
-  background: url('blackorchid.png') repeat;
+  background-image: url(<%= asset_path 'blackorchid.png' %>);
+  background-repeat: repeat;
+  /*background: url('blackorchid.png') repeat;*/
   position: absolute;
   top: 0;
   height: 100%; width: 100%;
@@ -476,7 +478,9 @@ button#close{
 }
 
 section#facts{
-  background: url(sadInPrisonBW.jpeg) no-repeat center center;
+  background-image: url(<%= asset_path 'sadInPrisonBW.jpeg' %>);
+  background-repeat: no-repeat;
+ /* background: center center;*/
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
