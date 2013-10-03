@@ -74,7 +74,7 @@ StackedBarChart.prototype.parseData = function(data){
   
   // data.sort(function(a, b) { return b.total_spending - a.total_spending; });
 
-  self.x.domain(data.map(function(d) { return d.abrev; }));
+  self.x.domain(data.map(function(d) { return d.postal_abbrev; }));
   self.y.domain([0, d3.max(data, function(d) { return d.total_spending; })]);
   
   self.svg.append("g")
@@ -96,7 +96,7 @@ StackedBarChart.prototype.parseData = function(data){
       .data(data)
     .enter().append("rect")
       .attr("class", "bar")
-      .attr("x", function(d) { return self.x(d.abrev); })
+      .attr("x", function(d) { return self.x(d.postal_abbrev); })
       .attr("width", self.x.rangeBand())
       .attr("y", function(d) { return self.y(d.total_spending); })
       .attr("height", function(d) { return 0; })

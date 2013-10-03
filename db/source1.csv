@@ -1,4 +1,4 @@
-abrev,name,edu_per_capita,inc_per_capita,whites_in_prison_per100k,blacks_in_prison_per100k,latinos_in_prison_per100k
+postal_abbrev,name,edu_per_capita,inc_per_capita,whites_in_prison_per100k,blacks_in_prison_per100k,latinos_in_prison_per100k
 AL,Alabama,8813,17285,542,1916,/
 AK,Alaska,16674,,500,2163,380
 AZ,Arizona,7666,24805,590,3294,1075
