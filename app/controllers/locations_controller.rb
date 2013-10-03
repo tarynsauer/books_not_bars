@@ -20,6 +20,7 @@ class LocationsController < ApplicationController
     @location = Location.new
   end
 
+  # REVIEW(RCB): Error handling for locations that don't exist?
   def edit
     @location = Location.where(id: params[:id]).first
     if @location

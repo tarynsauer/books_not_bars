@@ -8,7 +8,8 @@ class MapController < ApplicationController
   end
 
   def update
-        
+    # REVIEW(RCB): Why are you calling this twice? This should probably just use State.first instead
+    #   Also, there doesn't appear to be any error handling.
     p state_obj = State.where(name: params[:state])
 
     state_obj = State.where(name: params[:state])

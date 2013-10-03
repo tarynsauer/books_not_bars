@@ -104,7 +104,7 @@ var linkStyler = function() {
 
 var fadeSlideIn = function(toShow){
   // fade out all slides that aren't this selector
-  $("#factPanel2").children().not('[style="display: none;"]').fadeOut(4000, function(){
+  $("#factPanel2").children().not('[style="display: none;"]').fadeOut(1000, function(){
     $(toShow).fadeIn(100);
   })
 }
