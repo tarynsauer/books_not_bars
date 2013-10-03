@@ -69,7 +69,6 @@ ActiveRecord::Schema.define(version: 20131002234149) do
   create_table "states", force: true do |t|
     t.string   "postal_abbrev"
     t.string   "name"
-    t.string   "abrev"
     t.integer  "edu_per_capita"
     t.integer  "inc_per_capita"
     t.integer  "total_spending"

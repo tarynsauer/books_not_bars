@@ -1,10 +1,12 @@
 <section id='situation'>
   <div class="cover cover_gradient"></div>
   <div class="intro center">
+    
     <h1 class="main">Books and Bars</h1>
     <h2>Misplaced dollars and misplaced priorities.</h2>
     <hr>
-    <div class="toolkitIcon" id="reps">
+
+    <div  id="reps">
       <%= form_tag("/legislators", method: "get") do %>
         <%= hidden_field_tag(:latitude) %>
         <%= hidden_field_tag(:longitude) %>
