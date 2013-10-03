@@ -25,9 +25,6 @@ class ApplicationController < ActionController::Base
 
   # REVIEW(RCB): based on the usage of these two methods, they should probably be model methods on
   #   Location and then called via callbacks before save
-  def format_address_for_map(location)
-    location.full_address = "#{location.address_street}, #{location.city}, #{location.state} #{location.zipcode}"
-  end
 
   def format_info_window_text(location)
     location.full_description = "<h1 id='firstHeading' class='firstHeading'>#{location.title}</h1><div id='infoWindow'><p><b>#{location.address_street}</b><p>#{location.description}</p><p>For more information, visit <a href='#{location.website}' target='_blank'>#{location.website}</a>.</p><p><a href='https://twitter.com/intent/tweet?screen_name=#{location.twitter_handle}&text=Much%20love%20for%20&hashtags=#{location.twitter_handle},booksnotbars' class='twitter-mention-button' data-lang='en'>Tweet to @#{location.twitter_handle}</p>"

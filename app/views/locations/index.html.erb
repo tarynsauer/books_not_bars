@@ -1,15 +1,17 @@
-<h1>Books Not Bars Organizations Manager</h1>
-<table>
-  <th>Organization</th>
-  <th>On Map?</th>
-  <th>Edit</th>
-  <th>Delete</th>
-<% @locations.each do |location| %>
-<tr>
-  <td><%= location.organization_name %></td>
-  <td><%= !location.latitude.nil? %></td>
-  <td><%= link_to 'Edit', edit_location_path(location) %></td>
-  <td><%= link_to "Delete", location, :method => :delete, :confirm => "Are you sure?" %></td>
-</tr>
-<% end %>
-</table>
+<div class="locationHome">
+  <h1>Books Not Bars Organizations Manager</h1>
+  <table>
+    <th>Organization</th>
+    <th>On Map?</th>
+    <th>Edit</th>
+    <th>Delete</th>
+  <% @locations.each do |location| %>
+  <tr>
+    <td><%= location.organization_name %></td>
+    <td><%= !location.latitude.nil? %></td>
+    <td><%= link_to 'Edit', edit_location_path(location) %></td>
+    <td><%= link_to "Delete", location, :method => :delete, :confirm => "Are you sure?" %></td>
+  </tr>
+  <% end %>
+  </table>
+</div>
