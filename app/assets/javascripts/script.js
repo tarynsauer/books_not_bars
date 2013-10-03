@@ -172,6 +172,7 @@ var tweetWidget = function() {
 
 $(document).ready(function() {
 
+  tweetWidget();
   // Link Transition Function
   linkTransition();
   // Link Styler Function
@@ -182,6 +183,6 @@ $(document).ready(function() {
   flipTile('#fact3');
   flipTile('#fact4');
 
-  tweetWidget();
+  $('.btn').html('<img class="tweetFactIcon" src="tweetCongressBlueOnWhite"/>');
 });
 
