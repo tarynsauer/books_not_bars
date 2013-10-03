@@ -109,49 +109,6 @@ var fadeSlideIn = function(toShow){
   })
 }
 
-var animateCaro = function() {
-  // loop through each of these classes
-  var nextFrameIndex = 0;
-  var frames = [".nycprice", ".incrate", ".earlyed", ".earlyed2"];
-  window.caroAnimate = setInterval(function() {
-    nextFrameIndex += 1;
-    if(nextFrameIndex ==frames.length) {
-      nextFrameIndex = 0;
-    }
-
-    fadeSlideIn(frames[nextFrameIndex]);
-  }, 4100);
-
-}
-var fadeCaro = function(){
-  $('.nycprice').fadeOut(4000, function() {
-    $('.incrate').fadeIn(100, function(){
-      $('.incrate').fadeOut(4000, function() {
-        $('.earlyed').fadeIn(100, function(){
-          $('.earlyed').fadeOut(4000, function() {
-            $('.earlyed2').fadeIn(100, function(){
-              $('.earlyed2').fadeOut(4000, function() {
-                $('.nycprice').fadeIn(100, function(){
-                  fadeCaro();
-                });
-              });
-            });
-          });
-        });
-      });
-    });
-  });
-};
-
-var slideCaro = function(){
-  $(".live-tile, .flip-list").not(".exclude").liveTile();
-};
-
-var buttonCaro = function(selector){
-  $()
-
-};
-
 var flipTile = function(jqSelector){
   var self = $(jqSelector);
 
