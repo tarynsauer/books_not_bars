@@ -4,7 +4,11 @@ class RepresentativesController < ApplicationController
   # REVIEW(RCB): No error handling. What if the Sunlight API is down? I found the issue
   #   by not having specified a Sunlight API key
   def index
-    @response = Sunlight_Foundation.response(params[:latitude], params[:longitude])
+    if params[:latitude]
+      @response = Sunlight_Foundation.response(params[:latitude], params[:longitude])
+    else
+      @response = Sunlight_Foundation.response(params[:latitude2], params[:longitude2])
+    end
     display_legislators_info(@response)
   end
 

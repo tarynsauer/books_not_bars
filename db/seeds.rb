@@ -7,15 +7,32 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 # source1array = []
 require 'csv'  
+State.delete_all
 
 csv_text = File.read('db/source1.csv')
 csv = CSV.parse(csv_text, :headers => true)
 
 csv.each do |row|
-  row.each do |item|
-    if item == nil
-      item = 0
-    end
+  state = State.create!(row.to_hash)
+
+  if state.edu_per_capita && state.inc_per_capita
+    ratio = state.inc_per_capita.to_f/state.edu_per_capita
+    ratio2 = ratio.round(2)
+    state.update_attributes(:spending_ratio => ratio2)
   end
-  State.create!(row.to_hash)
 end
+
+
+# states = State.all
+# states.each do |state|
+
+#   state.update
+# end
+
+# csv2_text = File.read('db/CrimeTrendsInOneVar.csv')
+
+# csv2 = CSV.parse(csv2_text, :headers => true)
+
+# csv2.each do |row|
+#   State.create!(row.to_hash)  
+# end

@@ -2,11 +2,16 @@
   <div class="cover cover_gradient"></div>
   <div class="intro center">
     <h1 class="main">Books and Bars</h1>
-    <h2>This is how we generate the Heat</h2>
+    <h2>Misplaced dollars and misplaced priorities.</h2>
     <hr>
-    <button>Groove to the beat</button>
-    <button>Move your feet</button>
-    <hr>
+    <div class="toolkitIcon" id="reps">
+      <%= form_tag("/legislators", method: "get") do %>
+        <%= hidden_field_tag(:latitude) %>
+        <%= hidden_field_tag(:longitude) %>
+        <%= submit_tag "Share your Opinion", id: "contactReps" %>
+      <% end %>
+    </div>
+    <%= button_to "Take Action", organizations_path, :method => :get %>    <hr>
   </div>
   <!-- <div id='situationDiv'>
     <div id="sitPic">4:1</div>

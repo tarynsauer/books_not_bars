@@ -18,17 +18,17 @@ ActiveRecord::Schema.define(version: 20131001222623) do
 
   create_table "locations", force: true do |t|
     t.string   "title"
-    t.string   "position"
     t.string   "organization_name"
-    t.string   "full_address"
     t.string   "address_street"
     t.string   "city"
     t.string   "state"
     t.string   "zipcode"
     t.text     "full_description"
-    t.string   "description"
+    t.text     "description"
     t.string   "website"
     t.string   "twitter_handle"
+    t.float    "latitude"
+    t.float    "longitude"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(version: 20131001222623) do
     t.integer  "whites_in_prison_per100k"
     t.integer  "latinos_in_prison_per100k"
     t.integer  "blacks_in_prison_per100k"
+    t.float    "spending_ratio"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

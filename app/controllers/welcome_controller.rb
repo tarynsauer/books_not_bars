@@ -4,6 +4,7 @@ class WelcomeController < ApplicationController
   protect_from_forgery with: :exception
 
   def index
+
   end
 
   # REVIEW (RCB): Is this action used? I don't see a reference to it
@@ -13,7 +14,7 @@ class WelcomeController < ApplicationController
     p state_obj = State.where(name: params[:state])
 
 
-    my_obj = state_obj[0]
+    p my_obj = state_obj[0]
     if request.xhr?
      render json: { stats: my_obj }
     end

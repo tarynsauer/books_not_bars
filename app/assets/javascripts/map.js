@@ -110,13 +110,14 @@ Map.prototype.statChange = function(){
 
         chart.render();
         chart.animateBars(2000);
-        self.assignStats(region, '$'+ data_array.edu_per_capita, '$'+ data_array.inc_per_capita)
+        self.assignStats(region, data_array.spending_ratio,'$'+ data_array.edu_per_capita, '$'+ data_array.inc_per_capita)
       })
   }); 
 }
 
-Map.prototype.assignStats = function(state, pupil_cost, inmate_cost){
+Map.prototype.assignStats = function(state, spending_ratio, pupil_cost, inmate_cost){
   $('#state').text(state)
+  $('#spending_ratio').text(spending_ratio)
   $('#inmate_cost').text(inmate_cost)
   $('#pupil_cost').text(pupil_cost)
 }

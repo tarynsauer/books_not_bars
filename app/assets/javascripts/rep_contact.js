@@ -12,6 +12,8 @@ var getGeoCoordinates = function() {
 
       $('#latitude').val(latitude);
       $('#longitude').val(longitude);
+      $('#latitude2').val(latitude);
+      $('#longitude2').val(longitude);
     };
 
     function error(err) {
