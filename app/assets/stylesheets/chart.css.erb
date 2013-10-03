@@ -565,74 +565,97 @@ div .hidden{
 .front{
   height: 300px!important;
   width: 480px!important;
-  background-color: rgba(250,250,250,0.7);
+  background-image: url('paper_fibers.png');
 }
 
 .back {
   height: 300px!important;
   width: 480px!important;
+  background-color: rgba(255,55,0,1);
 
-}
-span.tweet {
-  height: 300px!important;
 }
 
 #fact1, #fact3 {
   margin-right: 100px;
 }
 
+.live-tile:hover {
+  box-shadow: 0 0 30px white;
+}
+
 .live-tile {
   height: 300px!important;
   width: 480px!important;
+  transition: box-shadow 1s;
+  -webkit-transition: box-shadow 1s; /* Safari */
 }
 
 .question {
   display: block;
   color: black;
-  text-align: left;
-  font-size: 36px!important;
-  font-weight: bold;
+  text-align: center;
+  font-family: 'Bebas';
+  font-size: 30px!important;
+  line-height: 160%;
   padding: 25px;
-
-  letter-spacing: -1px;
+  word-spacing: 7px;
+  letter-spacing: 1px;
 }
 .answer {
-  display: inline-block;
   position: relative;
-  padding-top: 25px;
-  float: left;
-  width: 75%;
-  height: 300px;
-  background-color: rgba(255,55,0,0.9);
+  /*padding-top: 25px;*/
+  width: 100%;
+  height: 100%;
 }
 
 .answerHead {
-  text-align: center;
-  font-size: 72px!important;
+  display: block;
+  margin: 20px!important;
   line-height: 100px;
-  display: inline-block;
+  text-align: center;
+  font-family: 'Bebas';
+  font-size: 72px!important;
 }
 
 .answerBody {
+  display: block;
   padding-top: 0px!important;
-  padding-left: 30px;
-  padding-right: 30px;
-  text-align: justify;
+  padding-left: 30px!important;
+  padding-right: 30px!important;
+  line-height: 35px!important;
+  text-align: left;
+  font-family: 'Bebas';
   font-size: 22px!important;
+  word-spacing: 3px!important;
+}
+
+.factFoot {
+  display: block!important;
+  position: absolute;
+  bottom: 0px!important;
+  padding-left: 20px;
+  padding-right: 20px;
+  height: 40px!important;
+  width: 100%;
 }
 
 .source {
-  font-size: 12px;
+  display: inline-block!important;
+  position: absolute;
+  float: left;
+  font-size: .75em!important;
+  left: 10px;
 }
 
 .tweet {
-  display: inline-block;
-  position: relative;
+  display: inline-block!important;
+  position: absolute;
   float: right;
-  width: 25%;
-  height: auto;
-  background-color: rgba(250,250,250,0.7);
-  padding-top: 50%;
+  width: 110px!important;
+  height: 28px!important;
+  right: 35px;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 
