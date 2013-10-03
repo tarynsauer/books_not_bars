@@ -1,0 +1,21 @@
+    <h2>Contact your <%= @state.name %> representatives</h2>
+    <table>
+      <th>Name</th>
+      <th>Twitter</th>
+      <th>Web form</th>
+      <% @representatives.each do |rep| %>
+        <tr>
+          <% if rep.twitter_id %>
+            <td><%= rep.firstname + " " + rep.lastname %></td>
+            <td><a href="https://twitter.com/intent/tweet?screen_name=<%= rep.twitter_id %>&text=<%= @message %>&hashtags=booksnotbars"  class="twitter-mention-button" data-lang="en">Tweet to @<%= rep.twitter_id %></a>
+          <% end %>
+          </td>
+          <td><% web_form_link_text = rep.firstname + " " + rep.lastname + "'s web form" %></td>
+        <% if rep.webform %>
+        <% intro = rep.title + ". " + rep.lastname + ", "  %>
+          <td><textarea onclick="this.select();"><%= intro + @form_message %></textarea>
+          <%= link_to web_form_link_text, rep.webform, :class => "web-form-link", target: "_blank" %></td>
+        <% end %>
+        </tr>
+      <% end %>
+    </table>
