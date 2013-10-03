@@ -8,10 +8,12 @@
       <%= form_tag("/legislators", method: "get") do %>
         <%= hidden_field_tag(:latitude) %>
         <%= hidden_field_tag(:longitude) %>
-        <%= submit_tag "Share your Opinion", id: "contactReps" %>
+        <%= submit_tag "Share your Opinion", id: "contactReps", :class => 'submit_button'  %>
       <% end %>
     </div>
-    <%= button_to "Take Action", organizations_path, :method => :get %>    <hr>
+      <%= button_to "Take Action", organizations_path, :method => :get, :class => 'home_button' %>
+      <div class="clearfix"></div>
+      <hr>
   </div>
   <!-- <div id='situationDiv'>
     <div id="sitPic">4:1</div>

@@ -2,6 +2,7 @@ class OrganizationsController < ApplicationController
   layout 'action_toolkit'
 
   def index
+    render :index
   end
 
   def create
