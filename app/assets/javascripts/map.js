@@ -102,7 +102,7 @@ Map.prototype.statChange = function(){
         
         var chart = new ChartTable(40, 400, data_array);
       
-        // console.log(data_array);
+        console.log(data_array);
   
 // =================================================================
       
@@ -110,13 +110,14 @@ Map.prototype.statChange = function(){
 
         chart.render();
         chart.animateBars(2000);
-        self.assignStats(region, data_array.spending_ratio,'$'+ data_array.edu_per_capita, '$'+ data_array.inc_per_capita)
+        self.assignStats(region, data_array.spending_ratio, '$'+ data_array.total_spending, '$'+ data_array.edu_per_capita, '$'+ data_array.inc_per_capita)
       })
   }); 
 }
 
-Map.prototype.assignStats = function(state, spending_ratio, pupil_cost, inmate_cost){
+Map.prototype.assignStats = function(state, spending_ratio, total_spending, pupil_cost, inmate_cost){
   $('#state').text(state)
+  $('#total_spending').text(total_spending)
   $('#spending_ratio').text(spending_ratio)
   $('#inmate_cost').text(inmate_cost)
   $('#pupil_cost').text(pupil_cost)
@@ -127,6 +128,7 @@ ready = function() {
 
   var map = new Map('#vmap');
   map.statChange();
+
   $("#close").on('click', function(event){
     $("#vmap").attr('class', 'center');
     $('#close').hide();
