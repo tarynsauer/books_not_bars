@@ -94,9 +94,10 @@ Map.prototype.statChange = function(){
      
       self.elem.attr('class', 'display');
       $('#close').show(); 
-      $('#bar_chart_holder').show();
       $('#typo_stats').children('ul').slideDown('2000', function() {});(1000); 
-
+        
+      
+      $('#bar_chart_holder').show();
 
       $.post('/map/update',{ state: region }, function(response){
         
@@ -105,6 +106,8 @@ Map.prototype.statChange = function(){
         console.log(data_array.postal_abbrev)
         console.log(p_code)
         
+    
+
         $('.bar_two').css("fill", "rgba(21,21,21,0.9)")
         $(p_code).css("fill", "rgba(225,225,225,1)")
         var chart = new ChartTable(40, 500, data_array);
@@ -112,7 +115,7 @@ Map.prototype.statChange = function(){
 // =================================================================
       
 // =================================================================
-
+        stackedbar.animateBars();  
         chart.render();
         chart.animateBars(2000);
         self.assignStats(region, data_array.spending_ratio, '$'+ data_array.total_spending, '$'+ data_array.edu_per_capita, '$'+ data_array.inc_per_capita, data_array.latinos_in_prison_per100k, data_array.whites_in_prison_per100k, data_array.blacks_in_prison_per100k)
@@ -143,7 +146,10 @@ ready = function() {
   $("#close").on('click', function(event){
     $("#vmap").attr('class', 'center');
     $('#close').hide();
-    $('#bar_chart_holder').hide();
+    $('.chart_two').remove();
+      stackedbar = new StackedBarChart();
+      stackedbar.render();
+      stackedbar.fetchData();
     $('#typo_stats').children('ul').hide();
   });
 }
