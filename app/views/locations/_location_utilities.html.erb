@@ -1,10 +1,10 @@
 <div class="locationUtilities">
   <div class="utilities">
     <ul>
-      <li><%= link_to "Dashboard", locations_path %></li>
-      <li><%= link_to "Add new organization", new_location_path %></li>
-      <li><%= link_to "Edit", edit_location_path(@location) %></li>
-      <li><%= link_to "Delete", @location, :method => :delete, :confirm => "Are you sure?" %></li>
+      <li><%= link_to "Dashboard", locations_path, id: => "dashboard_organizations" %></li>
+      <li><%= link_to "Add new organization", new_location_path, id: => "add_new_organizations" %></li>
+      <li><%= link_to "Edit", edit_location_path(@location), id: => "edit_organizations" %></li>
+      <li><%= link_to "Delete", @location, :method => :delete, :confirm => "Are you sure?", id: => "delete_organizations" %></li>
     </ul>
   </div>
 </div>
