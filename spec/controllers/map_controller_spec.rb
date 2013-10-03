@@ -1,5 +1,9 @@
 require 'spec_helper'
 
+# REVIEW(RCB): These current specs might be better specified as routing expections
+#   https://www.relishapp.com/rspec/rspec-rails/v/2-14/docs/routing-specs
+#   Further specs I might add
+#     * map#update returns JSON
 describe MapController do
 
   	describe "map#index" do

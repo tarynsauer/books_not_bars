@@ -179,7 +179,7 @@ header{
 }
 
 section{
-  height:950px;
+  height:920px;
   width: 100%;
   top: 0; left:0;
   -webkit-perspective: 15000; perspective: 15000;
@@ -322,7 +322,7 @@ section#explore > div.stats{
   padding:0 0 0 0; margin: 0;
 }
 section#explore > div.stats > ul {
-  padding:120px 0 0 ; margin: 0;
+  padding:150px 0 0 ; margin: 0;
   text-align: left;
   font-size: 14px;
   height: 300px;
@@ -361,18 +361,29 @@ section#explore > div.ranking > ol > li > span{
   color:(21,21,21,1);
 }
 section#explore > div.stats ul > li > h3,
+section#explore > div.stats ul > li > h2,
 section#explore > div.stats ul > li > p{
   display: inline;
   margin: 4px 18px;
 }
-
+section#explore > div.stats ul > li > p{
+  float: right;
+}
 
 section#explore > div#chart_holder{
   padding:10px;
   width: 250px;
   right: 10px;
   position: absolute;
-  bottom: 200px;
+  bottom: 120px;
+}
+
+section#explore > div#bar_chart_holder{
+  padding:10px;
+  width: 850px;
+  left: 10px;
+  position: absolute;
+  bottom: 120px;
 }
 
 section#explore > div.stats > ul > div#chart_holder{
@@ -411,7 +422,7 @@ button#close{
   height: 50px;
   background: rgba(21,21,21,1);
   position: absolute;
-  top:5%; right:30px;
+  top:70px; right:20px;
   z-index:999;
   color:rgba(240,242,241,0.95);
 }
@@ -554,6 +565,9 @@ div .hidden{
   width: 480px!important;
 
 }
+span.tweet {
+  height: 300px!important;
+}
 
 #fact1, #fact3 {
   margin-right: 100px;
@@ -601,9 +615,9 @@ div .hidden{
   position: relative;
   float: right;
   width: 25%;
-  height: 300px;
+  height: auto;
   background-color: rgba(250,250,250,0.7);
-  padding-top: 40%;
+  padding-top: 50%;
 }
 /* ==========================================================================
    SVG Styles
@@ -677,6 +691,21 @@ div .hidden{
 }
 
 
+
+section#test .axis path,
+section#test .axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+section#test .bar {
+  fill: steelblue;
+}
+
+section#test .x.axis path {
+  display: none;
+}
 /* ==========================================================================
    Helper classes
    ==========================================================================

@@ -1,5 +1,6 @@
 require 'spec_helper'
 
+# REVIEW(RCB): Better as routing specs? (See maps_controller_spec notes)
 describe OrganizationsController do
 
   	describe "organizations#index" do

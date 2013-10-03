@@ -17,8 +17,15 @@ csv.each do |row|
 
   if state.edu_per_capita && state.inc_per_capita
     ratio = state.inc_per_capita.to_f/state.edu_per_capita
+    total = state.inc_per_capita.to_f + state.edu_per_capita
     ratio2 = ratio.round(2)
-    state.update_attributes(:spending_ratio => ratio2)
+    state.update_attributes(:spending_ratio => ratio2, :total_spending => total)
+  elsif state.edu_per_capita
+    total = state.edu_per_capita
+    state.update_attributes(:total_spending => total)
+  elsif state.inc_per_capita
+    total = state.inc_per_capita
+    state.update_attributes(:total_spending => total)
   end
 end
 

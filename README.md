@@ -58,6 +58,13 @@ Edit your config/application.yaml file and add the following: <br />
 ```bash
     $ rails s
 ```
+
+<!-- 
+     REVIEW(RCB): How do I generate organization data so that I can see it on the map?
+     		  It's hard to evaluate code that responds to /organizations/* without
+		  data
+-->
+
 You should now see the app on your localhost:3000
 
 
