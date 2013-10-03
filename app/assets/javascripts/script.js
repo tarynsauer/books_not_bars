@@ -174,8 +174,7 @@ $(document).ready(function() {
   linkTransition();
   // Link Styler Function
   linkStyler();
-  // animateCaro();
-  // slideCaro();
+  
   flipTile('#fact1');
   flipTile('#fact2');
   flipTile('#fact3');
