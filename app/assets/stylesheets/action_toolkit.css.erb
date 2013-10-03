@@ -46,8 +46,7 @@
 
 .legislators-contact-info textarea {
   display: block;
-  width: 400px;
-  height: 5em;
+  height: 4em;
   font-size: .9em;
 }
 
@@ -56,14 +55,113 @@
   margin-top: 36px;
 }
 
-.web-form-link a {
-  padding-bottom: 10px;
-}
-
 .web-form-list tr {
-  height: 120px;
+  height: 110px;
 }
 
+.bar {
+  background-color: black;
+  height: 58px;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.contactResultsContainer {
+  margin: 25px 5%;
+}
+
+.contactResultsContainer h1 {
+  color: white;
+  position: relative;
+  line-height: 0;
+}
+
+.contactWrapper {
+  margin-top: 50px;
+}
+
+p.contactIntro {
+  font-size: 20px;
+  line-height: 32px;
+}
+
+.contactResultsContainer a#findByZipcode {
+  text-decoration: none;
+  border: none;
+  border-radius: 6px;
+  background-color: rgba(218,33,50,0.9);
+  padding:8px;
+  color: rgba(254,254,254,0.9);
+  position: absolute;
+  top: 10px;
+  right: 5%
+}
+
+.contactResultsContainer a.web-form-link {
+  text-decoration: none;
+  border: none;
+  border-radius: 4px;
+  background-color: gray;
+  padding:4px 6px;
+  color: white;
+}
+
+.tweetBox h2 {
+  margin: 10px 0;
+  padding-bottom: 10px;
+  border-bottom: solid #ccc 2px;
+  line-height: 24px;
+  color: rgba(35, 43, 41, 0.9);
+}
+
+.tweetBox {
+  text-decoration: none;
+  border: none;
+  border-radius: 8px;
+  background-color: rgba(35, 43, 41, 0.1);
+  padding:10px;
+  color: black;
+  width: 30%;
+  float: left;
+}
+
+.tweetBox table {
+  width: 100%;
+  color: rgba(35, 43, 41, 0.9);
+}
+
+.webFormBox h2 {
+  margin: 10px 0;
+  padding-bottom: 10px;
+  border-bottom: solid #ccc 2px;
+  line-height: 24px;
+  color: rgba(35, 43, 41, 0.9);
+}
+
+.webFormBox {
+  text-decoration: none;
+  border: none;
+  border-radius: 8px;
+  background-color: rgba(35, 43, 41, 0.1);
+  padding:10px;
+  color: black;
+  width: 60%;
+  float: right;
+}
+
+.webFormBox table {
+  width: 100%;
+}
+
+.webFormBox textarea {
+  width: 98%;
+  color: rgba(35, 43, 41, 0.9);
+  border: 1px solid #ccc;
+  padding: 6px;
+  line-height: 1.3em;
+}
 
 /* ---------------------Location Admin Styles ------------------------*/
 
@@ -113,8 +211,4 @@
 input#location_city {
   display: inline-block;
   width: 175px;
-}
-
-.contactResultsContainer {
-  margin: 25px 5%;
 }
