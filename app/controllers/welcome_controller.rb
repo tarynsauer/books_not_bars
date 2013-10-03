@@ -4,7 +4,11 @@ class WelcomeController < ApplicationController
   protect_from_forgery with: :exception
 
   def index
-
+    state_bar = State.all
+    if request.xhr?
+     render json: { bar_stats: state_bar }
+    end
+    # render :index
   end
 
   # REVIEW (RCB): Is this action used? I don't see a reference to it
