@@ -7,8 +7,9 @@ class WelcomeController < ApplicationController
     state_bar = State.all
     if request.xhr?
      render json: { bar_stats: state_bar }
+    else
+      render :index
     end
-    # render :index
   end
 
   # REVIEW (RCB): Is this action used? I don't see a reference to it

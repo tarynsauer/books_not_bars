@@ -1,15 +1,15 @@
 var StackedBarChart = function(){
 
-  this.margin = {top: 20, right: 20, bottom: 30, left: 40};
-  this.width = 760 - this.margin.left - this.margin.right;
-  this.height = 400 - this.margin.top - this.margin.bottom;
+  this.margin = {top: 30, right: 20, bottom: 30, left: 80};
+  this.width = 1460 - this.margin.left - this.margin.right;
+  this.height = 200 - this.margin.top - this.margin.bottom;
 
 
   this.x = d3.scale.ordinal()
-      .rangeRoundBands([0, this.width], .1);
+    .rangeRoundBands([0, this.width], .1);
 
   this.y = d3.scale.linear()
-      .rangeRound([this.height, 0]);
+    .range([this.height, 0]);
 
 }
 
@@ -18,31 +18,40 @@ StackedBarChart.prototype.render = function(){
   this.svg = d3.select("#bar_chart_holder").append("svg")
       .attr("width", self.width + self.margin.left + self.margin.right)
       .attr("height", self.height + self.margin.top + self.margin.bottom)
+      .attr("class", "chart_two")
     .append("g")
       .attr("transform", "translate(" + self.margin.left + "," + self.margin.top + ")");
 
   this.xAxis = d3.svg.axis()
-      .scale(self.x)
-      .orient("bottom");
+    .scale(self.x)
+    .orient("bottom");
 
   this.yAxis = d3.svg.axis()
-      .scale(self.y)
-      .orient("left")
-      .tickFormat(d3.format(".2s"));
+    .scale(self.y)
+    .orient("left");
 }
  
 
 
 StackedBarChart.prototype.fetchData = function(){
   var self = this
+  
   $.get('/', function(response){
 
-    console.log(response);
+    // console.log(response);
 
     self.parseData(response.bar_stats);
 
   })
 }
+
+
+StackedBarChart.prototype.animateBars = function(state) {
+    var self = this
+    this.bars.transition()
+      .duration(2000)
+      .attr("height", function(d) { return self.height - self.y(d.total_spending); });;
+  };
 
 
 StackedBarChart.prototype.parseData = function(data){
@@ -62,74 +71,38 @@ StackedBarChart.prototype.parseData = function(data){
   var state_pick2 =  _.keys(state_pick)
 
   console.log(state_pick2);
+  
+  // data.sort(function(a, b) { return b.total_spending - a.total_spending; });
 
+  self.x.domain(data.map(function(d) { return d.postal_abbrev; }));
+  self.y.domain([0, d3.max(data, function(d) { return d.total_spending; })]);
+  
+  self.svg.append("g")
+      .attr("class", "x axis")
+      .attr("transform", "translate(0," + self.height + ")")
+      .call(self.xAxis);
 
-  color.domain(d3.keys(state_pick2).filter(function(key) { return key !== "name"; }));
-  data.forEach(function(d) {
-    this.y0 = 0;
-    // console.log(d.total_spending) 
-    d.ages = color.domain().map(function(name) { return {name: name, y0: y0, y1: y0 += +d.name}; });
-    d.total = d.total_spending.length
-  });
+  self.svg.append("g")
+      .attr("class", "y axis")
+      .call(self.yAxis)
+    .append("text")
+      .attr("y", 0)
+      .attr("x", 5)
+      .attr("dy", "0em")
+      .style("text-anchor", "end")
+      .text("Spending");
 
-    // data.sort(function(a, b) { return b.total - a.total; });
-
-    self.x.domain(data.map(function(d) { return d.name; }));
-    self.y.domain([0, d3.max(data, function(d) {return d.total_spending; })]);
-
-    
-    self.svg.append("g")
-        .attr("class", "x axis")
-        .attr("transform", "translate(0," + self.height + ")")
-        .call(self.xAxis);
-
-    self.svg.append("g")
-        .attr("class", "y axis")
-        .call(self.yAxis)
-      .append("text")
-        .attr("transform", "rotate(-90)")
-        .attr("y", 6)
-        .attr("dy", ".71em")
-        .style("text-anchor", "end")
-        .text("Spending");
-    var array_data = _.values(data)
-
-    console.log("A=-=========================================================================")
-    console.log(array_data)
-
-
-    var state = self.svg.selectAll(".state")
-        .data(data)
-      .enter().append("g")
-        .attr("class", "g")
-        .attr("transform", function(d) { return "translate(" + self.x(d.name) + ",0)"; });
-
-    state.selectAll("rect")
-        .data(function(d) { return d.total_spending; })
-      .enter().append("rect")
-        .attr("width", self.x.rangeBand())
-        .attr("y", function(d) { return self.y(0); })
-        .attr("height", function(d) { return self.y(d.total_spending); })
-        .style("fill", function(d) { return color(d.name); });
-
-    // var legend = self.svg.selectAll(".legend")
-    //     .data(color.domain().slice().reverse())
-    //   .enter().append("g")
-    //     .attr("class", "legend")
-    //     .attr("transform", function(d, i) { return "translate(0," + i * 20 + ")"; });
-
-    // legend.append("rect")
-    //     .attr("x", self.width - 18)
-    //     .attr("width", 18)
-    //     .attr("height", 18)
-    //     .style("fill", color);
-
-    // legend.append("text")
-    //     .attr("x", self.width - 24)
-    //     .attr("y", 9)
-    //     .attr("dy", ".35em")
-    //     .style("text-anchor", "end")
-    //     .text(function(d) { return d; });
+  this.bars = self.svg.selectAll(".bar")
+      .data(data)
+    .enter().append("rect")
+      .attr("class", "bar")
+      .attr("x", function(d) { return self.x(d.postal_abbrev); })
+      .attr("width", self.x.rangeBand())
+      .attr("y", function(d) { return self.y(d.total_spending); })
+      .attr("height", function(d) { return 0; })
+      .transition()
+      .duration(3000)
+      .attr("height", function(d) { return self.height - self.y(d.total_spending); });;
   }
 
 
