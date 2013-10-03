@@ -95,13 +95,18 @@ Map.prototype.statChange = function(){
       self.elem.attr('class', 'display');
       $('#close').show(); 
       $('#bar_chart_holder').show(); 
-      
+
 
       $.post('/map/update',{ state: region }, function(response){
         
         var data_array = response.stats       
+        var p_code =  '.' + data_array.postal_abbrev
+        console.log(data_array.postal_abbrev)
+        console.log(p_code)
         
-        var chart = new ChartTable(40, 400, data_array);
+        $('.bar_two').css("fill", "rgba(21,21,21,0.9)")
+        $(p_code).css("fill", "rgba(225,225,225,1)")
+        var chart = new ChartTable(40, 500, data_array);
   
 // =================================================================
       

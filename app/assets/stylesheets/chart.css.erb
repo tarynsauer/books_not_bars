@@ -337,6 +337,7 @@ section#explore > div.stats > ul {
 }
 section#explore > div.stats ul > li{
   list-style: none;
+  font-family: 'Dist';
   padding:5px 0;
   border-bottom: #ccc inset 1px;
   border-top: #ccc inset 1px;
@@ -370,24 +371,28 @@ section#explore > div.stats ul > li > h3,
 section#explore > div.stats ul > li > h2,
 section#explore > div.stats ul > li > p{
   display: inline;
-  margin: 4px 18px;
+  margin: 4px 12px;
 }
 section#explore > div.stats ul > li > p{
   float: right;
 }
 
 section#explore > div#chart_holder{
-  padding:10px;
+  padding:10px 10px 0;
   width: 250px;
+  margin: 0;
   right: 10px;
   position: absolute;
-  bottom: 120px;
+  bottom: 50px;
+  border-bottom:1px solid rgba(21,21,21,1);
+  border-right:1px solid rgba(21,21,21,1);
+   -webkit-transition: all 1s ease-in-out;
 }
 
 section#explore > div#bar_chart_holder{
   padding:10px;
   width: 850px;
-  left: 10px;
+  left: 20px;
   position: absolute;
   bottom: 120px;
 }
@@ -398,11 +403,19 @@ section#explore > div.stats > ul > div#chart_holder{
 
 section#explore div#typo_stats{
   position: relative;
-  bottom:600px;
+  bottom:680px;
+}
+
+section#explore div#typo_stats h1{
+  color: rgba(21,21,21,1);
+  font-family: 'FuturaNDBook';
+  /*font-weight: 100;*/
+  font-size: 52px;
 }
 
 section#explore div#bar_chart_holder{
   position: absolute;
+  font-family: 'FuturaNDBook';
   left: 120px;
   bottom:20px;
   opacity: 0.9;
@@ -424,6 +437,9 @@ section#explore > div#vmap > .arc_show{
 
 
 button#close{
+  font-family: 'Dist';
+  font-size: 22px;
+  font-weight: 100;
   border: none;
   border-radius: none;
   width: 250px;
@@ -642,9 +658,11 @@ span.tweet {
 
 
 .chart_two text{
+  font-family: 'Dist';
   fill: rgba(255,255,255,1);
 }
 .chart text {
+  font-family: 'Dist';
   fill: rgba(21,21,21,1);
 }
 
@@ -671,7 +689,7 @@ span.tweet {
 }
 
 .chart_two{
-
+  -webkit-transition: all 1s ease-in-out;
 }
 .outer,
 .inner {
@@ -714,22 +732,10 @@ span.tweet {
 
 .bar_two{
   fill:rgba(21,21,21,1);
+  -webkit-transition: all 1s ease-in-out;
 }
 
-section#test .axis path,
-section#test .axis line {
-  fill: none;
-  stroke: #000;
-  shape-rendering: crispEdges;
-}
 
-section#test .bar {
-  fill: steelblue;
-}
-
-section#test .x.axis path {
-  display: none;
-}
 /* ==========================================================================
    Helper classes
    ==========================================================================
