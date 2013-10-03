@@ -57,20 +57,14 @@ StackedBarChart.prototype.animateBars = function(state) {
 StackedBarChart.prototype.parseData = function(data){
   var self = this
 
-  console.log(typeof (data));
-  console.log(data);
-
   var color = d3.scale.ordinal()
       .range(["#98abc5", "#8a89a6", "#7b6888", "#6b486b", "#a05d56", "#d0743c", "#ff8c00"]);
 
   var state_pick = _.find(data, function(state){
     return state.name == "California"
   })
-  console.log(state_pick);
 
   var state_pick2 =  _.keys(state_pick)
-
-  console.log(state_pick2);
   
   // data.sort(function(a, b) { return b.total_spending - a.total_spending; });
 
@@ -95,7 +89,7 @@ StackedBarChart.prototype.parseData = function(data){
   this.bars = self.svg.selectAll(".bar")
       .data(data)
     .enter().append("rect")
-      .attr("class", "bar")
+      .attr("class", function(d){ return "bar_two " + d.postal_abbrev })
       .attr("x", function(d) { return self.x(d.postal_abbrev); })
       .attr("width", self.x.rangeBand())
       .attr("y", function(d) { return self.y(d.total_spending); })

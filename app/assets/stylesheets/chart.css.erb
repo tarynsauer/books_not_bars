@@ -163,7 +163,14 @@ header{
   top:0; left: 0;
   z-index:40;
 }
-
+header h1.logo{
+  position: fixed;
+  left:20px;
+  top:5px;
+  margin: 0;
+  font-family: 'FuturaNDBook';
+  text-shadow: 0 0 2px rgba(255,255,255,1), 0 0 2px rgba(255,255,255,1), 0 0 2px rgba(255,255,255,1), 0 0 3px rgba(218,33,50,0.7), 0 0 3px rgba(218,33,50,0.7), 0 0 3px rgba(218,33,50,0.7), 0 0 3px rgba(218,33,50,0.7), 0 0 3px rgba(218,33,50,0.7);
+}
 .cover{
   background: url('blackorchid.png') repeat;
   position: absolute;
@@ -337,6 +344,7 @@ section#explore > div.stats > ul {
 }
 section#explore > div.stats ul > li{
   list-style: none;
+  font-family: 'Dist';
   padding:5px 0;
   border-bottom: #ccc inset 1px;
   border-top: #ccc inset 1px;
@@ -370,24 +378,28 @@ section#explore > div.stats ul > li > h3,
 section#explore > div.stats ul > li > h2,
 section#explore > div.stats ul > li > p{
   display: inline;
-  margin: 4px 18px;
+  margin: 4px 12px;
 }
 section#explore > div.stats ul > li > p{
   float: right;
 }
 
 section#explore > div#chart_holder{
-  padding:10px;
+  padding:10px 10px 0;
   width: 250px;
+  margin: 0;
   right: 10px;
   position: absolute;
-  bottom: 120px;
+  bottom: 50px;
+  border-bottom:1px solid rgba(21,21,21,1);
+  border-right:1px solid rgba(21,21,21,1);
+   -webkit-transition: all 1s ease-in-out;
 }
 
 section#explore > div#bar_chart_holder{
   padding:10px;
   width: 850px;
-  left: 10px;
+  left: 20px;
   position: absolute;
   bottom: 120px;
 }
@@ -398,11 +410,35 @@ section#explore > div.stats > ul > div#chart_holder{
 
 section#explore div#typo_stats{
   position: relative;
-  bottom:600px;
+  bottom:640px;
+  width: 400px;
+  -webkit-transition: all 1s ease-in-out;
 }
-
+section#explore div#typo_stats hr{
+  margin: 0;
+}
+section#explore div#typo_stats h1{
+  color: rgba(21,21,21,1);
+  font-family: 'FuturaNDBook';
+  /*font-weight: 100;*/
+  font-size: 42px;
+  margin: 0; padding: 0;
+}
+section#explore div#typo_stats > ul{
+  margin: 0 auto;
+  padding: 0;
+  text-align: center;
+  -webkit-transition: all 1s ease-in-out;
+}
+section#explore div#typo_stats > ul > li{
+  list-style: none;
+  display: inline-block;
+  padding:  0 10px; 
+  height: 80px;
+}
 section#explore div#bar_chart_holder{
   position: absolute;
+  font-family: 'FuturaNDBook';
   left: 120px;
   bottom:20px;
   opacity: 0.9;
@@ -424,6 +460,9 @@ section#explore > div#vmap > .arc_show{
 
 
 button#close{
+  font-family: 'Dist';
+  font-size: 22px;
+  font-weight: 100;
   border: none;
   border-radius: none;
   width: 250px;
@@ -642,9 +681,11 @@ span.tweet {
 
 
 .chart_two text{
+  font-family: 'Dist';
   fill: rgba(255,255,255,1);
 }
 .chart text {
+  font-family: 'Dist';
   fill: rgba(21,21,21,1);
 }
 
@@ -671,7 +712,7 @@ span.tweet {
 }
 
 .chart_two{
-
+  -webkit-transition: all 1s ease-in-out;
 }
 .outer,
 .inner {
@@ -714,22 +755,10 @@ span.tweet {
 
 .bar_two{
   fill:rgba(21,21,21,1);
+  -webkit-transition: all 1s ease-in-out;
 }
 
-section#test .axis path,
-section#test .axis line {
-  fill: none;
-  stroke: #000;
-  shape-rendering: crispEdges;
-}
 
-section#test .bar {
-  fill: steelblue;
-}
-
-section#test .x.axis path {
-  display: none;
-}
 /* ==========================================================================
    Helper classes
    ==========================================================================
@@ -831,6 +860,75 @@ section#test .x.axis path {
     *zoom: 1;
 }
 
+
+.social-wrap {
+margin:0px 0px 0px 0px;
+padding:0px 0px 0px 0px;
+}
+.social-wrap ul li{
+list-style:none;
+border-bottom:none;
+margin:0px 0px 0px 0px;
+padding:0px 0px 0px 0px;
+}
+.social-wrap li a {
+margin:-5px 10px 0px 3px;
+padding:0px 0px 0px 0px;
+width:50px;
+height:40px;
+float:right;
+text-indent:-99999px;
+background: #191919;
+border:solid 1px #222121;
+-moz-border-radius-topleft: 5px;
+-moz-border-radius-topright:5px;
+-moz-border-radius-bottomleft:5px;
+-moz-border-radius-bottomright:5px;
+-webkit-border-top-left-radius:5px;
+-webkit-border-top-right-radius:5px;
+-webkit-border-bottom-left-radius:5px;
+-webkit-border-bottom-right-radius:5px;
+border-top-left-radius:5px;
+border-top-right-radius:5px;
+border-bottom-left-radius:5px;
+border-bottom-right-radius:5px;
+}
+.social-wrap li a.facebook {
+background: rgba(218,33,50,1) url(http://4.bp.blogspot.com/-njqMpTvxYbs/UFM2yXm-AnI/AAAAAAAAEFU/yfm_dKxQ2hs/s1600/facebook.png) no-repeat -3px -95px;
+-webkit-transition:All 0.3s ease-out;
+-moz-transition:All 0.3s ease-out;
+-o-transition:All 0.3s ease-out;
+}
+.social-wrap li a.facebook:hover {
+background: #191919 url(http://4.bp.blogspot.com/-njqMpTvxYbs/UFM2yXm-AnI/AAAAAAAAEFU/yfm_dKxQ2hs/s1600/facebook.png) no-repeat -0px -0px;
+}
+.social-wrap li a.twitter {
+background: rgba(218,33,50,1) url(http://2.bp.blogspot.com/-BtalCDk0UGg/UFM206t5yfI/AAAAAAAAEFk/1cwjqImigQo/s1600/twitter-1.png) no-repeat -8px -98px;
+-webkit-transition:All 0.3s ease-out;
+-moz-transition:All 0.3s ease-out;
+-o-transition:All 0.3s ease-out;
+}
+.social-wrap li a.twitter:hover {
+background: #191919 url(http://2.bp.blogspot.com/-BtalCDk0UGg/UFM206t5yfI/AAAAAAAAEFk/1cwjqImigQo/s1600/twitter-1.png) no-repeat -0px -0px;
+}
+.social-wrap li a.google-p {
+background:rgba(218,33,50,1) url(http://1.bp.blogspot.com/-qITbsA3n7_w/UFM2z36eMnI/AAAAAAAAEFc/PK9Cmf7JZd4/s1600/google.png) no-repeat -0px -100px;
+-webkit-transition:All 0.3s ease-out;
+-moz-transition:All 0.3s ease-out;
+-o-transition:All 0.3s ease-out;
+}
+.social-wrap li a.google-p:hover {
+background: #191919 url(http://1.bp.blogspot.com/-qITbsA3n7_w/UFM2z36eMnI/AAAAAAAAEFc/PK9Cmf7JZd4/s1600/google.png) no-repeat -0px -0px;
+}
+.social-wrap li a.rss {
+background:#191919 url(http://1.bp.blogspot.com/-xmXWc6_8mxw/UFM21nVC47I/AAAAAAAAEFs/Ydce5M-vkvw/s1600/twitter.png) no-repeat -0px -88px;
+-webkit-transition:All 0.3s ease-out;
+-moz-transition:All 0.3s ease-out;
+-o-transition:All 0.3s ease-out;
+}
+.social-wrap li a.rss:hover {
+background: #ffffff url(http://1.bp.blogspot.com/-xmXWc6_8mxw/UFM21nVC47I/AAAAAAAAEFs/Ydce5M-vkvw/s1600/twitter.png) no-repeat -0px -0px;
+}
 /* ==========================================================================
    EXAMPLE Media Queries for Responsive Design.
    These examples override the primary ('mobile first') styles.

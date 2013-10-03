@@ -94,14 +94,20 @@ Map.prototype.statChange = function(){
      
       self.elem.attr('class', 'display');
       $('#close').show(); 
-      $('#bar_chart_holder').show(); 
-      
+      $('#bar_chart_holder').show();
+      $('#typo_stats').children('ul').slideDown('2000', function() {});(1000); 
+
 
       $.post('/map/update',{ state: region }, function(response){
         
         var data_array = response.stats       
+        var p_code =  '.' + data_array.postal_abbrev
+        console.log(data_array.postal_abbrev)
+        console.log(p_code)
         
-        var chart = new ChartTable(40, 400, data_array);
+        $('.bar_two').css("fill", "rgba(21,21,21,0.9)")
+        $(p_code).css("fill", "rgba(225,225,225,1)")
+        var chart = new ChartTable(40, 500, data_array);
   
 // =================================================================
       
@@ -109,23 +115,27 @@ Map.prototype.statChange = function(){
 
         chart.render();
         chart.animateBars(2000);
-        self.assignStats(region, data_array.spending_ratio, '$'+ data_array.total_spending, '$'+ data_array.edu_per_capita, '$'+ data_array.inc_per_capita)
+        self.assignStats(region, data_array.spending_ratio, '$'+ data_array.total_spending, '$'+ data_array.edu_per_capita, '$'+ data_array.inc_per_capita, data_array.latinos_in_prison_per100k, data_array.whites_in_prison_per100k, data_array.blacks_in_prison_per100k)
       })
   }); 
 }
 
-Map.prototype.assignStats = function(state, spending_ratio, total_spending, pupil_cost, inmate_cost){
+Map.prototype.assignStats = function(state, spending_ratio, total_spending, pupil_cost, inmate_cost, latino, white, black){
   $('#state').text(state)
   $('#total_spending').text(total_spending)
   $('#spending_ratio').text(spending_ratio)
   $('#inmate_cost').text(inmate_cost)
   $('#pupil_cost').text(pupil_cost)
   $('#state_info').text(state)
+  $('#latinos_in_prison').text(latino)
+  $('#whites_in_prison').text(white)
+  $('#blacks_in_prison').text(black)
 }
 
 ready = function() {
   $('#close').hide();
   $('#bar_chart_holder').hide();
+  $('#typo_stats').children('ul').hide();
 
   var map = new Map('#vmap');
   map.statChange();
@@ -134,6 +144,7 @@ ready = function() {
     $("#vmap").attr('class', 'center');
     $('#close').hide();
     $('#bar_chart_holder').hide();
+    $('#typo_stats').children('ul').hide();
   });
 }
 
