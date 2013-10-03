@@ -222,7 +222,8 @@ section#situation > div.intro h1.main{
   text-shadow: 0 0 2px rgba(255,255,255,1), 0 0 2px rgba(255,255,255,1), 0 0 2px rgba(255,255,255,1), 0 0 3px rgba(218,33,50,0.7), 0 0 3px rgba(218,33,50,0.7), 0 0 3px rgba(218,33,50,0.7), 0 0 3px rgba(218,33,50,0.7), 0 0 3px rgba(218,33,50,0.7);
 }
 
-section#situation button{
+section#situation .submit_button,
+section#situation .home_button{
   border: none;
   border-radius: 8px;
   background-color: rgba(218,33,50,0.9);
@@ -231,7 +232,12 @@ section#situation button{
   margin:10px;
   color: rgba(254,254,254,0.9);
 }
-
+section#situation .submit_button{
+  float:left;
+}
+section#situation .home_button{
+  float: right;
+}
 section#explore{
   position: relative;
 }
@@ -390,14 +396,16 @@ section#explore > div.stats > ul > div#chart_holder{
   height: ;
 }
 
-
-
-section#explore div#donut_holder{
+section#explore div#typo_stats{
   position: relative;
-  bottom: 0px;
-  left:0;
-  opacity: 1;
-  border: 1px blue solid;
+  bottom:600px;
+}
+
+section#explore div#bar_chart_holder{
+  position: absolute;
+  left: 120px;
+  bottom:20px;
+  opacity: 0.9;
   -webkit-transition: all 1s ease-in-out;
 }
 
@@ -632,8 +640,12 @@ span.tweet {
    SVG Styles
    ========================================================================== */
 
+
+.chart_two text{
+  fill: rgba(255,255,255,1);
+}
 .chart text {
-    fill: rgba(21,21,21,1);
+  fill: rgba(21,21,21,1);
 }
 
 
@@ -646,7 +658,6 @@ span.tweet {
 .axis path,
 .axis line {
   fill: none;
-  /*stroke: #000;*/
   shape-rendering: crispEdges;
 }
 
@@ -659,7 +670,9 @@ span.tweet {
   stroke-width: 1.5px;
 }
 
+.chart_two{
 
+}
 .outer,
 .inner {
   shape-rendering: crispEdges;
@@ -699,7 +712,9 @@ span.tweet {
   shape-rendering: crispEdges;
 }
 
-
+.bar_two{
+  fill:rgba(21,21,21,1);
+}
 
 section#test .axis path,
 section#test .axis line {

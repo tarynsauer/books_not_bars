@@ -91,18 +91,17 @@ Map.prototype.statChange = function(){
 
   $(this.elem).on('regionClick.jqvmap', function(event, code, region){
      $('#chart_holder').children().remove();
-     $('#donut_holder').children().remove();
+     
       self.elem.attr('class', 'display');
       $('#close').show(); 
-    
+      $('#bar_chart_holder').show(); 
+      
 
       $.post('/map/update',{ state: region }, function(response){
         
         var data_array = response.stats       
         
         var chart = new ChartTable(40, 400, data_array);
-      
-        console.log(data_array);
   
 // =================================================================
       
@@ -121,10 +120,12 @@ Map.prototype.assignStats = function(state, spending_ratio, total_spending, pupi
   $('#spending_ratio').text(spending_ratio)
   $('#inmate_cost').text(inmate_cost)
   $('#pupil_cost').text(pupil_cost)
+  $('#state_info').text(state)
 }
 
 ready = function() {
   $('#close').hide();
+  $('#bar_chart_holder').hide();
 
   var map = new Map('#vmap');
   map.statChange();
@@ -132,6 +133,7 @@ ready = function() {
   $("#close").on('click', function(event){
     $("#vmap").attr('class', 'center');
     $('#close').hide();
+    $('#bar_chart_holder').hide();
   });
 }
 
