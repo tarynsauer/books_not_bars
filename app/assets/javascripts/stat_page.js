@@ -46,10 +46,10 @@ StackedBarChart.prototype.fetchData = function(){
 }
 
 
-StackedBarChart.prototype.animateBars = function(state) {
+StackedBarChart.prototype.animateBars = function() {
     var self = this
     this.bars.transition()
-      .duration(2000)
+      .duration(2500)
       .attr("height", function(d) { return self.height - self.y(d.total_spending); });;
   };
 
@@ -93,10 +93,7 @@ StackedBarChart.prototype.parseData = function(data){
       .attr("x", function(d) { return self.x(d.postal_abbrev); })
       .attr("width", self.x.rangeBand())
       .attr("y", function(d) { return self.y(d.total_spending); })
-      .attr("height", function(d) { return 0; })
-      .transition()
-      .duration(3000)
-      .attr("height", function(d) { return self.height - self.y(d.total_spending); });;
+      .attr("height", function(d) { return 0; });
   }
 
 
@@ -107,7 +104,7 @@ StackedBarChart.prototype.parseData = function(data){
 
 
 ready = function() {
-  var stackedbar = new StackedBarChart();
+  stackedbar = new StackedBarChart();
   stackedbar.render();
   stackedbar.fetchData();
 }
