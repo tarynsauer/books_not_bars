@@ -403,16 +403,32 @@ section#explore > div.stats > ul > div#chart_holder{
 
 section#explore div#typo_stats{
   position: relative;
-  bottom:680px;
+  bottom:640px;
+  width: 400px;
+  -webkit-transition: all 1s ease-in-out;
 }
-
+section#explore div#typo_stats hr{
+  margin: 0;
+}
 section#explore div#typo_stats h1{
   color: rgba(21,21,21,1);
   font-family: 'FuturaNDBook';
   /*font-weight: 100;*/
-  font-size: 52px;
+  font-size: 42px;
+  margin: 0; padding: 0;
 }
-
+section#explore div#typo_stats > ul{
+  margin: 0 auto;
+  padding: 0;
+  text-align: center;
+  -webkit-transition: all 1s ease-in-out;
+}
+section#explore div#typo_stats > ul > li{
+  list-style: none;
+  display: inline-block;
+  padding:  0 10px; 
+  height: 80px;
+}
 section#explore div#bar_chart_holder{
   position: absolute;
   font-family: 'FuturaNDBook';
