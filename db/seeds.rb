@@ -6,7 +6,7 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 # source1array = []
-require 'csv'  
+require 'csv'
 State.delete_all
 
 csv_text = File.read('db/source1.csv')
@@ -29,6 +29,12 @@ csv.each do |row|
   end
 end
 
+representatives_text = File.read('db/representatives_data.csv')
+representatives_csv = CSV.parse(representatives_text, :headers => true)
+representatives_csv.each do |row|
+  Representative.create!(row.to_hash)
+end
+
 
 # states = State.all
 # states.each do |state|
@@ -41,5 +47,5 @@ end
 # csv2 = CSV.parse(csv2_text, :headers => true)
 
 # csv2.each do |row|
-#   State.create!(row.to_hash)  
+#   State.create!(row.to_hash)
 # end

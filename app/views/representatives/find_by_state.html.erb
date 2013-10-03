@@ -1,0 +1,7 @@
+<h1>Select your state</h1>
+<p>Let congress know that you care about the spending disparity between education and incarceration in the U.S.</p>
+<%= form_tag("/legislators/show_by_state", method: "get") do %>
+  <%= label_tag(:state) %>
+  <%= select_tag 'State', options_for_select(@us_states), :name=>"state", :id=> "state" %>
+  <%= submit_tag "Find Representatives" %>
+<% end %>
