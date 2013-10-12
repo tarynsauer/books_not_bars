@@ -1,6 +1,8 @@
 CurrentBooksBar::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
+  # config.assets.initialize_on_precompile = false # => Possible next step to attempt fix
+
   # Code is not reloaded between requests.
   config.cache_classes = true
 
